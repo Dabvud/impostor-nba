@@ -1,0 +1,1409 @@
+[
+  {
+    "name": "Bayern München",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Süddeutschland",
+      "color": "Rot",
+      "league": "Bundesliga",
+      "character": "Großklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Kreis-Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Telekommunikation",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Borussia Dortmund",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Ruhrpott",
+      "color": "Gelb",
+      "league": "Bundesliga",
+      "character": "Stimmungshochburg",
+      "success": "Champions-League-Sieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Telekommunikation",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Bayer Leverkusen",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Rheinland",
+      "color": "Rot",
+      "league": "Bundesliga",
+      "character": "Werksklub",
+      "success": "Europapokalsieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1900er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Versicherung",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "RB Leipzig",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Sachsen",
+      "color": "Rot",
+      "league": "Bundesliga",
+      "character": "Investorenklub",
+      "success": "Pokalsieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "2000er",
+      "cityType": "Großstadt",
+      "derby": "kein großes Derby",
+      "sponsor": "Getränke",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Borussia Mönchengladbach",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Niederrhein",
+      "color": "Grün",
+      "league": "Bundesliga",
+      "character": "Traditionsverein",
+      "success": "Europapokalsieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Online-Handel",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "VfL Wolfsburg",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Niedersachsen",
+      "color": "Grün",
+      "league": "Bundesliga",
+      "character": "Werksklub",
+      "success": "Meister",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1940er",
+      "cityType": "Industriestadt",
+      "derby": "kein großes Derby",
+      "sponsor": "Auto",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Eintracht Frankfurt",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Hessen",
+      "color": "Schwarz",
+      "league": "Bundesliga",
+      "character": "Stimmungshochburg",
+      "success": "Europapokalsieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1890er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "TSG Hoffenheim",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Kraichgau",
+      "color": "Blau",
+      "league": "Bundesliga",
+      "character": "Investorenklub",
+      "success": "noch nie Meister",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1890er",
+      "cityType": "Kleinstadt",
+      "derby": "kein großes Derby",
+      "sponsor": "Technik",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "VfB Stuttgart",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Schwaben",
+      "color": "Weiß",
+      "league": "Bundesliga",
+      "character": "Traditionsverein",
+      "success": "Meister",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1890er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Bank",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "SC Freiburg",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Breisgau",
+      "color": "Rot",
+      "league": "Bundesliga",
+      "character": "Ausbildungsverein",
+      "success": "noch nie Meister",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1900er",
+      "cityType": "Großstadt",
+      "derby": "kein großes Derby",
+      "sponsor": "Technik",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Werder Bremen",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Norddeutschland",
+      "color": "Grün",
+      "league": "Bundesliga",
+      "character": "Traditionsverein",
+      "success": "Europapokalsieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1890er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Schalke 04",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Ruhrpott",
+      "color": "Blau",
+      "league": "Bundesliga",
+      "character": "Arbeiterklub",
+      "success": "Europapokalsieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Technik",
+      "mascot": "Figur-Maskottchen"
+    }
+  },
+  {
+    "name": "Mainz 05",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Rheinhessen",
+      "color": "Rot",
+      "league": "Bundesliga",
+      "character": "Kultklub",
+      "success": "noch nie Meister",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1900er",
+      "cityType": "Großstadt",
+      "derby": "kein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "Figur-Maskottchen"
+    }
+  },
+  {
+    "name": "FC Augsburg",
+    "region": "de",
+    "inAllClubs": false,
+    "hints": {
+      "region": "Schwaben",
+      "color": "Rot",
+      "league": "Bundesliga",
+      "character": "Traditionsverein",
+      "success": "noch nie Meister",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1900er",
+      "cityType": "Großstadt",
+      "derby": "kein großes Derby",
+      "sponsor": "Versicherung",
+      "mascot": "kein bekanntes Maskottchen"
+    }
+  },
+  {
+    "name": "1. FC Köln",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Rheinland",
+      "color": "Rot",
+      "league": "Bundesliga",
+      "character": "Kultklub",
+      "success": "Meister",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1940er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Hertha BSC",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Berlin",
+      "color": "Blau",
+      "league": "Bundesliga",
+      "character": "Traditionsverein",
+      "success": "Meister",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1890er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Bank",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Hamburger SV",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Norddeutschland",
+      "color": "Blau",
+      "league": "Bundesliga",
+      "character": "Traditionsverein",
+      "success": "Champions-League-Sieger",
+      "crest": "Kreis-Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1880er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Versicherung",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Union Berlin",
+    "region": "de",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Hauptstadtregion",
+      "color": "Rot",
+      "league": "Bundesliga",
+      "character": "Kultklub",
+      "success": "Pokalsieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "kleines Stadion",
+      "founded": "1960er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Bank",
+      "mascot": "Figur-Maskottchen"
+    }
+  },
+  {
+    "name": "Hannover 96",
+    "region": "de",
+    "inAllClubs": false,
+    "hints": {
+      "region": "Niedersachsen",
+      "color": "Grün",
+      "league": "Bundesliga",
+      "character": "Traditionsverein",
+      "success": "Meister",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1890er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Fortuna Düsseldorf",
+    "region": "de",
+    "inAllClubs": false,
+    "hints": {
+      "region": "Rheinland",
+      "color": "Rot",
+      "league": "Bundesliga",
+      "character": "Kultklub",
+      "success": "Meister",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1890er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Bank",
+      "mascot": "kein bekanntes Maskottchen"
+    }
+  },
+  {
+    "name": "1. FC Nürnberg",
+    "region": "de",
+    "inAllClubs": false,
+    "hints": {
+      "region": "Franken",
+      "color": "Rot",
+      "league": "Bundesliga",
+      "character": "Traditionsverein",
+      "success": "Meister",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Technik",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "VfL Bochum",
+    "region": "de",
+    "inAllClubs": false,
+    "hints": {
+      "region": "Ruhrpott",
+      "color": "Blau",
+      "league": "Bundesliga",
+      "character": "Arbeiterklub",
+      "success": "noch nie Meister",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1840er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "1. FC Heidenheim",
+    "region": "de",
+    "inAllClubs": false,
+    "hints": {
+      "region": "Ostwürttemberg",
+      "color": "Rot",
+      "league": "Bundesliga",
+      "character": "Traditionsverein",
+      "success": "noch nie Meister",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "kleines Stadion",
+      "founded": "2000er",
+      "cityType": "Industriestadt",
+      "derby": "kein großes Derby",
+      "sponsor": "Technik",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Manchester City",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "England",
+      "color": "Blau",
+      "league": "Premier League",
+      "character": "Investorenklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Kreis-Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1880er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Airline",
+      "mascot": "Figur-Maskottchen"
+    }
+  },
+  {
+    "name": "Manchester United",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "England",
+      "color": "Rot",
+      "league": "Premier League",
+      "character": "Großklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1870er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Technik",
+      "mascot": "Figur-Maskottchen"
+    }
+  },
+  {
+    "name": "Liverpool",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "England",
+      "color": "Rot",
+      "league": "Premier League",
+      "character": "Stimmungshochburg",
+      "success": "Champions-League-Sieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1890er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Bank",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Chelsea",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "England",
+      "color": "Blau",
+      "league": "Premier League",
+      "character": "Investorenklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1900er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Arsenal",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "England",
+      "color": "Rot",
+      "league": "Premier League",
+      "character": "Großklub",
+      "success": "Europapokalsieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1880er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Airline",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Tottenham",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "England",
+      "color": "Weiß",
+      "league": "Premier League",
+      "character": "Traditionsverein",
+      "success": "Europapokalsieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1880er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Versicherung",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Newcastle",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "England",
+      "color": "Schwarz",
+      "league": "Premier League",
+      "character": "Arbeiterklub",
+      "success": "Meister",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1890er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Getränke",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Aston Villa",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "England",
+      "color": "Rot",
+      "league": "Premier League",
+      "character": "Traditionsverein",
+      "success": "Champions-League-Sieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1870er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Reisen",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "West Ham",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "England",
+      "color": "Rot",
+      "league": "Premier League",
+      "character": "Arbeiterklub",
+      "success": "Europapokalsieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1890er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Wettanbieter",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Everton",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "England",
+      "color": "Blau",
+      "league": "Premier League",
+      "character": "Traditionsverein",
+      "success": "Europapokalsieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1870er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "Figur-Maskottchen"
+    }
+  },
+  {
+    "name": "Leicester City",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "England",
+      "color": "Blau",
+      "league": "Premier League",
+      "character": "Traditionsverein",
+      "success": "Meister",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1880er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Wettanbieter",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Real Madrid",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Spanien",
+      "color": "Weiß",
+      "league": "LaLiga",
+      "character": "Großklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Krone im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Airline",
+      "mascot": "kein bekanntes Maskottchen"
+    }
+  },
+  {
+    "name": "FC Barcelona",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Spanien",
+      "color": "Blau",
+      "league": "LaLiga",
+      "character": "Großklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Kreuz im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1890er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Technik",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Atlético Madrid",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Spanien",
+      "color": "Rot",
+      "league": "LaLiga",
+      "character": "Stimmungshochburg",
+      "success": "Europapokalsieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Airline",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "FC Sevilla",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Spanien",
+      "color": "Weiß",
+      "league": "LaLiga",
+      "character": "Traditionsverein",
+      "success": "Europapokalsieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1890er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": null,
+      "mascot": "kein bekanntes Maskottchen"
+    }
+  },
+  {
+    "name": "Valencia",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Spanien",
+      "color": "Weiß",
+      "league": "LaLiga",
+      "character": "Traditionsverein",
+      "success": "Europapokalsieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1910er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Villarreal",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Spanien",
+      "color": "Gelb",
+      "league": "LaLiga",
+      "character": "Ausbildungsverein",
+      "success": "Europapokalsieger",
+      "crest": "Krone im Wappen"
+    },
+    "extras": {
+      "stadium": "kleines Stadion",
+      "founded": "1920er",
+      "cityType": "Kleinstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "Figur-Maskottchen"
+    }
+  },
+  {
+    "name": "Athletic Bilbao",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Spanien",
+      "color": "Rot",
+      "league": "LaLiga",
+      "character": "Ausbildungsverein",
+      "success": "Meister",
+      "crest": "Kreuz im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1890er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Bank",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Real Betis",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Spanien",
+      "color": "Grün",
+      "league": "LaLiga",
+      "character": "Kultklub",
+      "success": "Meister",
+      "crest": "Krone im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Technik",
+      "mascot": "Figur-Maskottchen"
+    }
+  },
+  {
+    "name": "Juventus",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Italien",
+      "color": "Schwarz",
+      "league": "Serie A",
+      "character": "Großklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1890er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Auto",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Inter Mailand",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Italien",
+      "color": "Blau",
+      "league": "Serie A",
+      "character": "Großklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Wettanbieter",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "AC Mailand",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Italien",
+      "color": "Rot",
+      "league": "Serie A",
+      "character": "Großklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Kreuz im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1890er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Airline",
+      "mascot": "Figur-Maskottchen"
+    }
+  },
+  {
+    "name": "SSC Neapel",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Italien",
+      "color": "Blau",
+      "league": "Serie A",
+      "character": "Kultklub",
+      "success": "Europapokalsieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1920er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Reisen",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "AS Rom",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Italien",
+      "color": "Rot",
+      "league": "Serie A",
+      "character": "Traditionsverein",
+      "success": "Europapokalsieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1920er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Wettanbieter",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Lazio Rom",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Italien",
+      "color": "Blau",
+      "league": "Serie A",
+      "character": "Traditionsverein",
+      "success": "Europapokalsieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": null,
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Atalanta",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Italien",
+      "color": "Blau",
+      "league": "Serie A",
+      "character": "Ausbildungsverein",
+      "success": "Europapokalsieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "kleines Stadion",
+      "founded": "1900er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Getränke",
+      "mascot": "Figur-Maskottchen"
+    }
+  },
+  {
+    "name": "Fiorentina",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Italien",
+      "color": "Lila",
+      "league": "Serie A",
+      "character": "Traditionsverein",
+      "success": "Europapokalsieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "kleines Stadion",
+      "founded": "1920er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Telekommunikation",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Como",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Italien",
+      "color": "Blau",
+      "league": "Serie A",
+      "character": "Investorenklub",
+      "success": "noch nie Meister",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "kleines Stadion",
+      "founded": "1900er",
+      "cityType": "Kleinstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Bank",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Paris Saint-Germain",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Frankreich",
+      "color": "Blau",
+      "league": "Ligue 1",
+      "character": "Investorenklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Kreis-Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1970er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Airline",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Olympique Marseille",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Frankreich",
+      "color": "Weiß",
+      "league": "Ligue 1",
+      "character": "Stimmungshochburg",
+      "success": "Champions-League-Sieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1890er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "kein bekanntes Maskottchen"
+    }
+  },
+  {
+    "name": "Olympique Lyon",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Frankreich",
+      "color": "Weiß",
+      "league": "Ligue 1",
+      "character": "Ausbildungsverein",
+      "success": "Meister",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1950er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Airline",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "AS Monaco",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Riviera",
+      "color": "Rot",
+      "league": "Ligue 1",
+      "character": "Ausbildungsverein",
+      "success": "Meister",
+      "crest": "Krone im Wappen"
+    },
+    "extras": {
+      "stadium": "kleines Stadion",
+      "founded": "1920er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "OSC Lille",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Frankreich",
+      "color": "Rot",
+      "league": "Ligue 1",
+      "character": "Ausbildungsverein",
+      "success": "Meister",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1940er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Technik",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Benfica",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Portugal",
+      "color": "Rot",
+      "league": "Liga Portugal",
+      "character": "Großklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Airline",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "FC Porto",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Portugal",
+      "color": "Blau",
+      "league": "Liga Portugal",
+      "character": "Großklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1890er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Wettanbieter",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Sporting Lissabon",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Portugal",
+      "color": "Grün",
+      "league": "Liga Portugal",
+      "character": "Ausbildungsverein",
+      "success": "Europapokalsieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Wettanbieter",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Ajax Amsterdam",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Niederlande",
+      "color": "Rot",
+      "league": "Eredivisie",
+      "character": "Ausbildungsverein",
+      "success": "Champions-League-Sieger",
+      "crest": "Kreis-Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Hauptstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Telekommunikation",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "PSV Eindhoven",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Niederlande",
+      "color": "Rot",
+      "league": "Eredivisie",
+      "character": "Werksklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1910er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Technik",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Feyenoord",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Niederlande",
+      "color": "Rot",
+      "league": "Eredivisie",
+      "character": "Arbeiterklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Technik",
+      "mascot": "Figur-Maskottchen"
+    }
+  },
+  {
+    "name": "Celtic",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Schottland",
+      "color": "Grün",
+      "league": "Scottish Premiership",
+      "character": "Kultklub",
+      "success": "Champions-League-Sieger",
+      "crest": "Kreis-Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1880er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Wettanbieter",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Rangers",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Schottland",
+      "color": "Blau",
+      "league": "Scottish Premiership",
+      "character": "Traditionsverein",
+      "success": "Europapokalsieger",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1870er",
+      "cityType": "Industriestadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Wettanbieter",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Galatasaray",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Türkei",
+      "color": "Rot",
+      "league": "Süper Lig",
+      "character": "Stimmungshochburg",
+      "success": "Europapokalsieger",
+      "crest": "Buchstaben im Wappen"
+    },
+    "extras": {
+      "stadium": "großes Stadion",
+      "founded": "1900er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Andere",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "Fenerbahçe",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Türkei",
+      "color": "Gelb",
+      "league": "Süper Lig",
+      "character": "Großklub",
+      "success": "Meister",
+      "crest": "Kreis-Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1900er",
+      "cityType": "Großstadt",
+      "derby": "hat ein großes Derby",
+      "sponsor": "Auto",
+      "mascot": "Tier-Maskottchen"
+    }
+  },
+  {
+    "name": "RB Salzburg",
+    "region": "int",
+    "inAllClubs": true,
+    "hints": {
+      "region": "Österreich",
+      "color": "Rot",
+      "league": "Österreichische Bundesliga",
+      "character": "Ausbildungsverein",
+      "success": "Meister",
+      "crest": "Tier im Wappen"
+    },
+    "extras": {
+      "stadium": "mittelgroßes Stadion",
+      "founded": "1930er",
+      "cityType": "Großstadt",
+      "derby": "kein großes Derby",
+      "sponsor": "Getränke",
+      "mascot": "Tier-Maskottchen"
+    }
+  }
+]
