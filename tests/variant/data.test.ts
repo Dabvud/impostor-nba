@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { buildPool } from "../../src/variant/modes";
 import playersJson from "../../src/data/players.json";
 import teamsJson from "../../src/data/teams.json";
 import type { NbaPlayer, NbaTeam, PlayerExtras } from "../../src/variant/types";
@@ -6,6 +7,13 @@ import type { NbaPlayer, NbaTeam, PlayerExtras } from "../../src/variant/types";
 const players = playersJson as NbaPlayer[];
 const teams = teamsJson as NbaTeam[];
 const text = (value: unknown) => typeof value === "string" && value.trim().length > 0;
+const STYLES = [
+  "Scorer", "Dreierschütze", "Spielmacher", "Verteidiger", "Dunker", "Rebounder", "Shotblocker",
+  "Allrounder", "Athlet", "Mitteldistanz-Spezialist", "Post-Spieler",
+];
+const SUCCESS = ["NBA-Champion", "Finals-Teilnehmer", "Conference-Finalist"];
+const ROLES = ["Teamlegende", "Franchise-Spieler", "Talent"];
+const TIPS = [...STYLES, "All-Star", "All-NBA", ...SUCCESS, "Clutch-Moment", "bekannter Trade", "Verletzungspech", "Top-10-Pick", ...ROLES];
 const PLAYER_VALUES: Partial<Record<keyof PlayerExtras, string[]>> = {
   continent: ["Europa", "Nordamerika", "Südamerika", "Afrika", "Asien", "Ozeanien"],
   conference: ["meist im Westen", "meist im Osten"],
@@ -48,13 +56,64 @@ describe("players.json", () => {
       for (const tag of p.tags) expect(["star", "legende"]).toContain(tag);
     }
   });
-  it("hat Nation, eine der fünf Positionen und einen optionalen Spezialtipp", () => {
+  it("hat Nation, eine der fünf Positionen und kuratierte Tipps aus dem festen Vokabular", () => {
     for (const p of players) {
-      expect(Object.keys(p.hints).sort()).toEqual(["nation", "position", "special"]);
+      expect(Object.keys(p.hints).sort(), p.name).toEqual(["nation", "position", "tips"]);
       expect(text(p.hints.nation)).toBe(true);
       expect(["Point Guard", "Shooting Guard", "Small Forward", "Power Forward", "Center"]).toContain(p.hints.position);
-      expect(p.hints.special === null || text(p.hints.special)).toBe(true);
+      expect(Array.isArray(p.hints.tips), p.name).toBe(true);
+      expect(p.hints.tips.length, p.name).toBeGreaterThanOrEqual(2);
+      expect(new Set(p.hints.tips).size, p.name).toBe(p.hints.tips.length);
+      for (const tip of p.hints.tips) expect(TIPS, p.name).toContain(tip);
+      const styles = p.hints.tips.filter((tip) => STYLES.includes(tip));
+      expect(styles.length, p.name).toBeGreaterThanOrEqual(1);
+      expect(styles.length, p.name).toBeLessThanOrEqual(2);
+      expect(p.hints.tips.filter((tip) => SUCCESS.includes(tip)).length, p.name).toBeLessThanOrEqual(1);
+      expect(p.hints.tips.filter((tip) => ROLES.includes(tip)).length, p.name).toBeLessThanOrEqual(1);
     }
+  });
+  it("bietet mit echten Daten jedem Star mindestens drei verschiedene, geteilte Tipps", () => {
+    const pool = buildPool("stars", 1, players, teams);
+    expect(pool.length).toBeGreaterThan(0);
+    for (const entry of pool) {
+      expect(entry.hints.length, entry.name).toBeGreaterThanOrEqual(3);
+      expect(new Set(entry.hints).size, entry.name).toBe(entry.hints.length);
+      for (const hint of entry.hints) {
+        expect(pool.filter((other) => other.hints.includes(hint)).length, entry.name + ": " + hint).toBeGreaterThanOrEqual(2);
+      }
+    }
+  });
+  it("vergibt Top-10-Pick vollständig und ausschließlich an Draftplätze eins bis zehn", () => {
+    const top10 = ["Nummer-1-Pick", "Top-3-Pick", "Top-10-Pick"];
+    for (const p of players) {
+      expect(p.hints.tips.includes("Top-10-Pick"), p.name).toBe(top10.includes(p.extras?.draft ?? ""));
+    }
+    // Ältere Jahrgänge und die echte Grenze 10/11, nicht bloß junge Lottery-Spieler.
+    for (const name of ["LeBron James", "Kevin Durant", "Stephen Curry", "Paul George", "CJ McCollum", "Mikal Bridges"]) {
+      expect(players.find((p) => p.name === name)?.hints.tips, name).toContain("Top-10-Pick");
+    }
+    for (const name of ["Klay Thompson", "Myles Turner", "Shai Gilgeous-Alexander", "Tyrese Haliburton", "Nikola Jokić", "Austin Reaves"]) {
+      expect(players.find((p) => p.name === name)?.hints.tips, name).not.toContain("Top-10-Pick");
+    }
+  });
+  it("ersetzt die junge Rolle durch Talent bei denselben fünf Spielern", () => {
+    expect(players.filter((p) => p.hints.tips.includes("Talent")).map((p) => p.name).sort()).toEqual([
+      "Amen Thompson", "Brandon Miller", "Cooper Flagg", "Stephon Castle", "Victor Wembanyama",
+    ]);
+    expect(players.some((p) => p.hints.tips.includes("junger Star"))).toBe(false);
+  });
+  it("enthält die prägenden Trade- und Verletzungsbeispiele als normale Tipps", () => {
+    const pool = buildPool("stars", 1, players, teams);
+    for (const name of ["Luka Dončić", "Anthony Davis", "Kevin Durant", "Kawhi Leonard", "James Harden", "Karl-Anthony Towns", "Julius Randle", "Mikal Bridges"]) {
+      expect(pool.find((p) => p.name === name)?.hints, name).toContain("bekannter Trade");
+    }
+    for (const name of ["Zion Williamson", "Joel Embiid", "Kawhi Leonard", "Damian Lillard", "Tyrese Haliburton", "Jayson Tatum", "Kyrie Irving", "Jamal Murray", "Dejounte Murray"]) {
+      expect(pool.find((p) => p.name === name)?.hints, name).toContain("Verletzungspech");
+    }
+    // Weder ein beliebiger Trade noch ein beliebiger kurzer Ausfall genügen.
+    expect(pool.find((p) => p.name === "Stephen Curry")?.hints).not.toContain("bekannter Trade");
+    expect(pool.find((p) => p.name === "Aaron Gordon")?.hints).not.toContain("bekannter Trade");
+    expect(pool.find((p) => p.name === "Mikal Bridges")?.hints).not.toContain("Verletzungspech");
   });
   it("prüft alle Zusatzkategorien und ihre erlaubten Werte", () => {
     for (const p of players) {

@@ -7,7 +7,12 @@
     "hints": {
       "nation": "USA",
       "position": "Power Forward",
-      "special": "Dunker"
+      "tips": [
+        "Dunker",
+        "Verteidiger",
+        "NBA-Champion",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -40,7 +45,11 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Verteidiger"
+      "tips": [
+        "Verteidiger",
+        "Athlet",
+        "NBA-Champion"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -73,7 +82,11 @@
     "hints": {
       "nation": "Türkei",
       "position": "Center",
-      "special": "Post-Spieler"
+      "tips": [
+        "Post-Spieler",
+        "Spielmacher",
+        "All-Star"
+      ]
     },
     "extras": {
       "continent": "Asien",
@@ -106,7 +119,12 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Athlet"
+      "tips": [
+        "Athlet",
+        "Verteidiger",
+        "Talent",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -139,7 +157,14 @@
     "hints": {
       "nation": "Kanada",
       "position": "Small Forward",
-      "special": "Athlet"
+      "tips": [
+        "Athlet",
+        "Verteidiger",
+        "All-Star",
+        "NBA-Champion",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -172,7 +197,17 @@
     "hints": {
       "nation": "USA",
       "position": "Center",
-      "special": "Shotblocker"
+      "tips": [
+        "Shotblocker",
+        "Post-Spieler",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Clutch-Moment",
+        "bekannter Trade",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -205,7 +240,15 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Dunker"
+      "tips": [
+        "Dunker",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Franchise-Spieler",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -238,7 +281,11 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Scorer"
+      "tips": [
+        "Scorer",
+        "Spielmacher",
+        "Conference-Finalist"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -271,7 +318,12 @@
     "hints": {
       "nation": "USA",
       "position": "Center",
-      "special": "Verteidiger"
+      "tips": [
+        "Verteidiger",
+        "Rebounder",
+        "All-Star",
+        "Finals-Teilnehmer"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -304,7 +356,14 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Mitteldistanz"
+      "tips": [
+        "Mitteldistanz-Spezialist",
+        "Scorer",
+        "All-Star",
+        "bekannter Trade",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -337,7 +396,13 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Dreierschütze"
+      "tips": [
+        "Dreierschütze",
+        "Scorer",
+        "Talent",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -370,7 +435,15 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Spielmacher"
+      "tips": [
+        "Spielmacher",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Franchise-Spieler",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -403,7 +476,15 @@
     "hints": {
       "nation": "USA",
       "position": "Center",
-      "special": "Shotblocker"
+      "tips": [
+        "Shotblocker",
+        "Dreierschütze",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -436,7 +517,12 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Mitteldistanz"
+      "tips": [
+        "Mitteldistanz-Spezialist",
+        "Dreierschütze",
+        "Conference-Finalist",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -469,7 +555,12 @@
     "hints": {
       "nation": "USA",
       "position": "Power Forward",
-      "special": "Allrounder"
+      "tips": [
+        "Allrounder",
+        "Verteidiger",
+        "Talent",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -502,7 +593,18 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Dreierschütze"
+      "tips": [
+        "Dreierschütze",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Clutch-Moment",
+        "Teamlegende",
+        "bekannter Trade",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -535,7 +637,12 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Spielmacher"
+      "tips": [
+        "Spielmacher",
+        "Dreierschütze",
+        "All-Star",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -568,7 +675,15 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Schnelligkeit"
+      "tips": [
+        "Athlet",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -601,7 +716,13 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Spielmacher"
+      "tips": [
+        "Spielmacher",
+        "Verteidiger",
+        "All-Star",
+        "Conference-Finalist",
+        "Verletzungspech"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -634,7 +755,16 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Mitteldistanz"
+      "tips": [
+        "Mitteldistanz-Spezialist",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -667,7 +797,12 @@
     "hints": {
       "nation": "Israel",
       "position": "Small Forward",
-      "special": "Allrounder"
+      "tips": [
+        "Allrounder",
+        "Athlet",
+        "All-Star",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Asien",
@@ -700,7 +835,11 @@
     "hints": {
       "nation": "Deutschland",
       "position": "Point Guard",
-      "special": "Schnelligkeit"
+      "tips": [
+        "Athlet",
+        "Spielmacher",
+        "Conference-Finalist"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -733,7 +872,12 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Verteidiger"
+      "tips": [
+        "Verteidiger",
+        "Dreierschütze",
+        "NBA-Champion",
+        "Clutch-Moment"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -766,7 +910,11 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Dreierschütze"
+      "tips": [
+        "Dreierschütze",
+        "Scorer",
+        "bekannter Trade"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -799,7 +947,13 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Mitteldistanz"
+      "tips": [
+        "Mitteldistanz-Spezialist",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -832,7 +986,13 @@
     "hints": {
       "nation": "Litauen",
       "position": "Center",
-      "special": "Rebounder"
+      "tips": [
+        "Rebounder",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "bekannter Trade"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -865,7 +1025,14 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Scorer"
+      "tips": [
+        "Scorer",
+        "Dreierschütze",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "bekannter Trade"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -898,7 +1065,14 @@
     "hints": {
       "nation": "USA",
       "position": "Power Forward",
-      "special": "Verteidiger"
+      "tips": [
+        "Verteidiger",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Teamlegende"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -931,7 +1105,14 @@
     "hints": {
       "nation": "USA",
       "position": "Power Forward",
-      "special": "Shotblocker"
+      "tips": [
+        "Shotblocker",
+        "Verteidiger",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -964,7 +1145,11 @@
     "hints": {
       "nation": "Deutschland",
       "position": "Small Forward",
-      "special": "Allrounder"
+      "tips": [
+        "Allrounder",
+        "Scorer",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -997,7 +1182,14 @@
     "hints": {
       "nation": "Griechenland",
       "position": "Power Forward",
-      "special": "Athlet"
+      "tips": [
+        "Athlet",
+        "Dunker",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Teamlegende"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -1030,7 +1222,11 @@
     "hints": {
       "nation": "Kroatien",
       "position": "Center",
-      "special": "Rebounder"
+      "tips": [
+        "Rebounder",
+        "Post-Spieler",
+        "Conference-Finalist"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -1063,7 +1259,14 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Dunker"
+      "tips": [
+        "Dunker",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1096,7 +1299,14 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Mitteldistanz"
+      "tips": [
+        "Mitteldistanz-Spezialist",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Franchise-Spieler"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1129,7 +1339,12 @@
     "hints": {
       "nation": "USA",
       "position": "Center",
-      "special": "Rebounder"
+      "tips": [
+        "Rebounder",
+        "Dunker",
+        "All-Star",
+        "All-NBA"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1162,7 +1377,12 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Dunker"
+      "tips": [
+        "Dunker",
+        "Scorer",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1195,7 +1415,13 @@
     "hints": {
       "nation": "USA",
       "position": "Power Forward",
-      "special": "Allrounder"
+      "tips": [
+        "Allrounder",
+        "Athlet",
+        "All-Star",
+        "All-NBA",
+        "Verletzungspech"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1228,7 +1454,13 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Allrounder"
+      "tips": [
+        "Allrounder",
+        "Verteidiger",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1261,7 +1493,16 @@
     "hints": {
       "nation": "Kanada",
       "position": "Point Guard",
-      "special": "Mitteldistanz"
+      "tips": [
+        "Mitteldistanz-Spezialist",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Clutch-Moment",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1294,7 +1535,16 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Spielmacher"
+      "tips": [
+        "Spielmacher",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1327,7 +1577,13 @@
     "hints": {
       "nation": "USA",
       "position": "Power Forward",
-      "special": "Shotblocker"
+      "tips": [
+        "Shotblocker",
+        "Dreierschütze",
+        "All-Star",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1360,7 +1616,12 @@
     "hints": {
       "nation": "USA",
       "position": "Center",
-      "special": "Rebounder"
+      "tips": [
+        "Rebounder",
+        "Shotblocker",
+        "All-Star",
+        "Conference-Finalist"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1393,7 +1654,14 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Allrounder"
+      "tips": [
+        "Allrounder",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1426,7 +1694,16 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Scorer"
+      "tips": [
+        "Scorer",
+        "Allrounder",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Franchise-Spieler",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1459,7 +1736,14 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Verteidiger"
+      "tips": [
+        "Verteidiger",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "bekannter Trade"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1492,7 +1776,14 @@
     "hints": {
       "nation": "Kamerun",
       "position": "Center",
-      "special": "Post-Spieler"
+      "tips": [
+        "Post-Spieler",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Afrika",
@@ -1525,7 +1816,11 @@
     "hints": {
       "nation": "Australien",
       "position": "Point Guard",
-      "special": "Spielmacher"
+      "tips": [
+        "Spielmacher",
+        "Rebounder",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Ozeanien",
@@ -1558,7 +1853,12 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Rebounder"
+      "tips": [
+        "Rebounder",
+        "Verteidiger",
+        "NBA-Champion",
+        "bekannter Trade"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1591,7 +1891,13 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Verteidiger"
+      "tips": [
+        "Verteidiger",
+        "Spielmacher",
+        "All-Star",
+        "NBA-Champion",
+        "bekannter Trade"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1624,7 +1930,16 @@
     "hints": {
       "nation": "USA",
       "position": "Power Forward",
-      "special": "Scorer"
+      "tips": [
+        "Scorer",
+        "Post-Spieler",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "bekannter Trade",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1657,7 +1972,15 @@
     "hints": {
       "nation": "Dominikanische Republik",
       "position": "Center",
-      "special": "Dreierschütze"
+      "tips": [
+        "Dreierschütze",
+        "Post-Spieler",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1690,7 +2013,16 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Verteidiger"
+      "tips": [
+        "Verteidiger",
+        "Mitteldistanz-Spezialist",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Clutch-Moment",
+        "bekannter Trade",
+        "Verletzungspech"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1723,7 +2055,16 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Scorer"
+      "tips": [
+        "Scorer",
+        "Mitteldistanz-Spezialist",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "bekannter Trade",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1756,7 +2097,15 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Dreierschütze"
+      "tips": [
+        "Dreierschütze",
+        "Verteidiger",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Teamlegende",
+        "Verletzungspech"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1789,7 +2138,15 @@
     "hints": {
       "nation": "Lettland",
       "position": "Center",
-      "special": "Shotblocker"
+      "tips": [
+        "Shotblocker",
+        "Dreierschütze",
+        "All-Star",
+        "NBA-Champion",
+        "bekannter Trade",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -1822,7 +2179,17 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Scorer"
+      "tips": [
+        "Scorer",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Clutch-Moment",
+        "bekannter Trade",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1855,7 +2222,13 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Spielmacher"
+      "tips": [
+        "Spielmacher",
+        "Dreierschütze",
+        "All-Star",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1888,7 +2261,13 @@
     "hints": {
       "nation": "Finnland",
       "position": "Power Forward",
-      "special": "Dreierschütze"
+      "tips": [
+        "Dreierschütze",
+        "Scorer",
+        "All-Star",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -1921,7 +2300,16 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Allrounder"
+      "tips": [
+        "Allrounder",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Clutch-Moment",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -1954,7 +2342,17 @@
     "hints": {
       "nation": "Slowenien",
       "position": "Point Guard",
-      "special": "Spielmacher"
+      "tips": [
+        "Spielmacher",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Clutch-Moment",
+        "Franchise-Spieler",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -1987,7 +2385,12 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Verteidiger"
+      "tips": [
+        "Verteidiger",
+        "Spielmacher",
+        "Finals-Teilnehmer",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2020,7 +2423,13 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Verteidiger"
+      "tips": [
+        "Verteidiger",
+        "Dreierschütze",
+        "NBA-Champion",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2053,7 +2462,11 @@
     "hints": {
       "nation": "USA",
       "position": "Center",
-      "special": "Shotblocker"
+      "tips": [
+        "Shotblocker",
+        "Dreierschütze",
+        "Finals-Teilnehmer"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2086,7 +2499,14 @@
     "hints": {
       "nation": "Serbien",
       "position": "Center",
-      "special": "Spielmacher"
+      "tips": [
+        "Spielmacher",
+        "Post-Spieler",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Franchise-Spieler"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -2119,7 +2539,11 @@
     "hints": {
       "nation": "Montenegro",
       "position": "Center",
-      "special": "Rebounder"
+      "tips": [
+        "Rebounder",
+        "Post-Spieler",
+        "All-Star"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -2152,7 +2576,12 @@
     "hints": {
       "nation": "Jamaika",
       "position": "Shooting Guard",
-      "special": "Dreierschütze"
+      "tips": [
+        "Dreierschütze",
+        "Scorer",
+        "All-Star",
+        "NBA-Champion"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2185,7 +2614,13 @@
     "hints": {
       "nation": "Großbritannien",
       "position": "Small Forward",
-      "special": "Verteidiger"
+      "tips": [
+        "Verteidiger",
+        "Dreierschütze",
+        "NBA-Champion",
+        "Clutch-Moment",
+        "bekannter Trade"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -2218,7 +2653,13 @@
     "hints": {
       "nation": "USA",
       "position": "Power Forward",
-      "special": "Scorer"
+      "tips": [
+        "Scorer",
+        "Spielmacher",
+        "All-Star",
+        "Franchise-Spieler",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2251,7 +2692,14 @@
     "hints": {
       "nation": "Kamerun",
       "position": "Power Forward",
-      "special": "Allrounder"
+      "tips": [
+        "Allrounder",
+        "Post-Spieler",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "bekannter Trade"
+      ]
     },
     "extras": {
       "continent": "Afrika",
@@ -2284,7 +2732,16 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Allrounder"
+      "tips": [
+        "Allrounder",
+        "Dreierschütze",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "bekannter Trade",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2317,7 +2774,14 @@
     "hints": {
       "nation": "Frankreich",
       "position": "Center",
-      "special": "Shotblocker"
+      "tips": [
+        "Shotblocker",
+        "Rebounder",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "bekannter Trade"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -2350,7 +2814,12 @@
     "hints": {
       "nation": "USA",
       "position": "Power Forward",
-      "special": "Allrounder"
+      "tips": [
+        "Allrounder",
+        "Verteidiger",
+        "All-Star",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2383,7 +2852,15 @@
     "hints": {
       "nation": "Kanada",
       "position": "Point Guard",
-      "special": "Mitteldistanz"
+      "tips": [
+        "Mitteldistanz-Spezialist",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Franchise-Spieler",
+        "bekannter Trade"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2416,7 +2893,16 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Dreierschütze"
+      "tips": [
+        "Dreierschütze",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Teamlegende",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2449,7 +2935,13 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Verteidiger"
+      "tips": [
+        "Verteidiger",
+        "Spielmacher",
+        "Finals-Teilnehmer",
+        "Talent",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2482,7 +2974,15 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Spielmacher"
+      "tips": [
+        "Spielmacher",
+        "Dreierschütze",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2515,7 +3015,10 @@
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
-      "special": "Dreierschütze"
+      "tips": [
+        "Dreierschütze",
+        "Dunker"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2548,7 +3051,12 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Dreierschütze"
+      "tips": [
+        "Dreierschütze",
+        "Scorer",
+        "All-Star",
+        "Finals-Teilnehmer"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2581,7 +3089,16 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Spielmacher"
+      "tips": [
+        "Spielmacher",
+        "Dreierschütze",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Clutch-Moment",
+        "bekannter Trade",
+        "Verletzungspech"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2614,7 +3131,12 @@
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
-      "special": "Schnelligkeit"
+      "tips": [
+        "Athlet",
+        "Scorer",
+        "All-Star",
+        "All-NBA"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2647,7 +3169,15 @@
     "hints": {
       "nation": "Frankreich",
       "position": "Center",
-      "special": "Shotblocker"
+      "tips": [
+        "Shotblocker",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Talent",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Europa",
@@ -2680,7 +3210,13 @@
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
-      "special": "Dunker"
+      "tips": [
+        "Dunker",
+        "Scorer",
+        "All-Star",
+        "bekannter Trade",
+        "Verletzungspech"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",
@@ -2713,7 +3249,13 @@
     "hints": {
       "nation": "USA",
       "position": "Power Forward",
-      "special": "Dunker"
+      "tips": [
+        "Dunker",
+        "Post-Spieler",
+        "All-Star",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
     },
     "extras": {
       "continent": "Nordamerika",

@@ -10,12 +10,12 @@ export const teamExtras = (overrides: Partial<TeamExtras> = {}): TeamExtras => (
   founded: null, cityType: null, rival: null, mascot: null, relocated: null, nameType: null, ...overrides,
 });
 export const player = (name: string, overrides: Partial<NbaPlayer> = {}): NbaPlayer => ({
-  name, tags: ["star"], hints: { nation: "USA", position: "Point Guard", special: null }, ...overrides,
+  name, tags: ["star"], hints: { nation: "USA", position: "Point Guard", tips: [] }, ...overrides,
 });
 export const players: NbaPlayer[] = [
-  player("A", { hints: { nation: "USA", position: "Point Guard", special: "Dreier-Spezialist" } }),
-  player("B", { tags: ["legende"], hints: { nation: "Deutschland", position: "Power Forward", special: null } }),
-  player("C", { tags: ["star", "legende"], hints: { nation: "Serbien", position: "Center", special: null } }),
+  player("A", { hints: { nation: "USA", position: "Point Guard", tips: ["Dreierschütze", "Scorer"] } }),
+  player("B", { tags: ["legende"], hints: { nation: "Deutschland", position: "Power Forward", tips: [] } }),
+  player("C", { tags: ["star", "legende"], hints: { nation: "Serbien", position: "Center", tips: [] } }),
 ];
 export const team = (name: string, color: string, conference: string): NbaTeam => ({
   name,

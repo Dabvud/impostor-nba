@@ -54,17 +54,22 @@ const POSITION_GROUPS: Record<string, PositionGroup> = {
 };
 
 function playerEntries(players: NbaPlayer[]): Entry[] {
-  const nations = countBy(players, (p) => p.hints.nation);
+  const candidates = players.map(({ hints, extras }) => [...new Set([
+    hints.nation === "USA" ? "US-Amerikaner" : "kein US-Amerikaner",
+    ...(extras?.continent === "Europa" ? ["Europäer"] : []),
+    POSITION_GROUPS[hints.position],
+    ...hints.tips,
+  ])]);
+  const counts = countBy(candidates.flat(), (hint) => hint);
   // Spalte 0 = Nation (strengere Grenze), danach Position und die Zusatz-Kategorien
   const all = sharedOnly(
     players.map((p) => [p.hints.nation, p.hints.position, ...PLAYER_EXTRA_SLOTS.map(([k]) => p.extras?.[k])]),
     (c) => (c === 0 ? MIN_SAME_NATION : 2),
   );
   return players.map(({ name, hints }, i) => {
-    const nation = (nations.get(hints.nation) ?? 0) >= MIN_SAME_NATION ? hints.nation : null;
     return {
       name,
-      hints: [nation, hints.position, hints.special].filter(isText),
+      hints: candidates[i].filter((hint) => (counts.get(hint) ?? 0) >= 2),
       allHints: toTips(all[i], PLAYER_SLOTS),
       group: POSITION_GROUPS[hints.position],
     };

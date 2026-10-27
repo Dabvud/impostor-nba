@@ -16,11 +16,11 @@ const names = (mode: Parameters<typeof buildPool>[0], difficulty: 1 | 2 | 3 = 1)
 
 describe("poolFor – Tipps für die Runde, in der alle Impostor sind", () => {
   const squad = [
-    player("M", { hints: { nation: "USA", position: "Point Guard", special: null },
+    player("M", { hints: { nation: "USA", position: "Point Guard", tips: [] },
       extras: playerExtras({ continent: "Nordamerika", hand: "Linkshänder", era: "2010er", hair: "Glatze" }) }),
-    player("R", { hints: { nation: "Deutschland", position: "Point Guard", special: null },
+    player("R", { hints: { nation: "Deutschland", position: "Point Guard", tips: [] },
       extras: playerExtras({ continent: "Europa", hand: "Linkshänder", era: "2010er", hair: "blond" }) }),
-    player("K", { hints: { nation: "Kanada", position: "Center", special: null },
+    player("K", { hints: { nation: "Kanada", position: "Center", tips: [] },
       extras: playerExtras({ continent: "Nordamerika", hand: "Rechtshänder", era: "2010er", hair: "Locken" }) }),
   ];
 
@@ -87,43 +87,98 @@ describe("poolFor", () => {
     expect(buildPool(mode, 3, players, teams)).toEqual(buildPool(mode, 1, players, teams));
   });
 
-  it("liefert Name und die vorhandenen Tipps als Liste", () => {
+  it("liefert Namen und nur im jeweiligen Topf geteilte Tipps", () => {
     expect(normal(buildPool("stars", 1, players, teams))).toEqual([
-      { name: "A", hints: ["Point Guard", "Dreier-Spezialist"] },
-      { name: "C", hints: ["Center"] },
+      { name: "A", hints: [] },
+      { name: "C", hints: [] },
     ]);
     expect(normal(buildPool("legenden", 1, players, teams))).toEqual([
-      { name: "B", hints: ["Power Forward"] },
-      { name: "C", hints: ["Center"] },
+      { name: "B", hints: ["kein US-Amerikaner"] },
+      { name: "C", hints: ["kein US-Amerikaner"] },
     ]);
   });
 
-  it.each(["stars", "legenden"] as const)("nennt die Nation bei %s erst ab 5 Spielern im Topf", (mode) => {
+  it.each(["stars", "legenden"] as const)("behält die Grenze von 5 Nationen bei %s nur in allHints bei", (mode) => {
     const squad = [
       ...["U1", "U2", "U3", "U4", "U5"].map((name) => player(name, { tags: ["star", "legende"] })),
-      player("K", { tags: ["star", "legende"], hints: { nation: "Kanada", position: "Center", special: null } }),
+      player("K", { tags: ["star", "legende"], hints: { nation: "Kanada", position: "Center", tips: [] } }),
     ];
     const pool = buildPool(mode, 1, squad, []);
-    expect(pool[0].hints).toEqual(["USA", "Point Guard"]);
+    expect(pool[0].hints).toEqual(["US-Amerikaner", "Guard"]);
     expect(pool[0].allHints).toContainEqual({ slot: "herkunft", value: "USA" });
-    expect(pool[5].hints).toEqual(["Center"]);
+    expect(pool[5].hints).toEqual([]);
     expect(pool[5].allHints).toEqual([]);
     const smaller = buildPool(mode, 1, squad.slice(1), []);
-    expect(smaller[0].hints).toEqual(["Point Guard"]);
+    expect(smaller[0].hints).toEqual(["US-Amerikaner", "Guard"]);
     expect(smaller[0].allHints).not.toContainEqual({ slot: "herkunft", value: "USA" });
   });
 
-  it("zählt für die Nation nur Spieler des gewählten Modus", () => {
+  it("zählt für die genaue Nation in allHints nur Spieler des gewählten Modus", () => {
     const squad = Array.from({ length: 5 }, (_, i) => player("U" + i, { tags: i === 4 ? ["legende"] : ["star"] }));
-    expect(buildPool("stars", 1, squad, []).every((e) => !e.hints.includes("USA"))).toBe(true);
+    expect(buildPool("stars", 1, squad, []).every((e) => e.hints.includes("US-Amerikaner"))).toBe(true);
     expect(buildPool("stars", 1, squad, []).every((e) => !e.allHints?.some((h) => h.value === "USA"))).toBe(true);
   });
 
-  it("lässt eine auf alle zutreffende Nation nur aus den persönlichen Tipps weg", () => {
+  it("behält universelle normale Tipps bei und sperrt sie weiter in allHints", () => {
     const squad = Array.from({ length: 5 }, (_, i) => player("U" + i));
     const pool = buildPool("stars", 1, squad, []);
-    expect(pool.every((e) => e.hints.includes("USA"))).toBe(true);
+    expect(pool.every((e) => e.hints.includes("US-Amerikaner"))).toBe(true);
     expect(pool.map((e) => e.allHints)).toEqual([[], [], [], [], []]);
+  });
+
+  it("bildet USA, Europa und Kanada auf grobe Herkunftstipps ab", () => {
+    const squad = [
+      ...["U1", "U2"].map((name) => player(name)),
+      ...["Deutschland", "Frankreich"].map((nation) => player(nation, {
+        hints: { nation, position: "Point Guard", tips: [] },
+        extras: playerExtras({ continent: "Europa" }),
+      })),
+      player("Kanada", { hints: { nation: "Kanada", position: "Point Guard", tips: [] },
+        extras: playerExtras({ continent: "Nordamerika" }) }),
+    ];
+    expect(buildPool("stars", 1, squad, []).map((e) => e.hints)).toEqual([
+      ["US-Amerikaner", "Guard"], ["US-Amerikaner", "Guard"],
+      ["kein US-Amerikaner", "Europäer", "Guard"], ["kein US-Amerikaner", "Europäer", "Guard"],
+      ["kein US-Amerikaner", "Guard"],
+    ]);
+  });
+
+  it("filtert nach mindestens zwei Einträgen im gewählten Topf und zählt Duplikate nur einmal", () => {
+    const squad = [
+      player("A", { hints: { nation: "USA", position: "Point Guard", tips: ["Scorer", "Dunker", "Dunker"] } }),
+      player("B", { hints: { nation: "USA", position: "Shooting Guard", tips: ["Scorer"] } }),
+      player("C", { tags: ["legende"], hints: { nation: "USA", position: "Point Guard", tips: ["Dunker"] } }),
+    ];
+    expect(buildPool("stars", 1, squad, []).map((e) => e.hints)).toEqual([
+      ["US-Amerikaner", "Guard", "Scorer"], ["US-Amerikaner", "Guard", "Scorer"],
+    ]);
+    expect(buildPool("stars", 1, squad.slice(0, 1), [])[0].hints).toEqual([]);
+    expect(buildPool("stars", 1, [], [])).toEqual([]);
+  });
+
+  it("behält Herkunft, Position und Tipps in Reihenfolge und entfernt doppelte Werte", () => {
+    const squad = ["A", "B"].map((name) => player(name, {
+      hints: { nation: "Deutschland", position: "Small Forward", tips: ["Scorer", "Allrounder", "Scorer"] },
+      extras: playerExtras({ continent: "Europa" }),
+    }));
+    expect(buildPool("stars", 1, squad, []).map((e) => e.hints)).toEqual([
+      ["kein US-Amerikaner", "Europäer", "Forward", "Scorer", "Allrounder"],
+      ["kein US-Amerikaner", "Europäer", "Forward", "Scorer", "Allrounder"],
+    ]);
+  });
+
+  it("ändert allHints durch kuratierte normale Tipps nicht", () => {
+    const squad = ["A", "B", "C"].map((name, i) => player(name, {
+      hints: { nation: i === 2 ? "Kanada" : "USA", position: i === 2 ? "Center" : "Point Guard", tips: ["Scorer"] },
+      extras: playerExtras({ hand: i === 2 ? "Linkshänder" : "Rechtshänder" }),
+    }));
+    const before = buildPool("stars", 1, squad, []).map((e) => e.allHints);
+    const after = buildPool("stars", 1, squad.map((p) => ({ ...p, hints: { ...p.hints, tips: ["Dunker", "All-Star"] } })), [])
+      .map((e) => e.allHints);
+    expect(after).toEqual(before);
+    expect(after[0]).toEqual([
+      { slot: "position", value: "Point Guard" }, { slot: "hand", value: "Rechtshänder" },
+    ]);
   });
 
   it("nennt Team-Tipps nur, wenn mindestens 2, aber nicht alle Teams sie teilen", () => {
@@ -143,8 +198,15 @@ describe("poolFor", () => {
 
   it("ordnet alle fünf Positionen Guard, Forward oder Center zu", () => {
     const squad = ["Point Guard", "Shooting Guard", "Small Forward", "Power Forward", "Center"].map((position) =>
-      player(position, { hints: { nation: "USA", position, special: null } }));
-    expect(buildPool("stars", 1, squad, []).map((e) => e.group)).toEqual(["Guard", "Guard", "Forward", "Forward", "Center"]);
+      player(position, { hints: { nation: "USA", position, tips: [] } }));
+    const pool = buildPool("stars", 1, squad, []);
+    expect(pool.map((e) => e.group)).toEqual(["Guard", "Guard", "Forward", "Forward", "Center"]);
+    expect(pool.map((e) => e.hints)).toEqual([
+      ["US-Amerikaner", "Guard"], ["US-Amerikaner", "Guard"],
+      ["US-Amerikaner", "Forward"], ["US-Amerikaner", "Forward"], ["US-Amerikaner"],
+    ]);
+    const centers = [...squad, player("C2", { hints: { nation: "USA", position: "Center", tips: [] } })];
+    expect(buildPool("stars", 1, centers, [])[4].hints).toEqual(["US-Amerikaner", "Center"]);
   });
 
   it("lässt auch Center als Tipp-Geber zu", () => {

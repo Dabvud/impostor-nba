@@ -1,6 +1,6 @@
 export type Tag = "star" | "legende";
 /** Merkmale, aus denen der Tipp für den Impostor gezogen wird. */
-export type PlayerHints = { nation: string; position: string; special: string | null };
+export type PlayerHints = { nation: string; position: string; tips: string[] };
 export type TeamHints = {
   conference: string;
   division: string;
