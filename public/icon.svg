@@ -7,6 +7,7 @@
     <rect width="512" height="512" fill="#1d428a"/>
     <rect x="256" width="256" height="512" fill="#c8102e"/>
   </g>
+  <rect x="16" y="16" width="480" height="480" rx="82" fill="none" stroke="#f5f7fc" stroke-width="8"/>
   <circle cx="256" cy="268" r="150" fill="#ee6a24"/>
   <g clip-path="url(#ball)" fill="none" stroke="#0a1530" stroke-width="10">
     <path d="M256 110 V426 M98 268 H414"/>
