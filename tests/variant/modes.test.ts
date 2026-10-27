@@ -252,11 +252,11 @@ describe("Anbindung der Spieldaten", () => {
     }
   });
 
-  it("hat einen gefüllten Star-Topf, noch keine Legenden und genau 30 NBA-Teams", () => {
+  it("hat gefüllte Star- und Legenden-Töpfe und genau 30 NBA-Teams", () => {
     const sizes = poolSizes();
     expect(sizes.stars).toBeGreaterThanOrEqual(60);
     expect(sizes.stars).toBeLessThanOrEqual(90);
-    expect(sizes.legenden).toBe(0);
+    expect(sizes.legenden).toBeGreaterThan(0);
     expect(sizes.teams).toBe(30);
   });
 

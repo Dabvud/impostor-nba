@@ -75,6 +75,50 @@
     }
   },
   {
+    "name": "Allen Iverson",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "tips": [
+        "Scorer",
+        "Athlet",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "76ers",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 3",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Georgetown",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
     "name": "Alperen Şengün",
     "tags": [
       "star"
@@ -89,7 +133,7 @@
       ]
     },
     "extras": {
-      "continent": "Asien",
+      "continent": "Europa",
       "conference": "meist im Westen",
       "team": "Rockets",
       "playStyle": "Innenspieler",
@@ -109,6 +153,50 @@
       "draft": "Erstrunden-Pick",
       "college": "kein College",
       "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Amar'e Stoudemire",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Dunker",
+        "Post-Spieler",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Suns",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": "Rookie of the Year",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 32",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "kein College",
+      "transfer": null
     }
   },
   {
@@ -349,6 +437,178 @@
     }
   },
   {
+    "name": "Ben Wallace",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "tips": [
+        "Verteidiger",
+        "Rebounder",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Pistons",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "DPOY",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 3",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "undrafted",
+      "college": "Virginia Union",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Bill Russell",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "tips": [
+        "Verteidiger",
+        "Rebounder",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 60er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": null,
+      "team": "Celtics",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "60er",
+      "build": null,
+      "hand": "Linkshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 6",
+      "status": "Karriere beendet",
+      "afterCareer": "verstorben",
+      "draft": "Top-3-Pick",
+      "college": "San Francisco",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Blake Griffin",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Dunker",
+        "Athlet",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Star der 2010er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Clippers",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": "Rookie of the Year",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 32",
+      "status": "Karriere beendet",
+      "afterCareer": "TV-Experte",
+      "draft": "Nummer-1-Pick",
+      "college": "Oklahoma",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Bob Cousy",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Allrounder",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 50er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": null,
+      "team": "Celtics",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "50er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 14",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Holy Cross",
+      "transfer": null
+    }
+  },
+  {
     "name": "Brandon Ingram",
     "tags": [
       "star"
@@ -469,6 +729,138 @@
     }
   },
   {
+    "name": "Carmelo Anthony",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "tips": [
+        "Scorer",
+        "Mitteldistanz-Spezialist",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Hall of Famer",
+        "Star der 2010er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Knicks",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 7",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "Syracuse",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Charles Barkley",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Rebounder",
+        "Post-Spieler",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Hall of Famer",
+        "Star der 90er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": null,
+      "team": "Suns",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 34",
+      "status": "Karriere beendet",
+      "afterCareer": "TV-Experte",
+      "draft": "Top-10-Pick",
+      "college": "Auburn",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Chauncey Billups",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Dreierschütze",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Pistons",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Finals-MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 1",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "Colorado",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
     "name": "Chet Holmgren",
     "tags": [
       "star"
@@ -510,6 +902,137 @@
     }
   },
   {
+    "name": "Chris Bosh",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Post-Spieler",
+        "Allrounder",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2010er",
+        "Teamlegende",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Heat",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Linkshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 1",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Georgia Tech",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Chris Paul",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Verteidiger",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Star der 2010er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Clutch-Moment",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Clippers",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Game-Winner in den Playoffs",
+      "award": null,
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 3",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Wake Forest",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Chris Webber",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Post-Spieler",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Kings",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": null,
+      "award": "Rookie of the Year",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 4",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Michigan",
+      "transfer": null
+    }
+  },
+  {
     "name": "CJ McCollum",
     "tags": [
       "star"
@@ -544,6 +1067,49 @@
       "afterCareer": null,
       "draft": "Top-10-Pick",
       "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Clyde Drexler",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "tips": [
+        "Dunker",
+        "Allrounder",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 90er",
+        "Teamlegende",
+        "bekannter Trade"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Trail Blazers",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 22",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Houston",
       "transfer": "wechselte per Trade"
     }
   },
@@ -665,6 +1231,89 @@
       "draft": "Top-10-Pick",
       "college": null,
       "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "David Lee",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Rebounder",
+        "Post-Spieler",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Star der 2010er"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Warriors",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Linkshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 10",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Florida",
+      "transfer": null
+    }
+  },
+  {
+    "name": "David Robinson",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "tips": [
+        "Shotblocker",
+        "Athlet",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 90er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Spurs",
+      "playStyle": "Rim-Protector",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 50",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Navy",
+      "transfer": "blieb seinem ersten NBA-Team treu"
     }
   },
   {
@@ -790,6 +1439,49 @@
     }
   },
   {
+    "name": "DeMarcus Cousins",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "tips": [
+        "Post-Spieler",
+        "Rebounder",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Star der 2010er",
+        "Teamlegende",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Kings",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 15",
+      "status": null,
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Kentucky",
+      "transfer": null
+    }
+  },
+  {
     "name": "Deni Avdija",
     "tags": [
       "star"
@@ -805,7 +1497,7 @@
       ]
     },
     "extras": {
-      "continent": "Asien",
+      "continent": "Europa",
       "conference": "meist im Osten",
       "team": "Trail Blazers",
       "playStyle": "Two-Way-Spieler",
@@ -825,6 +1517,48 @@
       "draft": "Top-10-Pick",
       "college": "kein College",
       "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Dennis Rodman",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Rebounder",
+        "Verteidiger",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 90er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Bulls",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "DPOY",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 91",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Zweitrunden-Pick",
+      "college": "Southeastern Oklahoma State",
+      "transfer": null
     }
   },
   {
@@ -862,6 +1596,49 @@
       "draft": "Erstrunden-Pick",
       "college": "kein College",
       "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Derrick Rose",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Athlet",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Star der 2010er",
+        "Teamlegende",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Bulls",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": "MVP",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 1",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Memphis",
+      "transfer": null
     }
   },
   {
@@ -979,6 +1756,49 @@
     }
   },
   {
+    "name": "Dirk Nowitzki",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "Deutschland",
+      "position": "Power Forward",
+      "tips": [
+        "Mitteldistanz-Spezialist",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Mavericks",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 41",
+      "status": "Karriere beendet",
+      "afterCareer": "TV-Experte",
+      "draft": "Top-10-Pick",
+      "college": "kein College",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
     "name": "Domantas Sabonis",
     "tags": [
       "star"
@@ -1015,6 +1835,48 @@
       "draft": "Erstrunden-Pick",
       "college": "Gonzaga",
       "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Dominique Wilkins",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "tips": [
+        "Dunker",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Hall of Famer",
+        "Star der 80er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Hawks",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "80er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 21",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "Georgia",
+      "transfer": null
     }
   },
   {
@@ -1098,6 +1960,136 @@
     }
   },
   {
+    "name": "Dwight Howard",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "tips": [
+        "Rebounder",
+        "Shotblocker",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2010er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Magic",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "DPOY",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 12",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Dwyane Wade",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "tips": [
+        "Scorer",
+        "Athlet",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Heat",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Finals-MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 3",
+      "status": "Karriere beendet",
+      "afterCareer": "TV-Experte",
+      "draft": "Top-10-Pick",
+      "college": "Marquette",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Elgin Baylor",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "tips": [
+        "Scorer",
+        "Rebounder",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Hall of Famer",
+        "Star der 60er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": null,
+      "team": "Lakers",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Rookie of the Year",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "60er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 22",
+      "status": "Karriere beendet",
+      "afterCareer": "verstorben",
+      "draft": "Nummer-1-Pick",
+      "college": "Seattle",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
     "name": "Evan Mobley",
     "tags": [
       "star"
@@ -1175,6 +2167,91 @@
     }
   },
   {
+    "name": "Gary Payton",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Verteidiger",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 90er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "SuperSonics",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "DPOY",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 20",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "Oregon State",
+      "transfer": null
+    }
+  },
+  {
+    "name": "George Mikan",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "tips": [
+        "Post-Spieler",
+        "Rebounder",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 50er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": null,
+      "team": "Lakers",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "50er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 99",
+      "status": "Karriere beendet",
+      "afterCareer": "verstorben",
+      "draft": null,
+      "college": "DePaul",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
     "name": "Giannis Antetokounmpo",
     "tags": [
       "star"
@@ -1212,6 +2289,216 @@
       "draft": "Erstrunden-Pick",
       "college": "kein College",
       "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Gilbert Arenas",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Scorer",
+        "Dreierschütze",
+        "All-Star",
+        "All-NBA",
+        "Star der 2000er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Wizards",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": null,
+      "award": "Most Improved Player",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 0",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Zweitrunden-Pick",
+      "college": "Arizona",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Goran Dragić",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "Slowenien",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Star der 2010er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Osten",
+      "team": "Heat",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Most Improved Player",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Linkshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 7",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Zweitrunden-Pick",
+      "college": "kein College",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Hakeem Olajuwon",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "Nigeria",
+      "position": "Center",
+      "tips": [
+        "Post-Spieler",
+        "Shotblocker",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 90er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Afrika",
+      "conference": "meist im Westen",
+      "team": "Rockets",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 34",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Houston",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Isaiah Thomas",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Scorer",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Star der 2010er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Verletzungspech"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Celtics",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Linkshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 4",
+      "status": null,
+      "afterCareer": null,
+      "draft": "Zweitrunden-Pick",
+      "college": "Washington",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Isiah Thomas",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 80er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Pistons",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Finals-MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "80er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 11",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "Indiana",
+      "transfer": "blieb seinem ersten NBA-Team treu"
     }
   },
   {
@@ -1570,6 +2857,49 @@
     }
   },
   {
+    "name": "James Worthy",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "tips": [
+        "Dunker",
+        "Post-Spieler",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 80er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Lakers",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Finals-MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "80er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 42",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "North Carolina",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
     "name": "Jaren Jackson Jr.",
     "tags": [
       "star"
@@ -1644,6 +2974,49 @@
       "draft": "Erstrunden-Pick",
       "college": "Texas",
       "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Jason Kidd",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Verteidiger",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Nets",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 5",
+      "status": "Karriere beendet",
+      "afterCareer": "TV-Experte",
+      "draft": "Top-3-Pick",
+      "college": "California",
+      "transfer": null
     }
   },
   {
@@ -1729,6 +3102,49 @@
     }
   },
   {
+    "name": "Jerry West",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "tips": [
+        "Scorer",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 60er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": null,
+      "team": "Lakers",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Finals-MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "60er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 44",
+      "status": "Karriere beendet",
+      "afterCareer": "verstorben",
+      "draft": "Top-3-Pick",
+      "college": "West Virginia",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
     "name": "Jimmy Butler",
     "tags": [
       "star"
@@ -1769,6 +3185,49 @@
     }
   },
   {
+    "name": "Joakim Noah",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "Frankreich",
+      "position": "Center",
+      "tips": [
+        "Verteidiger",
+        "Rebounder",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Star der 2010er",
+        "Teamlegende",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Osten",
+      "team": "Bulls",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": null,
+      "award": "DPOY",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 13",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Florida",
+      "transfer": null
+    }
+  },
+  {
     "name": "Joel Embiid",
     "tags": [
       "star"
@@ -1806,6 +3265,91 @@
       "draft": "Top-3-Pick",
       "college": "Kansas",
       "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "John Stockton",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Verteidiger",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Hall of Famer",
+        "Star der 90er",
+        "Teamlegende",
+        "Clutch-Moment"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Jazz",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Game-Winner in den Playoffs",
+      "award": null,
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 12",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Gonzaga",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "John Wall",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Athlet",
+        "All-Star",
+        "All-NBA",
+        "Star der 2010er",
+        "Teamlegende",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Wizards",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 2",
+      "status": "Karriere beendet",
+      "afterCareer": "TV-Experte",
+      "draft": "Nummer-1-Pick",
+      "college": "Kentucky",
+      "transfer": null
     }
   },
   {
@@ -1923,6 +3467,48 @@
     }
   },
   {
+    "name": "Julius Erving",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "tips": [
+        "Dunker",
+        "Athlet",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 70er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "76ers",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "70er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 6",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Massachusetts",
+      "transfer": null
+    }
+  },
+  {
     "name": "Julius Randle",
     "tags": [
       "star"
@@ -1962,6 +3548,92 @@
       "draft": "Top-10-Pick",
       "college": "Kentucky",
       "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Kareem Abdul-Jabbar",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "tips": [
+        "Post-Spieler",
+        "Shotblocker",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 70er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Lakers",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "70er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 33",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "UCLA",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Karl Malone",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Post-Spieler",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Hall of Famer",
+        "Star der 90er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Jazz",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 32",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Louisiana Tech",
+      "transfer": null
     }
   },
   {
@@ -2048,6 +3720,49 @@
     }
   },
   {
+    "name": "Kemba Walker",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Scorer",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Star der 2010er",
+        "Teamlegende",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Hornets",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 15",
+      "status": "Karriere beendet",
+      "afterCareer": "Trainer",
+      "draft": "Top-10-Pick",
+      "college": "UConn",
+      "transfer": null
+    }
+  },
+  {
     "name": "Kevin Durant",
     "tags": [
       "star"
@@ -2087,6 +3802,50 @@
       "draft": "Top-3-Pick",
       "college": "Texas",
       "transfer": "wechselte als Free Agent"
+    }
+  },
+  {
+    "name": "Kevin Garnett",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Verteidiger",
+        "Allrounder",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Timberwolves",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 21",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
     }
   },
   {
@@ -2131,6 +3890,49 @@
     }
   },
   {
+    "name": "Kobe Bryant",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "tips": [
+        "Scorer",
+        "Mitteldistanz-Spezialist",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "Clutch-Moment"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Lakers",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Game-Winner in den Playoffs",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 24",
+      "status": "Karriere beendet",
+      "afterCareer": "verstorben",
+      "draft": "Erstrunden-Pick",
+      "college": "kein College",
+      "transfer": null
+    }
+  },
+  {
     "name": "Kristaps Porziņģis",
     "tags": [
       "star"
@@ -2169,6 +3971,47 @@
       "draft": "Top-10-Pick",
       "college": "kein College",
       "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Kyle Lowry",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Verteidiger",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Star der 2010er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Raptors",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 7",
+      "status": "Karriere beendet",
+      "afterCareer": "TV-Experte",
+      "draft": "Erstrunden-Pick",
+      "college": "Villanova",
+      "transfer": null
     }
   },
   {
@@ -2215,6 +4058,48 @@
     }
   },
   {
+    "name": "LaMarcus Aldridge",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Post-Spieler",
+        "Mitteldistanz-Spezialist",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Star der 2010er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Trail Blazers",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 12",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "Texas",
+      "transfer": null
+    }
+  },
+  {
     "name": "LaMelo Ball",
     "tags": [
       "star"
@@ -2250,6 +4135,50 @@
       "afterCareer": null,
       "draft": "Top-3-Pick",
       "college": "kein College",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Larry Bird",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "tips": [
+        "Allrounder",
+        "Dreierschütze",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 80er",
+        "Teamlegende",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Celtics",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "80er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 33",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Indiana State",
       "transfer": "blieb seinem ersten NBA-Team treu"
     }
   },
@@ -2378,6 +4307,133 @@
     }
   },
   {
+    "name": "Magic Johnson",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Allrounder",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 80er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Lakers",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "80er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 32",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Michigan State",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Manu Ginóbili",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "Argentinien",
+      "position": "Shooting Guard",
+      "tips": [
+        "Allrounder",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Südamerika",
+      "conference": "meist im Westen",
+      "team": "Spurs",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Sixth Man of the Year",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Linkshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 20",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Zweitrunden-Pick",
+      "college": "kein College",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Marc Gasol",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "Spanien",
+      "position": "Center",
+      "tips": [
+        "Verteidiger",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Star der 2010er",
+        "Teamlegende",
+        "bekannter Trade"
+      ]
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Grizzlies",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "DPOY",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 33",
+      "status": "Karriere beendet",
+      "afterCareer": "Funktionär/Besitzer",
+      "draft": "Zweitrunden-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
     "name": "Marcus Smart",
     "tags": [
       "star"
@@ -2413,6 +4469,50 @@
       "draft": "Top-10-Pick",
       "college": "Oklahoma State",
       "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Michael Jordan",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "tips": [
+        "Scorer",
+        "Verteidiger",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 90er",
+        "Teamlegende",
+        "Clutch-Moment",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Bulls",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Game-Winner in den Playoffs",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 23",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "North Carolina",
+      "transfer": null
     }
   },
   {
@@ -2452,6 +4552,48 @@
       "draft": "Top-10-Pick",
       "college": "Villanova",
       "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Moses Malone",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "tips": [
+        "Rebounder",
+        "Post-Spieler",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 80er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": null,
+      "team": "76ers",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "80er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 2",
+      "status": "Karriere beendet",
+      "afterCareer": "verstorben",
+      "draft": null,
+      "college": "kein College",
+      "transfer": null
     }
   },
   {
@@ -2646,6 +4788,49 @@
     }
   },
   {
+    "name": "Oscar Robertson",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Allrounder",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 60er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": null,
+      "team": "Royals",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "60er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 14",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Cincinnati",
+      "transfer": null
+    }
+  },
+  {
     "name": "Paolo Banchero",
     "tags": [
       "star"
@@ -2725,6 +4910,93 @@
     }
   },
   {
+    "name": "Patrick Ewing",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "tips": [
+        "Post-Spieler",
+        "Shotblocker",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Hall of Famer",
+        "Star der 90er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Knicks",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Rookie of the Year",
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 33",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Georgetown",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Pau Gasol",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "Spanien",
+      "position": "Power Forward",
+      "tips": [
+        "Post-Spieler",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Lakers",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Rookie of the Year",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 16",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
     "name": "Paul George",
     "tags": [
       "star"
@@ -2764,6 +5036,304 @@
       "draft": "Top-10-Pick",
       "college": null,
       "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Paul Pierce",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "tips": [
+        "Scorer",
+        "Mitteldistanz-Spezialist",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "Clutch-Moment",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Celtics",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Game-Winner in den Playoffs",
+      "award": "Finals-MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 34",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Kansas",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Peja Stojaković",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "Serbien",
+      "position": "Small Forward",
+      "tips": [
+        "Dreierschütze",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Star der 2000er"
+      ]
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Kings",
+      "playStyle": "Schütze",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 16",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "kein College",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Penny Hardaway",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Allrounder",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Star der 90er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Magic",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 1",
+      "status": "Karriere beendet",
+      "afterCareer": "Trainer",
+      "draft": "Top-3-Pick",
+      "college": "Memphis",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Rajon Rondo",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Verteidiger",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Star der 2010er",
+        "Teamlegende",
+        "bekannter Trade"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Celtics",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 9",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Kentucky",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Rasheed Wallace",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Verteidiger",
+        "Post-Spieler",
+        "All-Star",
+        "NBA-Champion",
+        "Star der 2000er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Pistons",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 30",
+      "status": "Karriere beendet",
+      "afterCareer": "Trainer",
+      "draft": "Top-10-Pick",
+      "college": "North Carolina",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Ray Allen",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "tips": [
+        "Dreierschütze",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Clutch-Moment",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Celtics",
+      "playStyle": "Schütze",
+      "trait": null,
+      "moment": "Game-Winner in den Playoffs",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 20",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "UConn",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Reggie Miller",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "tips": [
+        "Dreierschütze",
+        "Scorer",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Hall of Famer",
+        "Star der 90er",
+        "Teamlegende",
+        "Clutch-Moment"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Pacers",
+      "playStyle": "Schütze",
+      "trait": null,
+      "moment": "Game-Winner in den Playoffs",
+      "award": null,
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 31",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "UCLA",
+      "transfer": "blieb seinem ersten NBA-Team treu"
     }
   },
   {
@@ -2807,6 +5377,50 @@
     }
   },
   {
+    "name": "Russell Westbrook",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "tips": [
+        "Athlet",
+        "Spielmacher",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Star der 2010er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Thunder",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 0",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "UCLA",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
     "name": "Scottie Barnes",
     "tags": [
       "star"
@@ -2842,6 +5456,49 @@
       "draft": "Top-10-Pick",
       "college": null,
       "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Scottie Pippen",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "tips": [
+        "Verteidiger",
+        "Allrounder",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 90er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Bulls",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "90er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 33",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Central Arkansas",
+      "transfer": null
     }
   },
   {
@@ -2882,6 +5539,50 @@
       "afterCareer": null,
       "draft": "Erstrunden-Pick",
       "college": "Kentucky",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Shaquille O'Neal",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "tips": [
+        "Post-Spieler",
+        "Dunker",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Lakers",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 34",
+      "status": "Karriere beendet",
+      "afterCareer": "TV-Experte",
+      "draft": "Nummer-1-Pick",
+      "college": "LSU",
       "transfer": "wechselte per Trade"
     }
   },
@@ -2964,6 +5665,178 @@
       "draft": "Top-10-Pick",
       "college": null,
       "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Steve Nash",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "Kanada",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Dreierschütze",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Suns",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": null,
+      "award": "MVP",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 13",
+      "status": "Karriere beendet",
+      "afterCareer": "TV-Experte",
+      "draft": "Erstrunden-Pick",
+      "college": "Santa Clara",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Tim Duncan",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Post-Spieler",
+        "Verteidiger",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Spurs",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 21",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Wake Forest",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Tony Parker",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "Frankreich",
+      "position": "Point Guard",
+      "tips": [
+        "Spielmacher",
+        "Athlet",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Spurs",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Finals-MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 9",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "kein College",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Tracy McGrady",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "tips": [
+        "Scorer",
+        "Athlet",
+        "All-Star",
+        "All-NBA",
+        "Finals-Teilnehmer",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Magic",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Most Improved Player",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 1",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
     }
   },
   {
@@ -3203,6 +6076,135 @@
     }
   },
   {
+    "name": "Vince Carter",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "tips": [
+        "Dunker",
+        "Athlet",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Raptors",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": "Rookie of the Year",
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 15",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "North Carolina",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Wilt Chamberlain",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "tips": [
+        "Scorer",
+        "Rebounder",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Hall of Famer",
+        "Star der 60er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": null,
+      "team": "76ers",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "60er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 13",
+      "status": "Karriere beendet",
+      "afterCareer": "verstorben",
+      "draft": null,
+      "college": "Kansas",
+      "transfer": null
+    }
+  },
+  {
+    "name": "Yao Ming",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "China",
+      "position": "Center",
+      "tips": [
+        "Post-Spieler",
+        "Shotblocker",
+        "All-Star",
+        "All-NBA",
+        "Hall of Famer",
+        "Star der 2000er",
+        "Teamlegende",
+        "Verletzungspech",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Asien",
+      "conference": "meist im Westen",
+      "team": "Rockets",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 11",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "kein College",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
     "name": "Zach LaVine",
     "tags": [
       "star"
@@ -3239,6 +6241,47 @@
       "draft": "Erstrunden-Pick",
       "college": "UCLA",
       "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Zach Randolph",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Post-Spieler",
+        "Rebounder",
+        "All-Star",
+        "All-NBA",
+        "Conference-Finalist",
+        "Star der 2010er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Grizzlies",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": null,
+      "award": "Most Improved Player",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Linkshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 50",
+      "status": "Karriere beendet",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Michigan State",
+      "transfer": null
     }
   },
   {

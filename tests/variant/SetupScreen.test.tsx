@@ -6,11 +6,12 @@ import { poolSizes } from "../../src/game/modes";
 import { settings } from "./fixtures";
 
 describe("Spielmodi in der Einrichtung", () => {
-  it("bietet Stars und NBA-Teams an und kennzeichnet die leeren Legenden als bald", async () => {
+  it("bietet Stars, spielbare Legenden ohne bald und NBA-Teams an", async () => {
     const user = userEvent.setup();
     render(<SetupScreen initial={null} poolSizes={poolSizes()} onStart={vi.fn()} />);
     expect(screen.getByRole("option", { name: "⭐ Aktuelle Stars" })).toBeEnabled();
-    expect(screen.getByRole("option", { name: "👑 Legenden (bald)" })).toBeDisabled();
+    expect(screen.getByRole("option", { name: "👑 Legenden" })).toBeEnabled();
+    expect(screen.queryByRole("option", { name: "👑 Legenden (bald)" })).not.toBeInTheDocument();
     expect(screen.getByRole("option", { name: "🏟️ NBA-Teams" })).toBeEnabled();
     expect(screen.getByLabelText("Spielmodus")).toHaveValue("stars");
     await user.selectOptions(screen.getByLabelText("Spielmodus"), "teams");
@@ -18,7 +19,16 @@ describe("Spielmodi in der Einrichtung", () => {
     await user.selectOptions(screen.getByLabelText("Spielmodus"), "stars");
     expect(screen.getByLabelText("Spielmodus")).toHaveValue("stars");
     await user.selectOptions(screen.getByLabelText("Spielmodus"), "legenden");
-    expect(screen.getByLabelText("Spielmodus")).toHaveValue("stars");
+    expect(screen.getByLabelText("Spielmodus")).toHaveValue("legenden");
+  });
+
+  it("startet mit dem ausgewählten Legenden-Modus", async () => {
+    const onStart = vi.fn();
+    const user = userEvent.setup();
+    render(<SetupScreen initial={settings} poolSizes={poolSizes()} onStart={onStart} />);
+    await user.selectOptions(screen.getByLabelText("Spielmodus"), "legenden");
+    await user.click(screen.getByRole("button", { name: "Start" }));
+    expect(onStart).toHaveBeenCalledWith({ ...settings, mode: "legenden" });
   });
 
   it("startet eine neue Einrichtung mit aktuellen Stars", async () => {

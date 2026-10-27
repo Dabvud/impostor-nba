@@ -4,20 +4,17 @@ import playersJson from "../../src/data/players.json";
 import teamsJson from "../../src/data/teams.json";
 import type { NbaPlayer, NbaTeam, PlayerExtras } from "../../src/variant/types";
 
+import { PLAYER_STYLES as STYLES, PLAYER_SUCCESSES as SUCCESS, PLAYER_ROLES as ROLES,
+  PLAYER_TIPS, LEGEND_TIPS, LEGEND_ERAS, AFTER_CAREER_VALUES } from "../../src/variant/playerVocabulary";
+const TIPS = [...PLAYER_TIPS, ...LEGEND_TIPS];
 const players = playersJson as NbaPlayer[];
 const teams = teamsJson as NbaTeam[];
 const text = (value: unknown) => typeof value === "string" && value.trim().length > 0;
-const STYLES = [
-  "Scorer", "Dreierschütze", "Spielmacher", "Verteidiger", "Dunker", "Rebounder", "Shotblocker",
-  "Allrounder", "Athlet", "Mitteldistanz-Spezialist", "Post-Spieler",
-];
-const SUCCESS = ["NBA-Champion", "Finals-Teilnehmer", "Conference-Finalist"];
-const ROLES = ["Teamlegende", "Franchise-Spieler", "Talent"];
-const TIPS = [...STYLES, "All-Star", "All-NBA", ...SUCCESS, "Clutch-Moment", "bekannter Trade", "Verletzungspech", "Top-10-Pick", ...ROLES];
 const PLAYER_VALUES: Partial<Record<keyof PlayerExtras, string[]>> = {
   continent: ["Europa", "Nordamerika", "Südamerika", "Afrika", "Asien", "Ozeanien"],
   conference: ["meist im Westen", "meist im Osten"],
   hand: ["Linkshänder", "Rechtshänder"], status: ["aktiv", "Karriere beendet"],
+  afterCareer: [...AFTER_CAREER_VALUES],
   draft: ["Nummer-1-Pick", "Top-3-Pick", "Top-10-Pick", "Erstrunden-Pick", "Zweitrunden-Pick", "undrafted"],
 };
 const PLAYER_EXTRA_KEYS: (keyof PlayerExtras)[] = [
@@ -43,8 +40,9 @@ const TEAM_EXTRA_VALUES = {
 };
 
 describe("players.json", () => {
-  it("ist eine Liste und darf vorerst leer sein", () => {
+  it("ist eine gefüllte Liste", () => {
     expect(Array.isArray(playersJson)).toBe(true);
+    expect(players.length).toBeGreaterThan(0);
   });
   it("hat eindeutige, nicht leere Namen und gültige Tags", () => {
     expect(new Set(players.map((p) => p.name.trim().toLowerCase())).size).toBe(players.length);
@@ -126,6 +124,110 @@ describe("players.json", () => {
         if (PLAYER_VALUES[key]) expect(PLAYER_VALUES[key]).toContain(value);
       }
     }
+  });
+});
+
+describe("Legenden und Herkunft", () => {
+  const legends = players.filter((p) => p.tags.includes("legende"));
+  const stars = players.filter((p) => p.tags.includes("star"));
+
+  it("trennt aktive Stars und Legenden eindeutig und verlangt alle 20 Zusatzfelder", () => {
+    expect(legends.length).toBeGreaterThan(0);
+    for (const p of players) {
+      expect(p.tags, p.name).toHaveLength(1);
+      expect(Object.keys(p.extras ?? {}).sort(), p.name).toEqual([...PLAYER_EXTRA_KEYS].sort());
+      if (p.tags.includes("legende")) expect(["Karriere beendet", null], p.name).toContain(p.extras?.status);
+      else expect(p.extras?.status, p.name).toBe("aktiv");
+      if (p.tags.includes("star")) expect(p.extras?.afterCareer, p.name).toBeNull();
+    }
+    expect(stars.some((p) => legends.some((l) => l.name === p.name))).toBe(false);
+  });
+
+  it("erlaubt bei Legenden nur das kleine Vokabular nach der Karriere und niemals Talent", () => {
+    for (const p of legends) {
+      expect([null, ...AFTER_CAREER_VALUES], p.name).toContain(p.extras?.afterCareer);
+      expect(p.hints.tips, p.name).not.toContain("Talent");
+    }
+  });
+
+  it("vergibt genau den Ära-Tipp der Glanzzeit und reserviert die neuen Wörter für Legenden", () => {
+    for (const p of legends) {
+      expect(LEGEND_ERAS, p.name).toContain(p.extras?.era);
+      expect(p.hints.tips.filter((tip) => tip.startsWith("Star der ")), p.name)
+        .toEqual(["Star der " + p.extras?.era]);
+      if (p.extras?.era === "2010er") expect(p.hints.tips, p.name).toContain("All-NBA");
+    }
+    for (const p of stars) expect(p.hints.tips.some((tip) => LEGEND_TIPS.includes(tip)), p.name).toBe(false);
+    // Individuelle Naismith-Aufnahme, kein künftiger Kandidat und keine bloße Team-Aufnahme.
+    for (const name of ["Dwight Howard", "Carmelo Anthony", "Amar'e Stoudemire", "Chris Bosh", "Dominique Wilkins", "James Worthy"]) {
+      expect(legends.find((p) => p.name === name)?.hints.tips, name).toContain("Hall of Famer");
+    }
+    for (const name of ["Russell Westbrook", "Chris Paul", "Peja Stojaković", "Marc Gasol", "Derrick Rose", "Isaiah Thomas", "DeMarcus Cousins", "Penny Hardaway", "Gilbert Arenas", "Rasheed Wallace"]) {
+      expect(legends.find((p) => p.name === name)?.hints.tips, name).not.toContain("Hall of Famer");
+    }
+  });
+
+  it("bietet jeder Legende mindestens drei im Legenden-Topf geteilte normale Tipps", () => {
+    const pool = buildPool("legenden", 1, players, teams);
+    expect(pool).toHaveLength(legends.length);
+    for (const p of pool) {
+      expect(p.hints.length, p.name).toBeGreaterThanOrEqual(3);
+      expect(new Set(p.hints).size, p.name).toBe(p.hints.length);
+      for (const tip of p.hints) expect(pool.filter((other) => other.hints.includes(tip)).length, p.name + ": " + tip)
+        .toBeGreaterThanOrEqual(2);
+      // Ein unbekannter Status erzeugt keinen Tipp; bestätigte Karriereenden teilen ihn im Topf.
+      const player = legends.find((legend) => legend.name === p.name)!;
+      expect(p.allHints?.some((hint) => hint.value === "Karriere beendet"), p.name)
+        .toBe(player.extras?.status === "Karriere beendet");
+    }
+  });
+
+  it("setzt die Nutzerentscheidungen aus Runde 3 mit ehrlichem Rücktrittsstatus um", () => {
+    for (const name of ["Isaiah Thomas", "DeMarcus Cousins"]) {
+      const p = legends.find((p) => p.name === name);
+      expect(p, name).toBeDefined();
+      expect(p?.extras?.status, name).toBeNull();
+      expect(p?.extras?.afterCareer, name).toBeNull();
+      expect(p?.extras?.era, name).toBe("2010er");
+      expect(p?.hints.tips, name).toContain("All-NBA");
+    }
+    const eras = { "Carmelo Anthony": "2010er", "Dominique Wilkins": "80er", "James Worthy": "80er",
+      "Penny Hardaway": "90er", "Gilbert Arenas": "2000er", "Rasheed Wallace": "2000er", "Dwight Howard": "2010er" };
+    for (const [name, era] of Object.entries(eras)) {
+      const p = legends.find((p) => p.name === name);
+      expect(p?.extras?.era, name).toBe(era);
+      expect(p?.hints.tips, name).toContain("Star der " + era);
+    }
+    expect(legends.find((p) => p.name === "Rasheed Wallace")?.hints.tips).not.toContain("All-NBA");
+  });
+
+  it("zählt gleiche Wörter nur innerhalb des gewählten Legenden-Topfs", () => {
+    const base = legends[0];
+    const a = { ...base, name: "Legende A", hints: { ...base.hints, tips: ["Dunker"] } };
+    const b = { ...base, name: "Legende B", hints: { ...base.hints, tips: ["Spielmacher"] } };
+    const star = { ...base, name: "Star C", tags: ["star"] as NbaPlayer["tags"], hints: { ...base.hints, tips: ["Dunker"] } };
+    const pool = buildPool("legenden", 1, [a, b, star], []);
+    expect(pool.map((p) => p.name)).toEqual(["Legende A", "Legende B"]);
+    expect(pool[0].hints).not.toContain("Dunker");
+    expect(pool[1].hints).not.toContain("Spielmacher");
+    expect(buildPool("legenden", 1, [a, { ...b, hints: a.hints }, star], []).every((p) => p.hints.includes("Dunker"))).toBe(true);
+  });
+
+  it("ordnet die Türkei und Israel dauerhaft Basketball-Europa zu und gibt beiden Stars Europäer", () => {
+    for (const p of players.filter((p) => ["Türkei", "Israel"].includes(p.hints.nation))) {
+      expect(p.extras?.continent, p.name).toBe("Europa");
+    }
+    const pool = buildPool("stars", 1, players, teams);
+    for (const name of ["Alperen Şengün", "Deni Avdija"]) expect(pool.find((p) => p.name === name)?.hints, name).toContain("Europäer");
+  });
+
+  it("behandelt historische Draft-Sonderfälle ohne erfundenen regulären Draftplatz", () => {
+    for (const name of ["Wilt Chamberlain", "Moses Malone", "George Mikan"]) {
+      const p = legends.find((p) => p.name === name);
+      expect(p?.extras?.draft, name).toBeNull();
+      expect(p?.hints.tips, name).not.toContain("Top-10-Pick");
+    }
+    expect(legends.find((p) => p.name === "Dennis Rodman")?.extras?.draft).toBe("Zweitrunden-Pick");
   });
 });
 

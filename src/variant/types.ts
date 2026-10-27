@@ -11,6 +11,7 @@ export type TeamHints = {
 };
 /** Zusätzliche Tipp-Kategorien, nur für die Runde, in der alle Impostor sind. */
 export type PlayerExtras = {
+  /** Basketball-Zuordnung: Türkei und Israel zählen wie FIBA Europe zu Europa. */
   continent: string | null;
   conference: string | null;
   team: string | null;
