@@ -131,16 +131,27 @@ describe("Legenden und Herkunft", () => {
   const legends = players.filter((p) => p.tags.includes("legende"));
   const stars = players.filter((p) => p.tags.includes("star"));
 
-  it("trennt aktive Stars und Legenden eindeutig und verlangt alle 20 Zusatzfelder", () => {
+  it("ordnet Stars und Legenden zu und verlangt alle 20 Zusatzfelder", () => {
     expect(legends.length).toBeGreaterThan(0);
     for (const p of players) {
-      expect(p.tags, p.name).toHaveLength(1);
       expect(Object.keys(p.extras ?? {}).sort(), p.name).toEqual([...PLAYER_EXTRA_KEYS].sort());
-      if (p.tags.includes("legende")) expect(["Karriere beendet", null], p.name).toContain(p.extras?.status);
-      else expect(p.extras?.status, p.name).toBe("aktiv");
-      if (p.tags.includes("star")) expect(p.extras?.afterCareer, p.name).toBeNull();
+      if (p.tags.includes("star")) {
+        expect(p.extras?.status, p.name).toBe("aktiv");
+        expect(p.extras?.afterCareer, p.name).toBeNull();
+      } else {
+        // Legenden mit Prime in den 2010ern dürfen noch aktiv sein (z. B. Kevin Love).
+        expect(["Karriere beendet", "aktiv", null], p.name).toContain(p.extras?.status);
+      }
     }
-    expect(stars.some((p) => legends.some((l) => l.name === p.name))).toBe(false);
+  });
+
+  it("führt Stars mit Prime in den 2010ern und 2020ern auch als 2010er-Legenden", () => {
+    const both = players.filter((p) => p.tags.includes("star") && p.tags.includes("legende"));
+    expect(both.map((p) => p.name)).toEqual(expect.arrayContaining(["LeBron James", "Stephen Curry", "Klay Thompson", "Draymond Green"]));
+    for (const p of both) {
+      expect(p.extras?.era, p.name).toBe("2010er");
+      expect(p.hints.tips, p.name).toContain("All-NBA");
+    }
   });
 
   it("erlaubt bei Legenden nur das kleine Vokabular nach der Karriere und niemals Talent", () => {
@@ -157,7 +168,9 @@ describe("Legenden und Herkunft", () => {
         .toEqual(["Star der " + p.extras?.era]);
       if (p.extras?.era === "2010er") expect(p.hints.tips, p.name).toContain("All-NBA");
     }
-    for (const p of stars) expect(p.hints.tips.some((tip) => LEGEND_TIPS.includes(tip)), p.name).toBe(false);
+    for (const p of stars.filter((s) => !s.tags.includes("legende"))) {
+      expect(p.hints.tips.some((tip) => LEGEND_TIPS.includes(tip)), p.name).toBe(false);
+    }
     // Individuelle Naismith-Aufnahme, kein künftiger Kandidat und keine bloße Team-Aufnahme.
     for (const name of ["Dwight Howard", "Carmelo Anthony", "Amar'e Stoudemire", "Chris Bosh", "Dominique Wilkins", "James Worthy"]) {
       expect(legends.find((p) => p.name === name)?.hints.tips, name).toContain("Hall of Famer");

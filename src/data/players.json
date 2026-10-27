@@ -38,6 +38,47 @@
     }
   },
   {
+    "name": "Al Horford",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "Dominikanische Republik",
+      "position": "Center",
+      "tips": [
+        "Verteidiger",
+        "Dreierschütze",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Star der 2010er",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Hawks",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 15",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "Florida",
+      "transfer": "wechselte als Free Agent"
+    }
+  },
+  {
     "name": "Alex Caruso",
     "tags": [
       "star"
@@ -280,7 +321,8 @@
   {
     "name": "Anthony Davis",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -294,7 +336,8 @@
         "Clutch-Moment",
         "bekannter Trade",
         "Verletzungspech",
-        "Top-10-Pick"
+        "Top-10-Pick",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -1154,7 +1197,8 @@
   {
     "name": "Damian Lillard",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -1169,7 +1213,8 @@
         "Teamlegende",
         "bekannter Trade",
         "Verletzungspech",
-        "Top-10-Pick"
+        "Top-10-Pick",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -1358,6 +1403,47 @@
     }
   },
   {
+    "name": "DeAndre Jordan",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "tips": [
+        "Rebounder",
+        "Shotblocker",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Star der 2010er",
+        "Teamlegende"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Clippers",
+      "playStyle": "Rim-Protector",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 6",
+      "status": null,
+      "afterCareer": null,
+      "draft": "Zweitrunden-Pick",
+      "college": "Texas A&M",
+      "transfer": "wechselte als Free Agent"
+    }
+  },
+  {
     "name": "Dejounte Murray",
     "tags": [
       "star"
@@ -1399,7 +1485,8 @@
   {
     "name": "DeMar DeRozan",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -1412,7 +1499,8 @@
         "Conference-Finalist",
         "Teamlegende",
         "bekannter Trade",
-        "Top-10-Pick"
+        "Top-10-Pick",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -1922,7 +2010,8 @@
   {
     "name": "Draymond Green",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -1933,7 +2022,8 @@
         "All-Star",
         "All-NBA",
         "NBA-Champion",
-        "Teamlegende"
+        "Teamlegende",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -2254,7 +2344,8 @@
   {
     "name": "Giannis Antetokounmpo",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "Griechenland",
@@ -2265,7 +2356,8 @@
         "All-Star",
         "All-NBA",
         "NBA-Champion",
-        "Teamlegende"
+        "Teamlegende",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -2817,7 +2909,8 @@
   {
     "name": "James Harden",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -2830,7 +2923,8 @@
         "Finals-Teilnehmer",
         "Teamlegende",
         "bekannter Trade",
-        "Top-10-Pick"
+        "Top-10-Pick",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -3147,7 +3241,8 @@
   {
     "name": "Jimmy Butler",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -3158,7 +3253,8 @@
         "All-Star",
         "All-NBA",
         "Finals-Teilnehmer",
-        "bekannter Trade"
+        "bekannter Trade",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -3230,7 +3326,8 @@
   {
     "name": "Joel Embiid",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "Kamerun",
@@ -3241,7 +3338,8 @@
         "All-Star",
         "All-NBA",
         "Verletzungspech",
-        "Top-10-Pick"
+        "Top-10-Pick",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -3639,7 +3737,8 @@
   {
     "name": "Karl-Anthony Towns",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "Dominikanische Republik",
@@ -3651,7 +3750,8 @@
         "All-NBA",
         "NBA-Champion",
         "bekannter Trade",
-        "Top-10-Pick"
+        "Top-10-Pick",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -3680,7 +3780,8 @@
   {
     "name": "Kawhi Leonard",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -3693,7 +3794,8 @@
         "NBA-Champion",
         "Clutch-Moment",
         "bekannter Trade",
-        "Verletzungspech"
+        "Verletzungspech",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -3765,7 +3867,8 @@
   {
     "name": "Kevin Durant",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -3778,7 +3881,8 @@
         "NBA-Champion",
         "bekannter Trade",
         "Verletzungspech",
-        "Top-10-Pick"
+        "Top-10-Pick",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -3792,7 +3896,7 @@
       "title": "NBA-Champion",
       "hair": null,
       "look": null,
-      "era": "2000er",
+      "era": "2010er",
       "build": "lange Arme",
       "hand": "Rechtshänder",
       "careerType": "Wandervogel",
@@ -3849,9 +3953,52 @@
     }
   },
   {
+    "name": "Kevin Love",
+    "tags": [
+      "legende"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "tips": [
+        "Rebounder",
+        "Dreierschütze",
+        "All-Star",
+        "All-NBA",
+        "NBA-Champion",
+        "Star der 2010er",
+        "bekannter Trade",
+        "Top-10-Pick"
+      ]
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Timberwolves",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Most Improved Player",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trug die 0",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "UCLA",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
     "name": "Klay Thompson",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -3863,7 +4010,8 @@
         "All-NBA",
         "NBA-Champion",
         "Teamlegende",
-        "Verletzungspech"
+        "Verletzungspech",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -4017,7 +4165,8 @@
   {
     "name": "Kyrie Irving",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -4031,7 +4180,8 @@
         "Clutch-Moment",
         "bekannter Trade",
         "Verletzungspech",
-        "Top-10-Pick"
+        "Top-10-Pick",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -4224,7 +4374,8 @@
   {
     "name": "LeBron James",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -4237,7 +4388,8 @@
         "NBA-Champion",
         "Clutch-Moment",
         "Teamlegende",
-        "Top-10-Pick"
+        "Top-10-Pick",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -4251,7 +4403,7 @@
       "title": "NBA-Champion",
       "hair": "Kurzhaarschnitt",
       "look": "Bart",
-      "era": "2000er",
+      "era": "2010er",
       "build": "kräftig",
       "hand": "Rechtshänder",
       "careerType": "Highschool-Phänomen",
@@ -4636,7 +4788,8 @@
   {
     "name": "Nikola Jokić",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "Serbien",
@@ -4647,7 +4800,8 @@
         "All-Star",
         "All-NBA",
         "NBA-Champion",
-        "Franchise-Spieler"
+        "Franchise-Spieler",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -4999,7 +5153,8 @@
   {
     "name": "Paul George",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -5012,7 +5167,8 @@
         "Conference-Finalist",
         "bekannter Trade",
         "Verletzungspech",
-        "Top-10-Pick"
+        "Top-10-Pick",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -5339,7 +5495,8 @@
   {
     "name": "Rudy Gobert",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "Frankreich",
@@ -5350,7 +5507,8 @@
         "All-Star",
         "All-NBA",
         "Conference-Finalist",
-        "bekannter Trade"
+        "bekannter Trade",
+        "Star der 2010er"
       ]
     },
     "extras": {
@@ -5589,7 +5747,8 @@
   {
     "name": "Stephen Curry",
     "tags": [
-      "star"
+      "star",
+      "legende"
     ],
     "hints": {
       "nation": "USA",
@@ -5602,7 +5761,8 @@
         "NBA-Champion",
         "Teamlegende",
         "Verletzungspech",
-        "Top-10-Pick"
+        "Top-10-Pick",
+        "Star der 2010er"
       ]
     },
     "extras": {
