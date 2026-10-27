@@ -12,9 +12,10 @@ export function maxImpostors(playerCount: number): number {
 }
 
 /** Leere Liste = gültig, sonst Fehlermeldungen für die Anzeige. */
-export function validateSettings(s: Settings): string[] {
+export function validateSettings(s: Settings, poolSize?: number): string[] {
   const names = normalizeNames(s.names);
   const errors: string[] = [];
+  if (poolSize === 0) errors.push("In diesem Modus gibt es noch keine Begriffe");
   if (names.length < MIN_PLAYERS) errors.push(`Mindestens ${MIN_PLAYERS} Spieler`);
   if (new Set(names.map((n) => n.toLowerCase())).size !== names.length) errors.push("Namen doppelt");
   if (s.secretImpostors) return errors;

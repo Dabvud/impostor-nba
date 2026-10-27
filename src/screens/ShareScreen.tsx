@@ -18,7 +18,7 @@ export default function ShareScreen({ url, onBack }: Props) {
   async function share() {
     try {
       if (canShare) {
-        await navigator.share({ title: "Impostor", text: "Unser Fußball-Impostor für die nächste Runde:", url });
+        await navigator.share({ title: "Impostor NBA", text: "Unser NBA-Impostor für die nächste Runde:", url });
       } else {
         await navigator.clipboard.writeText(url);
         setCopied(true);

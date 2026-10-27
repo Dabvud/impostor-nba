@@ -18,7 +18,7 @@ describe("RulesScreen", () => {
 });
 
 describe("ShareScreen", () => {
-  const url = "https://dabvud.github.io/impostor/";
+  const url = "https://dabvud.github.io/Impostor-NBA/";
 
   it("zeigt einen QR-Code und den Link", async () => {
     render(<ShareScreen url={url} onBack={vi.fn()} />);

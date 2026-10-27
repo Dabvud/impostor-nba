@@ -5,8 +5,7 @@ import type { Settings } from "../../src/game/types";
 const base: Settings = {
   names: ["Anna", "Ben", "Cem"],
   impostorCount: 1,
-  mode: "alle",
-  difficulty: 1,
+  mode: "stars",
   hintsEnabled: true,
   secretImpostors: false,
   thinkSeconds: null,
@@ -57,5 +56,14 @@ describe("validateSettings", () => {
 
   it("erkennt doppelte Namen getrimmt und ohne Groß-/Kleinschreibung", () => {
     expect(validateSettings({ ...base, names: ["Luca", "luca ", "Ben"] })).toContain("Namen doppelt");
+  });
+});
+
+describe("validateSettings mit Topfgröße", () => {
+  it.each([false, true])("meldet einen leeren Modus auch bei geheimem Modus %s", (secretImpostors) => {
+    expect(validateSettings({ ...base, secretImpostors }, 0)).toContain("In diesem Modus gibt es noch keine Begriffe");
+  });
+  it.each([undefined, 1, 30])("akzeptiert gültige Einstellungen bei Größe %s", (size) => {
+    expect(validateSettings(base, size)).toEqual([]);
   });
 });

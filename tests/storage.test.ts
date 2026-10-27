@@ -18,8 +18,7 @@ import {
 const settings: Settings = {
   names: ["Anna", "Ben", "Cem"],
   impostorCount: 1,
-  mode: "vereine-int",
-  difficulty: 2,
+  mode: "teams",
   hintsEnabled: false,
   secretImpostors: true,
   thinkSeconds: 30,
@@ -32,8 +31,8 @@ const game: GameState = {
   index: 1,
   seen: true,
   round: {
-    word: { name: "Messi", hints: ["Argentinien"] },
-    hint: "Argentinien",
+    word: { name: "Nowitzki", hints: ["Deutschland"] },
+    hint: "Deutschland",
     impostors: ["Ben"],
     revealOrder: ["Anna", "Ben", "Cem"],
     starter: "Cem",
@@ -53,10 +52,10 @@ describe("speichern und laden", () => {
   it("liefert dieselben Objekte zurück", () => {
     saveSettings(settings);
     saveGame(game);
-    saveUsed({ "alle-1": ["Messi"] });
+    saveUsed({ "stars": ["Nowitzki"] });
     expect(loadSettings()).toEqual(settings);
     expect(loadGame()).toEqual(game);
-    expect(loadUsed()).toEqual({ "alle-1": ["Messi"] });
+    expect(loadUsed()).toEqual({ "stars": ["Nowitzki"] });
   });
 
   it("liefert ohne gespeicherte Daten null bzw. {}", () => {
@@ -82,7 +81,7 @@ describe("Spielstände aus v1.0", () => {
       guessEnabled: _f,
       ...old
     } = settings;
-    localStorage.setItem("impostor:v1:settings", JSON.stringify(old));
+    localStorage.setItem("impostor-nba:v1:settings", JSON.stringify(old));
     expect(loadSettings()).toEqual({
       ...settings,
       hintsEnabled: true,
@@ -95,15 +94,15 @@ describe("Spielstände aus v1.0", () => {
   });
 
   it("lädt alte Runden ohne Tipp mit hint null", () => {
-    const oldRound = { word: { name: "Messi", hint: null }, impostors: ["Ben"], revealOrder: ["Anna", "Ben", "Cem"], starter: "Cem" };
-    localStorage.setItem("impostor:v1:game", JSON.stringify({ phase: "discussion", round: oldRound }));
+    const oldRound = { word: { name: "Nowitzki", hint: null }, impostors: ["Ben"], revealOrder: ["Anna", "Ben", "Cem"], starter: "Cem" };
+    localStorage.setItem("impostor-nba:v1:game", JSON.stringify({ phase: "discussion", round: oldRound }));
     expect(loadGame()).toEqual({
       phase: "discussion",
       round: {
         ...oldRound,
         id: "",
         guessEnabled: false,
-        word: { name: "Messi", hints: [] },
+        word: { name: "Nowitzki", hints: [] },
         hint: null,
         speakingOrder: ["Cem", "Anna", "Ben"],
         thinkSeconds: null,
@@ -116,61 +115,61 @@ describe("Spielstände aus v1.0", () => {
 
 describe("kaputte Daten", () => {
   it("verwirft ungültiges JSON", () => {
-    localStorage.setItem("impostor:v1:settings", "{kaputt");
-    localStorage.setItem("impostor:v1:game", "{kaputt");
-    localStorage.setItem("impostor:v1:used", "{kaputt");
+    localStorage.setItem("impostor-nba:v1:settings", "{kaputt");
+    localStorage.setItem("impostor-nba:v1:game", "{kaputt");
+    localStorage.setItem("impostor-nba:v1:used", "{kaputt");
     expect(loadSettings()).toBeNull();
     expect(loadGame()).toBeNull();
     expect(loadUsed()).toEqual({});
   });
 
   it("verwirft unbekannte Phasen und Runden ohne round", () => {
-    localStorage.setItem("impostor:v1:game", JSON.stringify({ phase: "voting", round: game.round }));
+    localStorage.setItem("impostor-nba:v1:game", JSON.stringify({ phase: "voting", round: game.round }));
     expect(loadGame()).toBeNull();
-    localStorage.setItem("impostor:v1:game", JSON.stringify({ phase: "handoff", index: 0 }));
+    localStorage.setItem("impostor-nba:v1:game", JSON.stringify({ phase: "handoff", index: 0 }));
     expect(loadGame()).toBeNull();
   });
 
   it("lädt persönliche Tipps einer Alle-Impostor-Runde und verwirft kaputte", () => {
-    const personal = { ...game, round: { ...game.round, personalHints: { Anna: "Linksfuß", Ben: "Glatze", Cem: "2010er" } } };
-    localStorage.setItem("impostor:v1:game", JSON.stringify(personal));
+    const personal = { ...game, round: { ...game.round, personalHints: { Anna: "Linkshänder", Ben: "Glatze", Cem: "2010er" } } };
+    localStorage.setItem("impostor-nba:v1:game", JSON.stringify(personal));
     expect(loadGame()).toEqual(personal);
-    localStorage.setItem("impostor:v1:game", JSON.stringify({ ...personal, round: { ...personal.round, personalHints: { Anna: 5 } } }));
+    localStorage.setItem("impostor-nba:v1:game", JSON.stringify({ ...personal, round: { ...personal.round, personalHints: { Anna: 5 } } }));
     expect((loadGame() as { round: { personalHints: unknown } }).round.personalHints).toBeNull();
   });
 
   it("lädt eine Auflösung mitten im Ablauf unverändert", () => {
     const mid = { phase: "resolution", round: game.round, step: "guess", winner: null, caught: true };
-    localStorage.setItem("impostor:v1:game", JSON.stringify(mid));
+    localStorage.setItem("impostor-nba:v1:game", JSON.stringify(mid));
     expect(loadGame()).toEqual(mid);
   });
 
   it("lädt eine Auflösung aus v1.3 (ohne Schritt) als abgeschlossen", () => {
-    localStorage.setItem("impostor:v1:game", JSON.stringify({ phase: "resolution", round: game.round }));
+    localStorage.setItem("impostor-nba:v1:game", JSON.stringify({ phase: "resolution", round: game.round }));
     expect(loadGame()).toEqual({ phase: "resolution", round: game.round, step: "done", winner: null, caught: null });
   });
 
   it("verwirft einen unbekannten Auflösungs-Schritt", () => {
-    localStorage.setItem("impostor:v1:game", JSON.stringify({ phase: "resolution", round: game.round, step: "?" }));
+    localStorage.setItem("impostor-nba:v1:game", JSON.stringify({ phase: "resolution", round: game.round, step: "?" }));
     expect(loadGame()).toBeNull();
   });
 
   it("lädt eine Hinweisrunde und verwirft einen ungültigen Index", () => {
     const clues = { phase: "clues", round: game.round, index: 2 };
-    localStorage.setItem("impostor:v1:game", JSON.stringify(clues));
+    localStorage.setItem("impostor-nba:v1:game", JSON.stringify(clues));
     expect(loadGame()).toEqual(clues);
-    localStorage.setItem("impostor:v1:game", JSON.stringify({ ...clues, index: 3 }));
+    localStorage.setItem("impostor-nba:v1:game", JSON.stringify({ ...clues, index: 3 }));
     expect(loadGame()).toBeNull();
   });
 
   it("verwirft Einstellungen mit unbekanntem Modus", () => {
-    localStorage.setItem("impostor:v1:settings", JSON.stringify({ ...settings, mode: "kreisliga" }));
+    localStorage.setItem("impostor-nba:v1:settings", JSON.stringify({ ...settings, mode: "unbekannt" }));
     expect(loadSettings()).toBeNull();
   });
 
   it("verwirft used-Einträge, die keine Listen sind", () => {
-    localStorage.setItem("impostor:v1:used", JSON.stringify({ "alle-1": ["Messi"], "alle-2": "Messi", x: [1] }));
-    expect(loadUsed()).toEqual({ "alle-1": ["Messi"] });
+    localStorage.setItem("impostor-nba:v1:used", JSON.stringify({ "stars": ["Nowitzki"], "legenden": "Nowitzki", x: [1] }));
+    expect(loadUsed()).toEqual({ "stars": ["Nowitzki"] });
   });
 
   it("übersteht einen werfenden localStorage", () => {
@@ -210,7 +209,7 @@ describe("Gruppen speichern", () => {
 
   it("verwirft kaputte Gruppen und Auswahl-IDs, die es nicht mehr gibt", () => {
     localStorage.setItem(
-      "impostor:v1:groups",
+      "impostor-nba:v1:groups",
       JSON.stringify([group, { id: "g2", name: 5 }, { ...group, id: "g3", selected: ["m1", "weg"] }]),
     );
     expect(loadGroups()).toEqual([group, { ...group, id: "g3", selected: ["m1"] }]);
@@ -222,7 +221,7 @@ describe("Statistik speichern", () => {
     roundId: "r1",
     evening: 1,
     at: "2026-10-26T20:00:00.000Z",
-    mode: "alle" as const,
+    mode: "stars" as const,
     players: ["a", "b", "c"],
     impostors: ["a"],
     starter: "b",
@@ -246,7 +245,22 @@ describe("Statistik speichern", () => {
   });
 
   it("verwirft kaputte Einträge", () => {
-    localStorage.setItem("impostor:v1:stats:g1", JSON.stringify([record, { roundId: 5 }]));
+    localStorage.setItem("impostor-nba:v1:stats:g1", JSON.stringify([record, { roundId: 5 }]));
     expect(loadStats("g1")).toEqual([record]);
+  });
+});
+
+describe("NBA-Speicher", () => {
+  it("schreibt sämtliche Daten einschließlich Statistik unter impostor-nba", () => {
+    saveSettings(settings);
+    saveGame(game);
+    saveUsed({ stars: ["Nowitzki"] });
+    saveGroups([]);
+    appendRecord("g1", { roundId: "r1", evening: 1, at: "2026-10-27T20:00:00Z", mode: "teams",
+      players: ["a", "b", "c"], impostors: ["a"], starter: "b", winner: null, caught: null });
+    const keys = Array.from({ length: localStorage.length }, (_, i) => localStorage.key(i));
+    expect(keys).toHaveLength(5);
+    expect(keys.every((key) => key?.startsWith("impostor-nba:"))).toBe(true);
+    expect(keys).toContain("impostor-nba:v1:stats:g1");
   });
 });

@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from "vitest";
 import { useState } from "react";
 import type { Group } from "../../src/game/groups";
 import type { Settings } from "../../src/game/types";
+import { settings } from "../helpers/nba";
 import SetupScreen from "../../src/screens/SetupScreen";
 
 async function addNames(user: ReturnType<typeof userEvent.setup>, names: string[]) {
@@ -121,8 +122,7 @@ describe("SetupScreen", () => {
     const initial: Settings = {
       names: ["Anna", "Ben", "Cem"],
       impostorCount: 1,
-      mode: "alle",
-      difficulty: 1,
+      mode: "stars",
       hintsEnabled: true,
       secretImpostors: false,
       thinkSeconds: null,
@@ -142,8 +142,7 @@ describe("SetupScreen", () => {
     const initial: Settings = {
       names: ["Anna", "Ben", "Cem"],
       impostorCount: 1,
-      mode: "alle",
-      difficulty: 1,
+      mode: "stars",
       hintsEnabled: true,
       secretImpostors: true,
       thinkSeconds: 15,
@@ -167,14 +166,6 @@ describe("SetupScreen", () => {
     expect(screen.getByRole("button", { name: "Start" })).toBeEnabled();
   });
 
-  it("zeigt die Schwierigkeit nur bei 'Alle Fußballer'", async () => {
-    const user = userEvent.setup();
-    render(<SetupScreen initial={null} onStart={vi.fn()} />);
-    expect(screen.getByRole("button", { name: "Mittel" })).toBeInTheDocument();
-    await user.selectOptions(screen.getByLabelText("Spielmodus"), "vereine-de");
-    expect(screen.queryByRole("button", { name: "Mittel" })).not.toBeInTheDocument();
-  });
-
   it("lässt die Impostor-Anzahl nicht über das Maximum steigen", async () => {
     const user = userEvent.setup();
     render(<SetupScreen initial={null} onStart={vi.fn()} />);
@@ -189,8 +180,7 @@ describe("SetupScreen", () => {
     const initial: Settings = {
       names: ["Anna", "Ben", "Cem", "Dana", "Eli", "Finn"],
       impostorCount: 2,
-      mode: "alle",
-      difficulty: 1,
+      mode: "stars",
       hintsEnabled: true,
       secretImpostors: false,
       thinkSeconds: null,
@@ -213,8 +203,7 @@ describe("SetupScreen", () => {
     const initial: Settings = {
       names: ["Anna", "Ben", "Cem"],
       impostorCount: 1,
-      mode: "alle",
-      difficulty: 3,
+      mode: "stars",
       hintsEnabled: true,
       secretImpostors: false,
       thinkSeconds: null,
@@ -224,13 +213,12 @@ describe("SetupScreen", () => {
     };
     render(<SetupScreen initial={initial} onStart={onStart} />);
     await addNames(user, ["  Dana  "]);
-    await user.selectOptions(screen.getByLabelText("Spielmodus"), "cl-legenden");
+    await user.selectOptions(screen.getByLabelText("Spielmodus"), "legenden");
     await user.click(screen.getByRole("button", { name: "Start" }));
     expect(onStart).toHaveBeenCalledWith({
       names: ["Anna", "Ben", "Cem", "Dana"],
       impostorCount: 1,
-      mode: "cl-legenden",
-      difficulty: 3,
+      mode: "legenden",
       hintsEnabled: true,
       secretImpostors: false,
       thinkSeconds: null,
@@ -309,7 +297,7 @@ describe("SetupScreen mit Gruppen", () => {
     function BigHarness() {
       const [groups, setGroups] = useState<Group[]>([big]);
       const initial: Settings = {
-        names: [], impostorCount: 3, mode: "alle", difficulty: 1, hintsEnabled: true, secretImpostors: false,
+        names: [], impostorCount: 3, mode: "stars", hintsEnabled: true, secretImpostors: false,
         thinkSeconds: null, discussSeconds: null, groupId: "g1", guessEnabled: true,
       };
       return <SetupScreen initial={initial} onStart={onStart} groups={groups} onGroupsChange={setGroups} />;
@@ -347,8 +335,7 @@ describe("SetupScreen mit Gruppen", () => {
     const initial: Settings = {
       names: ["X", "Y", "Z"],
       impostorCount: 1,
-      mode: "alle",
-      difficulty: 1,
+      mode: "stars",
       hintsEnabled: true,
       secretImpostors: false,
       thinkSeconds: null,
@@ -376,5 +363,45 @@ describe("SetupScreen mit Gruppen", () => {
     expect(onOpen.mock.calls.map((c) => c[0])).toEqual(["rules", "stats", "share"]);
     await user.click(screen.getByRole("button", { name: "Start" }));
     expect(onStart).toHaveBeenCalledWith(expect.objectContaining({ guessEnabled: false }));
+  });
+});
+
+describe("SetupScreen mit leeren Töpfen", () => {
+  it("sperrt leere Modi im Select und ergänzt bald", () => {
+    render(<SetupScreen initial={null} poolSizes={{ stars: 0, legenden: 0, teams: 30 }} onStart={vi.fn()} />);
+    expect(screen.getByRole("option", { name: "⭐ Aktuelle Stars (bald)" })).toBeDisabled();
+    expect(screen.getByRole("option", { name: "👑 Legenden (bald)" })).toBeDisabled();
+    expect(screen.getByRole("option", { name: "🏟️ NBA-Teams" })).toBeEnabled();
+    expect(screen.getByLabelText("Spielmodus")).toHaveValue("teams");
+  });
+  it.each([null, "stars", "legenden"] as const)("fällt bei leerem Startmodus %s auf Teams zurück", (mode) => {
+    render(<SetupScreen initial={mode ? { ...settings, mode } : null}
+      poolSizes={{ stars: 0, legenden: 0, teams: 30 }} onStart={vi.fn()} />);
+    expect(screen.getByLabelText("Spielmodus")).toHaveValue("teams");
+  });
+  it("fällt in MODES-Reihenfolge auf Legenden zurück", () => {
+    render(<SetupScreen initial={settings} poolSizes={{ stars: 0, legenden: 2, teams: 30 }} onStart={vi.fn()} />);
+    expect(screen.getByLabelText("Spielmodus")).toHaveValue("legenden");
+  });
+  it("behält einen spielbaren gespeicherten Modus", () => {
+    render(<SetupScreen initial={{ ...settings, mode: "teams" }} poolSizes={{ stars: 2, teams: 30 }} onStart={vi.fn()} />);
+    expect(screen.getByLabelText("Spielmodus")).toHaveValue("teams");
+  });
+  it("behandelt fehlende Größen als spielbar", () => {
+    render(<SetupScreen initial={null} poolSizes={{ teams: 0 }} onStart={vi.fn()} />);
+    expect(screen.getByLabelText("Spielmodus")).toHaveValue("stars");
+    expect(screen.getByRole("option", { name: "👑 Legenden" })).toBeEnabled();
+  });
+  it("startet ohne Größenangaben mit Stars", () => {
+    render(<SetupScreen initial={null} onStart={vi.fn()} />);
+    expect(screen.getByLabelText("Spielmodus")).toHaveValue("stars");
+    for (const option of screen.getAllByRole("option")) expect(option).toBeEnabled();
+  });
+  it("sperrt Start, wenn alle Töpfe leer sind", async () => {
+    const onStart = vi.fn();
+    render(<SetupScreen initial={settings} poolSizes={{ stars: 0, legenden: 0, teams: 0 }} onStart={onStart} />);
+    expect(screen.getByText("In diesem Modus gibt es noch keine Begriffe")).toBeInTheDocument();
+    await userEvent.setup().click(screen.getByRole("button", { name: "Start" }));
+    expect(onStart).not.toHaveBeenCalled();
   });
 });

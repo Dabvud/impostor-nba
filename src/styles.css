@@ -1,10 +1,17 @@
 :root {
-  --bg: #0f1a14;
-  --surface: #1a2b21;
-  --text: #f2f5f0;
-  --muted: #9fb3a6;
-  --accent: #3ddc84;
-  --danger: #ff5c5c;
+  /* NBA-Farben: Marineblau als Grund, Rot für die Hauptaktion, Blau für Auswahl, Weiß für Text */
+  --bg: #0a1530;
+  --surface: #15264f;
+  --card: #0e1c40;
+  --line: #2b4075;
+  --line-soft: #1f315e;
+  --text: #f5f7fc;
+  --muted: #a3b1d1;
+  --accent: #d9213a;
+  --on-accent: #ffffff;
+  --select: #2e66e6;
+  --on-select: #ffffff;
+  --danger: #ff4f63;
   color-scheme: dark;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
@@ -67,7 +74,7 @@ button.primary {
   max-width: 420px;
   padding: 18px;
   background: var(--accent);
-  color: #062312;
+  color: var(--on-accent);
   font-weight: 700;
   font-size: 20px;
 }
@@ -137,7 +144,7 @@ button.primary {
   flex: 1;
   min-width: 0;
   padding: 12px;
-  border: 1px solid #2c4636;
+  border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--bg);
   user-select: text;
@@ -176,8 +183,8 @@ button.primary {
 }
 
 .segmented button[aria-pressed="true"] {
-  background: var(--accent);
-  color: #062312;
+  background: var(--select);
+  color: var(--on-select);
   font-weight: 700;
 }
 
@@ -203,9 +210,9 @@ button.primary {
   word-break: break-word;
 }
 
-/* Countdown im Anstoßkreis */
+/* Countdown im Mittelkreis */
 .match-clock {
-  --clock: var(--accent);
+  --clock: var(--text);
   position: relative;
   width: min(68vw, 260px);
   aspect-ratio: 1;
@@ -228,7 +235,7 @@ button.primary {
 
 .match-clock-track {
   fill: none;
-  stroke: #24392c;
+  stroke: var(--line-soft);
   stroke-width: 6;
 }
 
@@ -284,14 +291,14 @@ button.primary {
   padding: 8px 12px;
   border-radius: 999px;
   background: transparent;
-  border: 1px solid #2c4636;
+  border: 1px solid var(--line);
   color: var(--muted);
   font-size: 14px;
 }
 
 .end-round:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--text);
   outline-offset: 2px;
 }
 
@@ -320,8 +327,8 @@ button:focus-visible {
   max-height: 60dvh;
   border-radius: 24px;
   overflow: hidden;
-  background: #0b2416;
-  border: 2px solid #2c4636;
+  background: var(--card);
+  border: 2px solid var(--line);
   touch-action: none;
 }
 
@@ -356,7 +363,7 @@ button:focus-visible {
   justify-content: center;
   gap: 12px;
   border-radius: 22px;
-  background: repeating-linear-gradient(135deg, #1f3a2a 0 22px, #1a3224 22px 44px);
+  background: repeating-linear-gradient(135deg, #1b2f5e 0 22px, #162852 22px 44px);
   color: var(--muted);
   font-weight: 600;
   cursor: grab;
@@ -385,7 +392,7 @@ button:focus-visible {
 .hold-fill {
   position: absolute;
   inset: 0;
-  background: rgba(6, 35, 18, 0.35);
+  background: rgba(10, 21, 48, 0.35);
   transform: scaleX(0);
   transform-origin: left;
 }
@@ -449,7 +456,7 @@ button:focus-visible {
   margin: 0;
   border-radius: 999px;
   background: var(--bg);
-  border: 1px solid #2c4636;
+  border: 1px solid var(--line);
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -467,12 +474,13 @@ button:focus-visible {
 }
 
 .switch-row input:checked {
-  background: var(--accent);
+  background: var(--select);
+  border-color: var(--select);
 }
 
 .switch-row input:checked::after {
   transform: translateX(22px);
-  background: #062312;
+  background: var(--on-select);
 }
 
 .signature {
@@ -525,14 +533,14 @@ button:focus-visible {
   padding: 8px 14px;
   border-radius: 999px;
   background: var(--bg);
-  border: 1px solid #2c4636;
+  border: 1px solid var(--line);
   font-size: 15px;
 }
 
 .group-bar button[aria-pressed="true"] {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #062312;
+  background: var(--select);
+  border-color: var(--select);
+  color: var(--on-select);
   font-weight: 700;
 }
 
@@ -558,13 +566,13 @@ button:focus-visible {
   border-radius: 999px;
   background: var(--bg);
   color: var(--muted);
-  border: 1px solid #2c4636;
+  border: 1px solid var(--line);
 }
 
-/* Ausgewählt = auf dem Platz: Name hell, Sitzplatz als Rückennummer */
+/* Ausgewählt = auf dem Court: Name hell, Sitzplatz als Rückennummer */
 .roster button[aria-pressed="true"] {
   color: var(--text);
-  border-color: var(--accent);
+  border-color: var(--select);
 }
 
 .seat {
@@ -573,8 +581,8 @@ button:focus-visible {
   min-width: 22px;
   height: 22px;
   border-radius: 6px;
-  background: var(--accent);
-  color: #062312;
+  background: var(--select);
+  color: var(--on-select);
   font-size: 13px;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
@@ -608,7 +616,7 @@ button:focus-visible {
 .text-input {
   width: 100%;
   padding: 12px;
-  border: 1px solid #2c4636;
+  border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--bg);
   user-select: text;
@@ -673,13 +681,13 @@ button:focus-visible {
 }
 
 .winner-crew {
-  background: var(--accent);
-  color: #062312;
+  background: var(--select);
+  color: var(--on-select);
 }
 
 .winner-impostor {
-  background: var(--danger);
-  color: #2a0606;
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
 /* Statistik, Regeln, Teilen */
@@ -695,8 +703,8 @@ button:focus-visible {
 }
 
 .scope button[aria-pressed="true"] {
-  background: var(--accent);
-  color: #062312;
+  background: var(--select);
+  color: var(--on-select);
   font-weight: 700;
 }
 
@@ -713,7 +721,7 @@ button:focus-visible {
   gap: 1px;
   border-radius: 16px;
   overflow: hidden;
-  background: #2c4636;
+  background: var(--line);
 }
 
 .awards div {
@@ -752,7 +760,7 @@ button:focus-visible {
 
 .stats-table td {
   padding: 8px 4px;
-  border-top: 1px solid #24392c;
+  border-top: 1px solid var(--line-soft);
   text-align: right;
 }
 
@@ -766,7 +774,7 @@ button:focus-visible {
   aspect-ratio: 1;
   padding: 12px;
   border-radius: 20px;
-  background: #f2f5f0;
+  background: #ffffff;
 }
 
 .qr svg {

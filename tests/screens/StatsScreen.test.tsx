@@ -22,7 +22,7 @@ const rec = (evening: number, impostor: string, winner: "crew" | "impostor"): Ro
   roundId: `${evening}${impostor}${winner}`,
   evening,
   at: "2026-10-26T20:00:00.000Z",
-  mode: "alle",
+  mode: "stars",
   players: ["a", "b", "c"],
   impostors: [impostor],
   starter: "c",

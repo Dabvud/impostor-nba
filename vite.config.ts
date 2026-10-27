@@ -32,14 +32,14 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        name: "Impostor",
-        short_name: "Impostor",
-        description: "Fußball-Impostor für eure Runde – ein Handy, alle Spieler.",
+        name: "Impostor NBA",
+        short_name: "Impostor NBA",
+        description: "NBA-Impostor für eure Runde – ein Handy, alle Spieler.",
         lang: "de",
         display: "standalone",
         orientation: "portrait",
-        theme_color: "#0f1a14",
-        background_color: "#0f1a14",
+        theme_color: "#0a1530",
+        background_color: "#0a1530",
         icons: [
           { src: "pwa-64x64.png", sizes: "64x64", type: "image/png" },
           { src: "pwa-192x192.png", sizes: "192x192", type: "image/png" },

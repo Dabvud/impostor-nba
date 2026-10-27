@@ -23,12 +23,12 @@ describe("GroupScreen", () => {
     const onSave = vi.fn();
     render(<GroupScreen group={null} onSave={onSave} onDelete={vi.fn()} onBack={vi.fn()} />);
     expect(screen.getByRole("button", { name: "Speichern" })).toBeDisabled();
-    await user.type(screen.getByLabelText("Gruppenname"), "Verein");
+    await user.type(screen.getByLabelText("Gruppenname"), "Gruppe");
     await user.type(screen.getByLabelText("Neues Mitglied"), "Luca{Enter}");
     await user.type(screen.getByLabelText("Neues Mitglied"), "Fabi{Enter}");
     await user.click(screen.getByRole("button", { name: "Speichern" }));
     const saved: Group = onSave.mock.calls[0][0];
-    expect(saved.name).toBe("Verein");
+    expect(saved.name).toBe("Gruppe");
     expect(saved.members.map((m) => m.name)).toEqual(["Luca", "Fabi"]);
     expect(saved.evening).toBe(1);
   });

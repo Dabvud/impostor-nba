@@ -1,56 +1,50 @@
-import type { Club, ClubExtras, ClubHints, Entry, Footballer, ModeId, PlayerExtras, Tag, Team, Tier, Tip } from "./types";
+import type { Entry, ModeId, NbaPlayer, NbaTeam, PlayerExtras, PositionGroup, Tag, TeamExtras, TeamHints, Tip } from "./types";
 
-export const MODES: { id: ModeId; label: string; hasDifficulty: boolean }[] = [
-  { id: "alle", label: "⚽ Alle Fußballer", hasDifficulty: true },
-  { id: "bundesliga", label: "🇩🇪 Bundesliga", hasDifficulty: false },
-  { id: "bvb", label: "🟡 BVB", hasDifficulty: false },
-  { id: "cl-legenden", label: "🏆 CL-Legenden", hasDifficulty: false },
-  { id: "wm-legenden", label: "🌍 WM-Legenden", hasDifficulty: false },
-  { id: "fifa-icons", label: "🎮 FIFA Icons", hasDifficulty: false },
-  { id: "vereine-de", label: "🏟️ Vereine Bundesliga", hasDifficulty: false },
-  { id: "vereine-int", label: "🌐 Alle Vereine", hasDifficulty: false },
+export const MODES: { id: ModeId; label: string }[] = [
+  { id: "stars", label: "⭐ Aktuelle Stars" },
+  { id: "legenden", label: "👑 Legenden" },
+  { id: "teams", label: "🏟️ NBA-Teams" },
 ];
 
 /** Kommen weniger Spieler eines Landes im Topf vor, verrät die Nation als Tipp zu viel. */
 const MIN_SAME_NATION = 5;
-const CLUB_HINT_KEYS: (keyof ClubHints)[] = ["region", "color", "league", "character", "success", "crest"];
+const TEAM_HINT_KEYS: (keyof TeamHints)[] = ["conference", "division", "color", "region", "success", "logo"];
 /** Zusatz-Kategorien der Spieler und ihr Konflikt-Slot (siehe `Tip`). */
 const PLAYER_EXTRA_SLOTS: [keyof PlayerExtras, string][] = [
   ["continent", "herkunft"],
-  ["league", "liga"],
+  ["conference", "conference"],
+  ["team", "team"],
   ["playStyle", "spielart"],
   ["trait", "eigenschaft"],
   ["moment", "erfolg"],
-  ["competition", "erfolg"],
+  ["award", "erfolg"],
   ["title", "erfolg"],
   ["hair", "frisur"],
   ["look", "aussehen"],
   ["era", "zeit"],
   ["build", "koerperbau"],
-  ["foot", "fuss"],
+  ["hand", "hand"],
   ["careerType", "karriere"],
   ["shirtNumber", "nummer"],
   ["status", "zeit"],
   ["afterCareer", "zeit"],
-  ["bundesliga", "liga"],
+  ["draft", "draft"],
+  ["college", "college"],
   ["transfer", "transfer"],
 ];
 const PLAYER_SLOTS = ["herkunft", "position", ...PLAYER_EXTRA_SLOTS.map(([, slot]) => slot)];
-const CLUB_SLOTS = [
-  "ort", "farbe", "ort", "charakter", "erfolg", "wappen", // region, color, league, character, success, crest
-  "stadion", "gruendung", "ort", "derby", "sponsor", "maskottchen",
+const TEAM_SLOTS = [
+  "conference", "conference", "farbe", "ort", "erfolg", "logo",
+  "gruendung", "ort", "rivale", "maskottchen", "geschichte", "name",
 ];
-const CLUB_EXTRA_KEYS: (keyof ClubExtras)[] = ["stadium", "founded", "cityType", "derby", "sponsor", "mascot"];
+const TEAM_EXTRA_KEYS: (keyof TeamExtras)[] = ["founded", "cityType", "rival", "mascot", "relocated", "nameType"];
 
-const TEAMS: Record<string, Team> = {
-  Torwart: "Tor",
-  Innenverteidiger: "Abwehr",
-  Außenverteidiger: "Abwehr",
-  "Defensives Mittelfeld": "Mittelfeld",
-  "Zentrales Mittelfeld": "Mittelfeld",
-  "Offensives Mittelfeld": "Mittelfeld",
-  Flügelspieler: "Angriff",
-  Stürmer: "Angriff",
+const POSITION_GROUPS: Record<string, PositionGroup> = {
+  "Point Guard": "Guard",
+  "Shooting Guard": "Guard",
+  "Small Forward": "Forward",
+  "Power Forward": "Forward",
+  Center: "Center",
 };
 
 const toTips = (row: (string | null)[], slots: string[]): Tip[] =>
@@ -80,7 +74,7 @@ function sharedOnly(rows: (string | null | undefined)[][], min: (column: number)
   );
 }
 
-function playerEntries(players: Footballer[]): Entry[] {
+export function playerEntries(players: NbaPlayer[]): Entry[] {
   const nations = countBy(players, (p) => p.hints.nation);
   // Spalte 0 = Nation (strengere Grenze), danach Position und die Zusatz-Kategorien
   const all = sharedOnly(
@@ -93,52 +87,49 @@ function playerEntries(players: Footballer[]): Entry[] {
       name,
       hints: [nation, hints.position, hints.special].filter(isText),
       allHints: toTips(all[i], PLAYER_SLOTS),
-      team: TEAMS[hints.position],
+      positionGroup: POSITION_GROUPS[hints.position],
     };
   });
 }
 
-/**
- * Vereins-Tipps nur, wenn mindestens zwei Vereine im Topf sie teilen (sonst verraten sie den
- * Verein) und nicht alle (sonst sagen sie nichts, z. B. „Bundesliga“ im Bundesliga-Modus).
- */
-function clubEntries(clubs: Club[]): Entry[] {
+/** Team-Tipps nur, wenn mindestens zwei Teams im Topf sie teilen und nicht alle. */
+export function teamEntries(teams: NbaTeam[]): Entry[] {
   const all = sharedOnly(
-    clubs.map((c) => [...CLUB_HINT_KEYS.map((k) => c.hints[k]), ...CLUB_EXTRA_KEYS.map((k) => c.extras?.[k])]),
+    teams.map((t) => [...TEAM_HINT_KEYS.map((k) => t.hints[k]), ...TEAM_EXTRA_KEYS.map((k) => t.extras?.[k])]),
     () => 2,
   );
-  return clubs.map(({ name }, i) => ({
+  return teams.map(({ name }, i) => ({
     name,
-    hints: all[i].slice(0, CLUB_HINT_KEYS.length).filter(isText),
-    allHints: toTips(all[i], CLUB_SLOTS),
+    hints: all[i].slice(0, TEAM_HINT_KEYS.length).filter(isText),
+    allHints: toTips(all[i], TEAM_SLOTS),
   }));
 }
 
-const withTag = (players: Footballer[], tag: Tag) => players.filter((p) => p.tags.includes(tag));
+const withTag = (players: NbaPlayer[], tag: Tag) => players.filter((p) => p.tags.includes(tag));
 
-/** Liefert den Topf an Begriffen für einen Modus. Die Schwierigkeit wirkt nur bei "alle". */
-export function poolFor(mode: ModeId, difficulty: Tier, players: Footballer[], clubs: Club[]): Entry[] {
+/** Liefert den Topf an Begriffen für einen Modus. */
+export function poolFor(mode: ModeId, players: NbaPlayer[], teams: NbaTeam[]): Entry[] {
   switch (mode) {
-    case "alle":
-      return playerEntries(players.filter((p) => p.tier <= difficulty));
-    case "bundesliga":
-      return playerEntries(withTag(players, "bundesliga"));
-    case "bvb":
-      return playerEntries(withTag(players, "bvb"));
-    case "cl-legenden":
-      return playerEntries(withTag(players, "cl-legende"));
-    case "wm-legenden":
-      return playerEntries(withTag(players, "wm-legende"));
-    case "fifa-icons":
-      return playerEntries(withTag(players, "fifa-icon"));
-    case "vereine-de":
-      return clubEntries(clubs.filter((c) => c.region === "de"));
-    case "vereine-int":
-      return clubEntries(clubs.filter((c) => c.inAllClubs));
+    case "stars":
+      return playerEntries(withTag(players, "star"));
+    case "legenden":
+      return playerEntries(withTag(players, "legende"));
+    case "teams":
+      return teamEntries(teams);
   }
 }
 
 /** Schlüssel, unter dem die schon gespielten Begriffe eines Topfs gespeichert werden. */
-export function poolKey(mode: ModeId, difficulty: Tier): string {
-  return mode === "alle" ? `alle-${difficulty}` : mode;
+export function poolKey(mode: ModeId): string {
+  return mode;
+}
+
+/** Größe jedes Topfs – leere Modi (noch keine Spieler eingetragen) sind nicht wählbar. */
+export function poolSizes(players: NbaPlayer[], teams: NbaTeam[]): Record<ModeId, number> {
+  return { stars: withTag(players, "star").length, legenden: withTag(players, "legende").length, teams: teams.length };
+}
+
+/** Erster Modus in MODES-Reihenfolge mit Begriffen; NBA-Teams sind immer gefüllt. */
+export function firstPlayableMode(sizes: Record<ModeId, number>): ModeId {
+  return MODES.find((m) => sizes[m.id] > 0)?.id ?? "teams";
 }

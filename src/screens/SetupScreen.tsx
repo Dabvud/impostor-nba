@@ -2,15 +2,9 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { formatTime } from "../components/useCountdown";
 import { displayName } from "../displayName";
 import { addMember, newId, selectedNames, toggleSelected, type Group } from "../game/groups";
-import { MODES } from "../game/modes";
+import { firstPlayableMode, MODES } from "../game/modes";
 import { maxImpostors, normalizeNames, validateSettings } from "../game/settings";
-import type { ModeId, Settings, Tier } from "../game/types";
-
-const DIFFICULTIES: { tier: Tier; label: string }[] = [
-  { tier: 1, label: "Leicht" },
-  { tier: 2, label: "Mittel" },
-  { tier: 3, label: "Schwer" },
-];
+import type { ModeId, Settings } from "../game/types";
 
 const THINK_TIMES = [
   { seconds: 15, label: "15 Sek." },
@@ -33,6 +27,7 @@ export type SetupView = "rules" | "stats" | "share";
 
 type Props = {
   initial: Settings | null;
+  poolSizes?: Partial<Record<ModeId, number>>;
   onStart: (s: Settings) => void;
   groups?: Group[];
   onGroupsChange?: (groups: Group[]) => void;
@@ -48,6 +43,7 @@ const noop = () => {};
 
 export default function SetupScreen({
   initial,
+  poolSizes,
   onStart,
   groups = [],
   onGroupsChange = noop,
@@ -72,8 +68,10 @@ export default function SetupScreen({
   const [duplicateHint, setDuplicateHint] = useState<string | null>(null);
   const nameInput = useRef<HTMLInputElement>(null);
   const [impostorCount, setImpostorCount] = useState(initial?.impostorCount ?? 1);
-  const [mode, setMode] = useState<ModeId>(initial?.mode ?? "alle");
-  const [difficulty, setDifficulty] = useState<Tier>(initial?.difficulty ?? 1);
+  const sizes = Object.fromEntries(MODES.map((m) => [m.id, poolSizes?.[m.id] ?? 1])) as Record<ModeId, number>;
+  const [mode, setMode] = useState<ModeId>(() =>
+    initial?.mode && sizes[initial.mode] > 0 ? initial.mode : firstPlayableMode(sizes),
+  );
   const [hintsEnabled, setHintsEnabled] = useState(initial?.hintsEnabled ?? true);
 
   const [secretImpostors, setSecretImpostors] = useState(initial?.secretImpostors ?? false);
@@ -88,7 +86,6 @@ export default function SetupScreen({
     names,
     impostorCount: effectiveImpostors,
     mode,
-    difficulty,
     hintsEnabled,
     secretImpostors,
     thinkSeconds,
@@ -96,12 +93,11 @@ export default function SetupScreen({
     groupId,
     guessEnabled,
   };
-  const errors = validateSettings(settings);
+  const errors = validateSettings(settings, poolSizes?.[mode]);
 
   const draftKey = JSON.stringify([settings, freeNames]);
   // nur bei echten Änderungen melden (Objekte entstehen bei jedem Rendern neu)
   useEffect(() => onDraftChange(settings, freeNames), [draftKey]);
-  const hasDifficulty = MODES.find((m) => m.id === mode)?.hasDifficulty ?? false;
 
   function addName(e: FormEvent) {
     e.preventDefault();
@@ -142,7 +138,7 @@ export default function SetupScreen({
 
   return (
     <main className="screen setup">
-      <h1 className="title">Impostor</h1>
+      <h1 className="title">Impostor NBA</h1>
 
       <section className="panel">
         <h2>Spieler</h2>
@@ -343,25 +339,11 @@ export default function SetupScreen({
         <h2>Spielmodus</h2>
         <select aria-label="Spielmodus" value={mode} onChange={(e) => setMode(e.target.value as ModeId)}>
           {MODES.map((m) => (
-            <option key={m.id} value={m.id}>
-              {m.label}
+            <option key={m.id} value={m.id} disabled={sizes[m.id] === 0}>
+              {m.label}{sizes[m.id] === 0 ? " (bald)" : ""}
             </option>
           ))}
         </select>
-        {hasDifficulty && (
-          <div className="segmented">
-            {DIFFICULTIES.map((d) => (
-              <button
-                key={d.tier}
-                type="button"
-                aria-pressed={difficulty === d.tier}
-                onClick={() => setDifficulty(d.tier)}
-              >
-                {d.label}
-              </button>
-            ))}
-          </div>
-        )}
       </section>
 
       {errors.length > 0 && (

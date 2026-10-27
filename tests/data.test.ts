@@ -1,255 +1,115 @@
 import { describe, expect, it } from "vitest";
-import clubsJson from "../src/data/clubs.json";
 import playersJson from "../src/data/players.json";
-import { MODES, poolFor } from "../src/game/modes";
-import type { Club, Footballer, Tier } from "../src/game/types";
+import teamsJson from "../src/data/teams.json";
+import type { NbaPlayer, NbaTeam, PlayerExtras } from "../src/game/types";
 
-const players = playersJson as Footballer[];
-const clubs = clubsJson as Club[];
-const TAGS = ["bundesliga", "cl-legende", "wm-legende", "fifa-icon", "bvb"];
-const POSITIONS = [
-  "Torwart",
-  "Innenverteidiger",
-  "Außenverteidiger",
-  "Defensives Mittelfeld",
-  "Zentrales Mittelfeld",
-  "Offensives Mittelfeld",
-  "Flügelspieler",
-  "Stürmer",
+const players = playersJson as NbaPlayer[];
+const teams = teamsJson as NbaTeam[];
+const text = (value: unknown) => typeof value === "string" && value.trim().length > 0;
+const PLAYER_VALUES: Partial<Record<keyof PlayerExtras, string[]>> = {
+  continent: ["Europa", "Nordamerika", "Südamerika", "Afrika", "Asien", "Ozeanien"],
+  conference: ["meist im Westen", "meist im Osten"],
+  hand: ["Linkshänder", "Rechtshänder"], status: ["aktiv", "Karriere beendet"],
+  draft: ["Nummer-1-Pick", "Top-3-Pick", "Top-10-Pick", "Erstrunden-Pick", "Zweitrunden-Pick", "undrafted"],
+};
+const PLAYER_EXTRA_KEYS: (keyof PlayerExtras)[] = [
+  "continent", "conference", "team", "playStyle", "trait", "moment", "award", "title", "hair", "look",
+  "era", "build", "hand", "careerType", "shirtNumber", "status", "afterCareer", "draft", "college", "transfer",
 ];
-
-const CLUB_VALUES = {
-  color: ["Rot", "Blau", "Weiß", "Schwarz", "Gelb", "Grün", "Orange", "Lila"],
-  league: [
-    "Bundesliga",
-    "Premier League",
-    "LaLiga",
-    "Serie A",
-    "Ligue 1",
-    "Eredivisie",
-    "Liga Portugal",
-    "Süper Lig",
-    "Scottish Premiership",
-    "Österreichische Bundesliga",
-  ],
-  character: [
-    "Traditionsverein",
-    "Werksklub",
-    "Großklub",
-    "Kultklub",
-    "Investorenklub",
-    "Ausbildungsverein",
-    "Arbeiterklub",
-    "Stimmungshochburg",
-  ],
-  success: ["Champions-League-Sieger", "Europapokalsieger", "Meister", "Pokalsieger", "noch nie Meister"],
-  crest: [
-    "Tier im Wappen",
-    "Stern im Wappen",
-    "Buchstaben im Wappen",
-    "Krone im Wappen",
-    "Kreuz im Wappen",
-    "Kreis-Wappen",
-  ],
+const DIVISIONS: Record<string, string> = {
+  "Atlantic Division": "Eastern Conference", "Central Division": "Eastern Conference", "Southeast Division": "Eastern Conference",
+  "Northwest Division": "Western Conference", "Pacific Division": "Western Conference", "Southwest Division": "Western Conference",
 };
-
-const PLAYER_EXTRA_VALUES: Record<string, string[] | RegExp | "frei"> = {
-  continent: ["Europa", "Südamerika", "Nordamerika", "Afrika", "Asien", "Ozeanien"],
-  league: [
-    "Bundesliga", "Premier League", "LaLiga", "Serie A", "Ligue 1", "Eredivisie", "Liga Portugal", "Süper Lig",
-    "Scottish Premiership", "MLS", "Saudi Pro League", "Brasilianische Liga", "Argentinische Liga", "andere Liga",
-  ],
-  playStyle: "frei",
-  trait: "frei",
-  moment: [
-    "wichtiges WM-Tor", "wichtiges EM-Tor", "Finaltor", "Last-Minute-Tor", "Elfmeter-Held",
-    "Hattrick in großem Spiel", "Traumtor", "Platzverweis in großem Spiel",
-  ],
-  competition: [
-    "WM", "EM", "Champions League", "Europa League", "Copa América", "Afrika-Cup", "Asienmeisterschaft",
-    "Gold Cup", "Olympia", "nationale Meisterschaft", "nationaler Pokal",
-  ],
-  title: [
-    "Weltmeister", "Europameister", "Champions-League-Sieger", "Copa-América-Sieger", "Afrika-Cup-Sieger",
-    "Ballon d'Or", "Meister", "Pokalsieger", "keine großen Titel",
-  ],
-  hair: [
-    "blond", "dunkle Haare", "rote Haare", "graue Haare", "Glatze", "Locken", "lange Haare", "Kurzhaarschnitt",
-    "Irokese", "gefärbte Haare",
-  ],
-  look: ["Bart", "Tattoos", "Stirnband", "Brille"],
-  era: ["1950er", "1960er", "1970er", "1980er", "1990er", "2000er", "2010er", "2020er"],
-  build: ["klein und wendig", "groß gewachsen", "kräftig", "schlank", "durchschnittlich"],
-  foot: ["Linksfuß", "Rechtsfuß", "beidfüßig"],
-  careerType: ["Vereinstreue", "Wandervogel", "Spätstarter", "Wunderkind", "Karriere im Ausland"],
-  shirtNumber: /^trug die \d{1,2}$/,
-  status: ["aktiv", "Karriere beendet"],
-  afterCareer: ["Trainer", "TV-Experte", "Funktionär", "Unternehmer"],
-  bundesliga: ["spielte in der Bundesliga", "nie in der Bundesliga"],
-  transfer: ["Rekordtransfer", "teurer Transfer", "ablösefrei gewechselt", "Eigengewächs", "Schnäppchen"],
+const TEAM_VALUES = {
+  conference: ["Western Conference", "Eastern Conference"], division: Object.keys(DIVISIONS),
+  color: ["Rot", "Blau", "Grün", "Lila", "Gelb", "Orange", "Schwarz", "Weinrot", "Türkis"],
+  region: ["Westküste", "Ostküste", "Süden", "Mittlerer Westen", "Texas", "Südwesten & Rockies", "Kanada"],
+  success: ["mehrfacher NBA-Champion", "einmal NBA-Champion", "noch nie NBA-Champion"],
+  logo: ["Tier im Logo", "Basketball im Logo", "Figur im Logo", "Schriftzug-Logo", "Symbol im Logo"],
 };
-
-const CLUB_EXTRA_VALUES: Record<string, string[] | RegExp> = {
-  stadium: ["großes Stadion", "mittelgroßes Stadion", "kleines Stadion"],
-  founded: /^(18|19|20)\d0er$/,
-  cityType: ["Großstadt", "Kleinstadt", "Hauptstadt", "Industriestadt"],
-  derby: ["hat ein großes Derby", "kein großes Derby"],
-  sponsor: [
-    "Auto", "Getränke", "Airline", "Versicherung", "Telekommunikation", "Bank", "Energie", "Wettanbieter",
-    "Technik", "Online-Handel", "Reisen", "Andere",
-  ],
-  mascot: ["Tier-Maskottchen", "Figur-Maskottchen", "kein bekanntes Maskottchen"],
+const TEAM_EXTRA_VALUES = {
+  cityType: ["Millionenstadt", "Großstadt", "kleinerer Markt"], rival: ["hat eine berühmte Rivalität"],
+  mascot: ["Tier-Maskottchen", "Fantasiefigur als Maskottchen", "kein Maskottchen"],
+  relocated: ["ist schon einmal umgezogen"],
+  nameType: ["Tiername", "Name aus der Stadtgeschichte", "Name nach Natur oder Wetter", "Name nach Musik oder Kultur", "Name nach Beruf oder Leuten"],
 };
-
-function allowed(rule: string[] | RegExp | "frei", value: string): boolean {
-  if (rule === "frei") return value.trim().length > 0 && !/\d/.test(value);
-  return Array.isArray(rule) ? rule.includes(value) : rule.test(value);
-}
-
-const words = (s: string) =>
-  s
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .split(/[^a-z0-9]+/)
-    .filter((w) => w.length >= 4);
-
-/** Ein Tipp verrät den Namen, wenn ein Wort im anderen steckt (z. B. „Hamburg“ in „Hamburger SV“). */
-function leaks(name: string, hint: string): boolean {
-  const nameWords = words(name);
-  return words(hint).some((h) => nameWords.some((n) => n.includes(h) || h.includes(n)));
-}
-
-function duplicates(names: string[]): string[] {
-  const seen = new Set<string>();
-  return names.filter((n) => {
-    const key = n.trim().toLowerCase();
-    if (seen.has(key)) return true;
-    seen.add(key);
-    return false;
-  });
-}
 
 describe("players.json", () => {
-  it("hat keine doppelten oder leeren Namen", () => {
-    expect(duplicates(players.map((p) => p.name))).toEqual([]);
-    expect(players.filter((p) => p.name.trim() === "")).toEqual([]);
+  it("ist eine Liste und darf vorerst leer sein", () => {
+    expect(Array.isArray(playersJson)).toBe(true);
   });
-
-  it("hat nur gültige Stufen und Tags", () => {
-    const invalid = players.filter((p) => ![1, 2, 3].includes(p.tier) || !p.tags.every((t) => TAGS.includes(t)));
-    expect(invalid).toEqual([]);
+  it("hat eindeutige, nicht leere Namen und gültige Tags", () => {
+    expect(new Set(players.map((p) => p.name.trim().toLowerCase())).size).toBe(players.length);
+    for (const p of players) {
+      expect(text(p.name)).toBe(true);
+      expect(Array.isArray(p.tags)).toBe(true);
+      expect(p.tags.length).toBeGreaterThan(0);
+      expect(new Set(p.tags).size).toBe(p.tags.length);
+      for (const tag of p.tags) expect(["star", "legende"]).toContain(tag);
+    }
   });
-
-  it("hat für jeden Spieler Nation und gültige Position", () => {
-    const invalid = players.filter(
-      (p) =>
-        !p.hints?.nation?.trim() ||
-        !POSITIONS.includes(p.hints.position) ||
-        (p.hints.special !== null && !p.hints.special.trim()),
-    );
-    expect(invalid.map((p) => p.name)).toEqual([]);
+  it("hat Nation, eine der fünf Positionen und einen optionalen Spezialtipp", () => {
+    for (const p of players) {
+      expect(Object.keys(p.hints).sort()).toEqual(["nation", "position", "special"]);
+      expect(text(p.hints.nation)).toBe(true);
+      expect(["Point Guard", "Shooting Guard", "Small Forward", "Power Forward", "Center"]).toContain(p.hints.position);
+      expect(p.hints.special === null || text(p.hints.special)).toBe(true);
+    }
   });
-
-  it("hat für jeden Spieler eine Besonderheit ohne Jahreszahlen oder Daten", () => {
-    expect(players.filter((p) => !p.hints.special || /\d/.test(p.hints.special)).map((p) => p.name)).toEqual([]);
-  });
-
-  it("verrät in keinem Tipp den Spielernamen", () => {
-    const leaking = players.flatMap((p) =>
-      [p.hints.nation, p.hints.special ?? ""].filter((h) => leaks(p.name, h)).map((h) => `${p.name}: ${h}`),
-    );
-    expect(leaking).toEqual([]);
-  });
-
-  it("erreicht die Mindestgrößen", () => {
-    expect(players.filter((p) => p.tier === 1).length).toBeGreaterThanOrEqual(60);
-    expect(players.filter((p) => p.tags.includes("bundesliga")).length).toBeGreaterThanOrEqual(150);
-    expect(players.filter((p) => p.tags.includes("cl-legende")).length).toBeGreaterThanOrEqual(50);
-    expect(players.filter((p) => p.tags.includes("wm-legende")).length).toBeGreaterThanOrEqual(50);
-    expect(players.filter((p) => p.tags.includes("fifa-icon")).length).toBeGreaterThanOrEqual(120);
-    expect(players.filter((p) => p.tags.includes("bvb")).length).toBeGreaterThanOrEqual(40);
+  it("prüft alle Zusatzkategorien und ihre erlaubten Werte", () => {
+    for (const p of players) {
+      if (p.extras === undefined) continue;
+      expect(Object.keys(p.extras).sort()).toEqual([...PLAYER_EXTRA_KEYS].sort());
+      for (const key of PLAYER_EXTRA_KEYS) {
+        const value = p.extras[key];
+        if (value === null) continue;
+        expect(text(value), p.name + ": " + key).toBe(true);
+        if (PLAYER_VALUES[key]) expect(PLAYER_VALUES[key]).toContain(value);
+      }
+    }
   });
 });
 
-describe("Tipps für die Runde, in der alle Impostor sind", () => {
-  it("hat für jeden Spieler alle 18 Zusatzfelder mit erlaubten Werten", () => {
-    const invalid = players.flatMap((p) =>
-      Object.entries(PLAYER_EXTRA_VALUES)
-        .filter(([key, rule]) => {
-          const value = (p.extras as Record<string, string | null> | undefined)?.[key];
-          return value === undefined || (value !== null && !allowed(rule, value));
-        })
-        .map(([key]) => `${p.name}.${key}: ${(p.extras as Record<string, unknown> | undefined)?.[key]}`),
-    );
-    expect(invalid).toEqual([]);
+describe("teams.json", () => {
+  it("hat genau 30 Teams mit eindeutigen, nicht leeren Namen", () => {
+    expect(teams).toHaveLength(30);
+    expect(new Set(teams.map((t) => t.name.trim().toLowerCase())).size).toBe(30);
+    for (const t of teams) expect(text(t.name)).toBe(true);
   });
-
-  it("hat für jeden Spieler mindestens 14 von 20 Kategorien", () => {
-    const thin = players.filter((p) => 2 + Object.values(p.extras ?? {}).filter(Boolean).length < 14);
-    expect(thin.map((p) => p.name)).toEqual([]);
+  it("verwendet für alle sechs Tipps nur erlaubte Werte", () => {
+    for (const t of teams) {
+      expect(Object.keys(t.hints).sort()).toEqual(Object.keys(TEAM_VALUES).sort());
+      for (const key of Object.keys(TEAM_VALUES) as (keyof typeof TEAM_VALUES)[]) {
+        expect(TEAM_VALUES[key], t.name + ": " + key).toContain(t.hints[key]);
+      }
+    }
   });
-
-  it("hat für jeden Verein mindestens 10 von 12 Kategorien mit erlaubten Werten", () => {
-    const invalid = clubs.flatMap((c) =>
-      Object.entries(CLUB_EXTRA_VALUES)
-        .filter(([key, rule]) => {
-          const value = (c.extras as Record<string, string | null> | undefined)?.[key];
-          return value === undefined || (value !== null && !allowed(rule, value));
-        })
-        .map(([key]) => `${c.name}.${key}`),
-    );
-    expect(invalid).toEqual([]);
-    expect(clubs.filter((c) => 6 + Object.values(c.extras ?? {}).filter(Boolean).length < 10).map((c) => c.name)).toEqual([]);
+  it("hat je 15 Teams pro Conference und je fünf pro passender Division", () => {
+    for (const conference of TEAM_VALUES.conference) expect(teams.filter((t) => t.hints.conference === conference)).toHaveLength(15);
+    for (const [division, conference] of Object.entries(DIVISIONS)) {
+      const members = teams.filter((t) => t.hints.division === division);
+      expect(members).toHaveLength(5);
+      expect(members.every((t) => t.hints.conference === conference)).toBe(true);
+    }
   });
-
-  it("verrät in keinem Zusatz-Tipp den Namen", () => {
-    const leaking = [...players, ...clubs].flatMap((e) =>
-      Object.values(e.extras ?? {})
-        .filter((v): v is string => typeof v === "string" && leaks(e.name, v))
-        .map((v) => `${e.name}: ${v}`),
-    );
-    expect(leaking).toEqual([]);
+  it("prüft Gründungsjahrzehnt und alle sechs Zusatzkategorien", () => {
+    for (const t of teams) {
+      expect(t.extras, t.name).toBeDefined();
+      expect(Object.keys(t.extras!).sort()).toEqual(["founded", ...Object.keys(TEAM_EXTRA_VALUES)].sort());
+      const founded = t.extras!.founded;
+      if (founded !== null) expect(founded).toMatch(/^(19|20)\d0er$/);
+      for (const key of Object.keys(TEAM_EXTRA_VALUES) as (keyof typeof TEAM_EXTRA_VALUES)[]) {
+        const value = t.extras![key];
+        if (value !== null) expect(TEAM_EXTRA_VALUES[key], t.name + ": " + key).toContain(value);
+      }
+    }
   });
-});
-
-describe("clubs.json", () => {
-  it("hat keine doppelten oder leeren Namen und gültige Regionen", () => {
-    expect(duplicates(clubs.map((c) => c.name))).toEqual([]);
-    expect(clubs.filter((c) => c.name.trim() === "" || !["de", "int"].includes(c.region))).toEqual([]);
-  });
-
-  it("hat für jeden Verein eine Region und nur Werte aus den festen Listen", () => {
-    const invalid = clubs.filter(
-      (c) =>
-        !c.hints?.region?.trim() ||
-        (Object.keys(CLUB_VALUES) as (keyof typeof CLUB_VALUES)[]).some((key) => !CLUB_VALUES[key].includes(c.hints[key])),
-    );
-    expect(invalid.map((c) => c.name)).toEqual([]);
-  });
-
-  it("verrät mit der Region nicht den Vereinsnamen", () => {
-    expect(clubs.filter((c) => leaks(c.name, c.hints.region)).map((c) => `${c.name}: ${c.hints.region}`)).toEqual([]);
-  });
-
-  it("hat 23 deutsche und 44 internationale Vereine", () => {
-    expect(clubs.filter((c) => c.region === "de")).toHaveLength(23);
-    expect(clubs.filter((c) => c.region === "int")).toHaveLength(44);
-  });
-
-  it("nimmt alle internationalen und 17 Bundesliga-Vereine in „Alle Vereine“ auf", () => {
-    expect(clubs.filter((c) => c.region === "int" && !c.inAllClubs)).toEqual([]);
-    expect(
-      clubs.filter((c) => c.region === "de" && !c.inAllClubs).map((c) => c.name).sort(),
-    ).toEqual(["1. FC Heidenheim", "1. FC Nürnberg", "FC Augsburg", "Fortuna Düsseldorf", "Hannover 96", "VfL Bochum"]);
-  });
-});
-
-describe("Spielmodi", () => {
-  const cases = MODES.flatMap((m) =>
-    m.hasDifficulty ? ([1, 2, 3] as Tier[]).map((d) => [m.id, d] as const) : [[m.id, 1 as Tier] as const],
-  );
-  it.each(cases)("%s (Stufe %i) hat mindestens 20 Einträge", (mode, difficulty) => {
-    expect(poolFor(mode, difficulty, players, clubs).length).toBeGreaterThanOrEqual(20);
+  it("zählt nur NBA-Titel, einschließlich der Thunder 2025 und früherer Standorte", () => {
+    const success = (name: string) => teams.find((t) => t.name === name)?.hints.success;
+    expect(success("Thunder")).toBe("mehrfacher NBA-Champion");
+    expect(success("Kings")).toBe("einmal NBA-Champion");
+    expect(success("Hawks")).toBe("einmal NBA-Champion");
+    expect(success("Nets")).toBe("noch nie NBA-Champion");
+    expect(success("Pacers")).toBe("noch nie NBA-Champion");
   });
 });

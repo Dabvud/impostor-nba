@@ -9,7 +9,7 @@ function setup(props: Partial<Parameters<typeof RevealScreen>[0]> = {}) {
     <RevealScreen
       name="Fabi"
       isImpostor={false}
-      word="Messi"
+      word="Nowitzki"
       hint={null}
       canPass={false}
       onSeen={onSeen}
@@ -28,12 +28,12 @@ function drag(card: HTMLElement, fromY: number, toY: number) {
 describe("RevealScreen", () => {
   it("zeigt das Wort nur, solange die Karte hochgezogen ist", () => {
     const { onSeen, card } = setup();
-    expect(screen.queryByText("Messi")).not.toBeInTheDocument();
+    expect(screen.queryByText("Nowitzki")).not.toBeInTheDocument();
     drag(card, 400, 300);
-    expect(screen.getByText("Messi")).toBeInTheDocument();
+    expect(screen.getByText("Nowitzki")).toBeInTheDocument();
     expect(onSeen).toHaveBeenCalled();
     fireEvent.pointerUp(card, { clientY: 300, pointerId: 1 });
-    expect(screen.queryByText("Messi")).not.toBeInTheDocument();
+    expect(screen.queryByText("Nowitzki")).not.toBeInTheDocument();
   });
 
   it("zeigt immer, wessen Karte es ist – auch nach dem Zurückschieben", () => {
@@ -54,7 +54,7 @@ describe("RevealScreen", () => {
   it("deckt bei zu kurzem Zug nicht auf", () => {
     const { onSeen, card } = setup();
     drag(card, 400, 360);
-    expect(screen.queryByText("Messi")).not.toBeInTheDocument();
+    expect(screen.queryByText("Nowitzki")).not.toBeInTheDocument();
     expect(onSeen).not.toHaveBeenCalled();
   });
 
@@ -62,17 +62,17 @@ describe("RevealScreen", () => {
     const { card } = setup({ isImpostor: true });
     drag(card, 400, 300);
     expect(screen.getByText("🕵️ Du bist der Impostor")).toBeInTheDocument();
-    expect(screen.queryByText("Messi")).not.toBeInTheDocument();
+    expect(screen.queryByText("Nowitzki")).not.toBeInTheDocument();
   });
 
   it("zeigt dem Impostor den Tipp", () => {
-    const { card } = setup({ isImpostor: true, hint: "Argentinien" });
+    const { card } = setup({ isImpostor: true, hint: "Deutschland" });
     drag(card, 400, 300);
-    expect(screen.getByText("Tipp: Argentinien")).toBeInTheDocument();
+    expect(screen.getByText("Tipp: Deutschland")).toBeInTheDocument();
   });
 
   it("zeigt der Crew keinen Tipp", () => {
-    const { card } = setup({ hint: "Argentinien" });
+    const { card } = setup({ hint: "Deutschland" });
     drag(card, 400, 300);
     expect(screen.queryByText(/Tipp/)).not.toBeInTheDocument();
   });

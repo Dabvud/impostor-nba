@@ -1,0 +1,572 @@
+[
+  {
+    "name": "Celtics",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Atlantic Division",
+      "color": "Grün",
+      "region": "Ostküste",
+      "success": "mehrfacher NBA-Champion",
+      "logo": "Figur im Logo"
+    },
+    "extras": {
+      "founded": "1940er",
+      "cityType": "Großstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Fantasiefigur als Maskottchen",
+      "relocated": null,
+      "nameType": "Name nach Beruf oder Leuten"
+    }
+  },
+  {
+    "name": "Nets",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Atlantic Division",
+      "color": "Schwarz",
+      "region": "Ostküste",
+      "success": "noch nie NBA-Champion",
+      "logo": "Basketball im Logo"
+    },
+    "extras": {
+      "founded": "1960er",
+      "cityType": "Millionenstadt",
+      "rival": null,
+      "mascot": "kein Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Name nach Musik oder Kultur"
+    }
+  },
+  {
+    "name": "Knicks",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Atlantic Division",
+      "color": "Blau",
+      "region": "Ostküste",
+      "success": "mehrfacher NBA-Champion",
+      "logo": "Basketball im Logo"
+    },
+    "extras": {
+      "founded": "1940er",
+      "cityType": "Millionenstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "kein Maskottchen",
+      "relocated": null,
+      "nameType": "Name aus der Stadtgeschichte"
+    }
+  },
+  {
+    "name": "76ers",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Atlantic Division",
+      "color": "Blau",
+      "region": "Ostküste",
+      "success": "mehrfacher NBA-Champion",
+      "logo": "Basketball im Logo"
+    },
+    "extras": {
+      "founded": "1940er",
+      "cityType": "Millionenstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Tier-Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Name aus der Stadtgeschichte"
+    }
+  },
+  {
+    "name": "Raptors",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Atlantic Division",
+      "color": "Rot",
+      "region": "Kanada",
+      "success": "einmal NBA-Champion",
+      "logo": "Basketball im Logo"
+    },
+    "extras": {
+      "founded": "1990er",
+      "cityType": "Millionenstadt",
+      "rival": null,
+      "mascot": "Tier-Maskottchen",
+      "relocated": null,
+      "nameType": "Tiername"
+    }
+  },
+  {
+    "name": "Bulls",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Central Division",
+      "color": "Rot",
+      "region": "Mittlerer Westen",
+      "success": "mehrfacher NBA-Champion",
+      "logo": "Tier im Logo"
+    },
+    "extras": {
+      "founded": "1960er",
+      "cityType": "Millionenstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Tier-Maskottchen",
+      "relocated": null,
+      "nameType": "Tiername"
+    }
+  },
+  {
+    "name": "Cavaliers",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Central Division",
+      "color": "Weinrot",
+      "region": "Mittlerer Westen",
+      "success": "einmal NBA-Champion",
+      "logo": "Schriftzug-Logo"
+    },
+    "extras": {
+      "founded": "1970er",
+      "cityType": "Großstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Tier-Maskottchen",
+      "relocated": null,
+      "nameType": "Name nach Beruf oder Leuten"
+    }
+  },
+  {
+    "name": "Pistons",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Central Division",
+      "color": "Blau",
+      "region": "Mittlerer Westen",
+      "success": "mehrfacher NBA-Champion",
+      "logo": "Basketball im Logo"
+    },
+    "extras": {
+      "founded": "1930er",
+      "cityType": "Großstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Tier-Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Name aus der Stadtgeschichte"
+    }
+  },
+  {
+    "name": "Pacers",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Central Division",
+      "color": "Gelb",
+      "region": "Mittlerer Westen",
+      "success": "noch nie NBA-Champion",
+      "logo": "Basketball im Logo"
+    },
+    "extras": {
+      "founded": "1960er",
+      "cityType": "Großstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Tier-Maskottchen",
+      "relocated": null,
+      "nameType": "Name aus der Stadtgeschichte"
+    }
+  },
+  {
+    "name": "Bucks",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Central Division",
+      "color": "Grün",
+      "region": "Mittlerer Westen",
+      "success": "mehrfacher NBA-Champion",
+      "logo": "Tier im Logo"
+    },
+    "extras": {
+      "founded": "1960er",
+      "cityType": "Großstadt",
+      "rival": null,
+      "mascot": "Tier-Maskottchen",
+      "relocated": null,
+      "nameType": "Tiername"
+    }
+  },
+  {
+    "name": "Hawks",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Southeast Division",
+      "color": "Rot",
+      "region": "Süden",
+      "success": "einmal NBA-Champion",
+      "logo": "Tier im Logo"
+    },
+    "extras": {
+      "founded": "1940er",
+      "cityType": "Großstadt",
+      "rival": null,
+      "mascot": "Tier-Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Tiername"
+    }
+  },
+  {
+    "name": "Hornets",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Southeast Division",
+      "color": "Türkis",
+      "region": "Süden",
+      "success": "noch nie NBA-Champion",
+      "logo": "Tier im Logo"
+    },
+    "extras": {
+      "founded": "1980er",
+      "cityType": "Großstadt",
+      "rival": null,
+      "mascot": "Tier-Maskottchen",
+      "relocated": null,
+      "nameType": "Tiername"
+    }
+  },
+  {
+    "name": "Heat",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Southeast Division",
+      "color": "Rot",
+      "region": "Süden",
+      "success": "mehrfacher NBA-Champion",
+      "logo": "Basketball im Logo"
+    },
+    "extras": {
+      "founded": "1980er",
+      "cityType": "Großstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Fantasiefigur als Maskottchen",
+      "relocated": null,
+      "nameType": "Name nach Natur oder Wetter"
+    }
+  },
+  {
+    "name": "Magic",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Southeast Division",
+      "color": "Blau",
+      "region": "Süden",
+      "success": "noch nie NBA-Champion",
+      "logo": "Basketball im Logo"
+    },
+    "extras": {
+      "founded": "1980er",
+      "cityType": "Großstadt",
+      "rival": null,
+      "mascot": "Fantasiefigur als Maskottchen",
+      "relocated": null,
+      "nameType": "Name nach Musik oder Kultur"
+    }
+  },
+  {
+    "name": "Wizards",
+    "hints": {
+      "conference": "Eastern Conference",
+      "division": "Southeast Division",
+      "color": "Blau",
+      "region": "Ostküste",
+      "success": "einmal NBA-Champion",
+      "logo": "Symbol im Logo"
+    },
+    "extras": {
+      "founded": "1960er",
+      "cityType": "Großstadt",
+      "rival": null,
+      "mascot": "Fantasiefigur als Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Name nach Musik oder Kultur"
+    }
+  },
+  {
+    "name": "Nuggets",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Northwest Division",
+      "color": "Blau",
+      "region": "Südwesten & Rockies",
+      "success": "einmal NBA-Champion",
+      "logo": "Symbol im Logo"
+    },
+    "extras": {
+      "founded": "1960er",
+      "cityType": "Großstadt",
+      "rival": null,
+      "mascot": "Tier-Maskottchen",
+      "relocated": null,
+      "nameType": "Name aus der Stadtgeschichte"
+    }
+  },
+  {
+    "name": "Timberwolves",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Northwest Division",
+      "color": "Blau",
+      "region": "Mittlerer Westen",
+      "success": "noch nie NBA-Champion",
+      "logo": "Tier im Logo"
+    },
+    "extras": {
+      "founded": "1980er",
+      "cityType": "Großstadt",
+      "rival": null,
+      "mascot": "Tier-Maskottchen",
+      "relocated": null,
+      "nameType": "Tiername"
+    }
+  },
+  {
+    "name": "Thunder",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Northwest Division",
+      "color": "Blau",
+      "region": "Süden",
+      "success": "mehrfacher NBA-Champion",
+      "logo": "Basketball im Logo"
+    },
+    "extras": {
+      "founded": "1960er",
+      "cityType": "kleinerer Markt",
+      "rival": null,
+      "mascot": "Tier-Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Name nach Natur oder Wetter"
+    }
+  },
+  {
+    "name": "Trail Blazers",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Northwest Division",
+      "color": "Rot",
+      "region": "Westküste",
+      "success": "einmal NBA-Champion",
+      "logo": "Symbol im Logo"
+    },
+    "extras": {
+      "founded": "1970er",
+      "cityType": "Großstadt",
+      "rival": null,
+      "mascot": "Tier-Maskottchen",
+      "relocated": null,
+      "nameType": "Name nach Beruf oder Leuten"
+    }
+  },
+  {
+    "name": "Jazz",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Northwest Division",
+      "color": "Lila",
+      "region": "Südwesten & Rockies",
+      "success": "noch nie NBA-Champion",
+      "logo": "Symbol im Logo"
+    },
+    "extras": {
+      "founded": "1970er",
+      "cityType": "kleinerer Markt",
+      "rival": null,
+      "mascot": "Tier-Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Name nach Musik oder Kultur"
+    }
+  },
+  {
+    "name": "Warriors",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Pacific Division",
+      "color": "Blau",
+      "region": "Westküste",
+      "success": "mehrfacher NBA-Champion",
+      "logo": "Symbol im Logo"
+    },
+    "extras": {
+      "founded": "1940er",
+      "cityType": "Großstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "kein Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Name nach Beruf oder Leuten"
+    }
+  },
+  {
+    "name": "Clippers",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Pacific Division",
+      "color": "Blau",
+      "region": "Westküste",
+      "success": "noch nie NBA-Champion",
+      "logo": "Symbol im Logo"
+    },
+    "extras": {
+      "founded": "1970er",
+      "cityType": "Millionenstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Tier-Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Name aus der Stadtgeschichte"
+    }
+  },
+  {
+    "name": "Lakers",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Pacific Division",
+      "color": "Gelb",
+      "region": "Westküste",
+      "success": "mehrfacher NBA-Champion",
+      "logo": "Schriftzug-Logo"
+    },
+    "extras": {
+      "founded": "1940er",
+      "cityType": "Millionenstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "kein Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Name nach Natur oder Wetter"
+    }
+  },
+  {
+    "name": "Suns",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Pacific Division",
+      "color": "Orange",
+      "region": "Südwesten & Rockies",
+      "success": "noch nie NBA-Champion",
+      "logo": "Basketball im Logo"
+    },
+    "extras": {
+      "founded": "1960er",
+      "cityType": "Millionenstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Tier-Maskottchen",
+      "relocated": null,
+      "nameType": "Name nach Natur oder Wetter"
+    }
+  },
+  {
+    "name": "Kings",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Pacific Division",
+      "color": "Lila",
+      "region": "Westküste",
+      "success": "einmal NBA-Champion",
+      "logo": "Symbol im Logo"
+    },
+    "extras": {
+      "founded": "1920er",
+      "cityType": "Großstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Tier-Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Name nach Beruf oder Leuten"
+    }
+  },
+  {
+    "name": "Mavericks",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Southwest Division",
+      "color": "Blau",
+      "region": "Texas",
+      "success": "einmal NBA-Champion",
+      "logo": "Tier im Logo"
+    },
+    "extras": {
+      "founded": "1980er",
+      "cityType": "Millionenstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Tier-Maskottchen",
+      "relocated": null,
+      "nameType": "Name nach Musik oder Kultur"
+    }
+  },
+  {
+    "name": "Rockets",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Southwest Division",
+      "color": "Rot",
+      "region": "Texas",
+      "success": "mehrfacher NBA-Champion",
+      "logo": "Symbol im Logo"
+    },
+    "extras": {
+      "founded": "1960er",
+      "cityType": "Millionenstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Tier-Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Name aus der Stadtgeschichte"
+    }
+  },
+  {
+    "name": "Grizzlies",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Southwest Division",
+      "color": "Blau",
+      "region": "Süden",
+      "success": "noch nie NBA-Champion",
+      "logo": "Tier im Logo"
+    },
+    "extras": {
+      "founded": "1990er",
+      "cityType": "Großstadt",
+      "rival": null,
+      "mascot": "Tier-Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Tiername"
+    }
+  },
+  {
+    "name": "Pelicans",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Southwest Division",
+      "color": "Blau",
+      "region": "Süden",
+      "success": "noch nie NBA-Champion",
+      "logo": "Tier im Logo"
+    },
+    "extras": {
+      "founded": "2000er",
+      "cityType": "Großstadt",
+      "rival": null,
+      "mascot": "Tier-Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Tiername"
+    }
+  },
+  {
+    "name": "Spurs",
+    "hints": {
+      "conference": "Western Conference",
+      "division": "Southwest Division",
+      "color": "Schwarz",
+      "region": "Texas",
+      "success": "mehrfacher NBA-Champion",
+      "logo": "Schriftzug-Logo"
+    },
+    "extras": {
+      "founded": "1960er",
+      "cityType": "Millionenstadt",
+      "rival": "hat eine berühmte Rivalität",
+      "mascot": "Tier-Maskottchen",
+      "relocated": "ist schon einmal umgezogen",
+      "nameType": "Name aus der Stadtgeschichte"
+    }
+  }
+]

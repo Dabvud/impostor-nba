@@ -7,7 +7,7 @@ const FINAL_SECONDS = 10;
 const RADIUS = 92;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
-/** Countdown im Anstoßkreis: der Ring leert sich im Uhrzeigersinn. */
+/** Countdown im Mittelkreis: der Ring leert sich im Uhrzeigersinn. */
 export default function MatchClock({ remaining, total }: Props) {
   const share = total > 0 ? Math.min(1, remaining / total) : 0;
   const state = remaining === 0 ? "over" : remaining <= FINAL_SECONDS ? "final" : "running";
