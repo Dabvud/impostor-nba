@@ -1,17 +1,5 @@
+/* Farben stehen in variant/theme.css */
 :root {
-  /* NBA-Farben: Marineblau als Grund, Rot für die Hauptaktion, Blau für Auswahl, Weiß für Text */
-  --bg: #0a1530;
-  --surface: #15264f;
-  --card: #0e1c40;
-  --line: #2b4075;
-  --line-soft: #1f315e;
-  --text: #f5f7fc;
-  --muted: #a3b1d1;
-  --accent: #d9213a;
-  --on-accent: #ffffff;
-  --select: #2e66e6;
-  --on-select: #ffffff;
-  --danger: #ff4f63;
   color-scheme: dark;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
@@ -210,9 +198,9 @@ button.primary {
   word-break: break-word;
 }
 
-/* Countdown im Mittelkreis */
+/* Countdown im Kreis */
 .match-clock {
-  --clock: var(--text);
+  --clock: var(--clock-color);
   position: relative;
   width: min(68vw, 260px);
   aspect-ratio: 1;
@@ -298,7 +286,7 @@ button.primary {
 
 .end-round:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--text);
+  outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
 
@@ -363,7 +351,7 @@ button:focus-visible {
   justify-content: center;
   gap: 12px;
   border-radius: 22px;
-  background: repeating-linear-gradient(135deg, #1b2f5e 0 22px, #162852 22px 44px);
+  background: repeating-linear-gradient(135deg, var(--cover-a) 0 22px, var(--cover-b) 22px 44px);
   color: var(--muted);
   font-weight: 600;
   cursor: grab;
@@ -392,7 +380,7 @@ button:focus-visible {
 .hold-fill {
   position: absolute;
   inset: 0;
-  background: rgba(10, 21, 48, 0.35);
+  background: var(--hold-fill);
   transform: scaleX(0);
   transform-origin: left;
 }
@@ -569,7 +557,7 @@ button:focus-visible {
   border: 1px solid var(--line);
 }
 
-/* Ausgewählt = auf dem Court: Name hell, Sitzplatz als Rückennummer */
+/* Ausgewählt = dabei: Name hell, Sitzplatz als Rückennummer */
 .roster button[aria-pressed="true"] {
   color: var(--text);
   border-color: var(--select);
@@ -686,8 +674,8 @@ button:focus-visible {
 }
 
 .winner-impostor {
-  background: var(--accent);
-  color: var(--on-accent);
+  background: var(--impostor-win-bg);
+  color: var(--impostor-win-fg);
 }
 
 /* Statistik, Regeln, Teilen */
@@ -774,7 +762,7 @@ button:focus-visible {
   aspect-ratio: 1;
   padding: 12px;
   border-radius: 20px;
-  background: #ffffff;
+  background: var(--qr-bg);
 }
 
 .qr svg {

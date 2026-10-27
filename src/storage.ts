@@ -4,15 +4,16 @@ import type { UsedMap } from "./game/session";
 import type { GameState } from "./game/state";
 import type { RoundRecord } from "./game/stats";
 import type { Round, Settings } from "./game/types";
+import { STORAGE_PREFIX } from "./variant/config";
 
 const KEYS = {
-  settings: "impostor-nba:v1:settings",
-  game: "impostor-nba:v1:game",
-  used: "impostor-nba:v1:used",
-  groups: "impostor-nba:v1:groups",
+  settings: `${STORAGE_PREFIX}:v1:settings`,
+  game: `${STORAGE_PREFIX}:v1:game`,
+  used: `${STORAGE_PREFIX}:v1:used`,
+  groups: `${STORAGE_PREFIX}:v1:groups`,
 };
 
-const statsKey = (groupId: string) => `impostor-nba:v1:stats:${groupId}`;
+const statsKey = (groupId: string) => `${STORAGE_PREFIX}:v1:stats:${groupId}`;
 
 function read(key: string): unknown {
   try {
@@ -42,6 +43,7 @@ function isSettings(v: unknown): v is Settings {
     isStringArray(v.names) &&
     typeof v.impostorCount === "number" &&
     MODES.some((m) => m.id === v.mode) &&
+    [1, 2, 3].includes(v.difficulty as number) &&
     (v.hintsEnabled === undefined || typeof v.hintsEnabled === "boolean") &&
     (v.secretImpostors === undefined || typeof v.secretImpostors === "boolean") &&
     isOptionalSeconds(v.thinkSeconds) &&

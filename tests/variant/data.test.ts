@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import playersJson from "../src/data/players.json";
-import teamsJson from "../src/data/teams.json";
-import type { NbaPlayer, NbaTeam, PlayerExtras } from "../src/game/types";
+import playersJson from "../../src/data/players.json";
+import teamsJson from "../../src/data/teams.json";
+import type { NbaPlayer, NbaTeam, PlayerExtras } from "../../src/variant/types";
 
 const players = playersJson as NbaPlayer[];
 const teams = teamsJson as NbaTeam[];

@@ -1,59 +1,20 @@
-export type Tag = "star" | "legende";
-/** Merkmale, aus denen der Tipp für den Impostor gezogen wird. */
-export type PlayerHints = { nation: string; position: string; special: string | null };
-export type TeamHints = {
-  conference: string;
-  division: string;
-  color: string;
-  region: string;
-  success: string;
-  logo: string;
-};
-/** Zusätzliche Tipp-Kategorien, nur für die Runde, in der alle Impostor sind. */
-export type PlayerExtras = {
-  continent: string | null;
-  conference: string | null;
-  team: string | null;
-  playStyle: string | null;
-  trait: string | null;
-  moment: string | null;
-  award: string | null;
-  title: string | null;
-  hair: string | null;
-  look: string | null;
-  era: string | null;
-  build: string | null;
-  hand: string | null;
-  careerType: string | null;
-  shirtNumber: string | null;
-  status: string | null;
-  afterCareer: string | null;
-  draft: string | null;
-  college: string | null;
-  transfer: string | null;
-};
-export type TeamExtras = {
-  founded: string | null;
-  cityType: string | null;
-  rival: string | null;
-  mascot: string | null;
-  relocated: string | null;
-  nameType: string | null;
-};
-export type NbaPlayer = { name: string; tags: Tag[]; hints: PlayerHints; extras?: PlayerExtras };
-export type NbaTeam = { name: string; hints: TeamHints; extras?: TeamExtras };
+import type { ModeId } from "../variant/modes";
+
+/** Schwierigkeitsstufe; wirkt nur in Modi mit `hasDifficulty`. */
+export type Tier = 1 | 2 | 3;
+
 /**
  * Tipp für die Runde, in der alle Impostor sind. `slot` fasst Kategorien zusammen, die sich
  * widersprechen könnten (z. B. Nation und Kontinent) – pro Runde wird jeder Slot nur einmal vergeben.
  */
 export type Tip = { slot: string; value: string };
-export type PositionGroup = "Guard" | "Forward" | "Center";
-export type Entry = { name: string; hints: string[]; allHints?: Tip[]; positionGroup?: PositionGroup };
-export type ModeId = "stars" | "legenden" | "teams";
+export type Entry = { name: string; hints: string[]; allHints?: Tip[]; group?: string; tipDonor?: boolean };
+export type ModeOption<M extends string = string> = { id: M; label: string; hasDifficulty: boolean };
 export type Settings = {
   names: string[];
   impostorCount: number;
   mode: ModeId;
+  difficulty: Tier;
   hintsEnabled: boolean;
   /** Anzahl der Impostor wird jede Runde geheim ausgelost (0 bis Maximum). */
   secretImpostors: boolean;

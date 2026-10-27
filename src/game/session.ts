@@ -1,13 +1,8 @@
+import { allImpostorsMax } from "../variant/modes";
 import { drawImpostorCount, drawRound } from "./engine";
 import { poolFor, poolKey } from "./modes";
 import { maxImpostors, normalizeNames } from "./settings";
-import type { NbaPlayer, NbaTeam, Rng, Round, Settings } from "./types";
-
-/**
- * „Alle sind Impostor“ nur, solange jeder eine eigene Tipp-Kategorie bekommen kann
- * (Spieler haben 22 Kategorien, Teams 12 – mit Puffer, damit es nicht herleitbar wird).
- */
-const ALL_IMPOSTORS_MAX = { players: 10, teams: 6 };
+import type { Rng, Round, Settings } from "./types";
 
 /** 8 Zeichen base36 aus dem Zufallsgenerator. */
 function roundId(rng: Rng): string {
@@ -19,15 +14,14 @@ export type UsedMap = Record<string, string[]>;
 
 export function nextRound(
   s: Settings,
-  players: NbaPlayer[],
-  teams: NbaTeam[],
   used: UsedMap,
   rng: Rng,
 ): { round: Round; used: UsedMap } {
-  const key = poolKey(s.mode);
-  const pool = poolFor(s.mode, players, teams);
+  const key = poolKey(s.mode, s.difficulty);
+  const pool = poolFor(s.mode, s.difficulty);
   const names = normalizeNames(s.names);
-  const allowAll = names.length <= (s.mode === "teams" ? ALL_IMPOSTORS_MAX.teams : ALL_IMPOSTORS_MAX.players);
+  // Eigene Tipps nur, solange die Variante genügend Kategorien für alle vorsieht.
+  const allowAll = names.length <= allImpostorsMax(s.mode);
   const impostorCount = s.secretImpostors
     ? drawImpostorCount(maxImpostors(names.length), names.length, rng, allowAll)
     : s.impostorCount;

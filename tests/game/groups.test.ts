@@ -78,7 +78,7 @@ describe("Gruppen", () => {
 
   it("benennt die Gruppe um und startet einen neuen Abend", () => {
     const g = squad();
-    expect(renameGroup(g, " Gruppe ").name).toBe("Gruppe");
+    expect(renameGroup(g, " Runde ").name).toBe("Runde");
     expect(startEvening(startEvening(g)).evening).toBe(3);
   });
 });

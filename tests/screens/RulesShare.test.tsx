@@ -1,3 +1,4 @@
+import { APP_NAME, SHARE_TEXT } from "../../src/variant/config";
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
@@ -18,7 +19,7 @@ describe("RulesScreen", () => {
 });
 
 describe("ShareScreen", () => {
-  const url = "https://dabvud.github.io/Impostor-NBA/";
+  const url = "https://example.org/spiel/";
 
   it("zeigt einen QR-Code und den Link", async () => {
     render(<ShareScreen url={url} onBack={vi.fn()} />);
@@ -31,7 +32,7 @@ describe("ShareScreen", () => {
     vi.stubGlobal("navigator", { ...navigator, share });
     render(<ShareScreen url={url} onBack={vi.fn()} />);
     await userEvent.setup().click(screen.getByRole("button", { name: "Link teilen" }));
-    expect(share).toHaveBeenCalledWith(expect.objectContaining({ url }));
+    expect(share).toHaveBeenCalledWith({ title: APP_NAME, text: SHARE_TEXT, url });
   });
 
   it("kopiert den Link, wenn das Handy kein Teilen-Menü hat", async () => {

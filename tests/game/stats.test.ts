@@ -1,3 +1,4 @@
+import { MODES } from "../../src/game/modes";
 import { describe, expect, it } from "vitest";
 import type { Group, Member } from "../../src/game/groups";
 import { computeStats, toRecord, type RoundRecord } from "../../src/game/stats";
@@ -14,7 +15,7 @@ const rec = (o: Partial<RoundRecord>): RoundRecord => ({
   roundId: Math.random().toString(36),
   evening: 1,
   at: "2026-10-26T20:00:00.000Z",
-  mode: "stars",
+  mode: MODES[0].id,
   players: all,
   impostors: ["a"],
   starter: "a",
@@ -25,14 +26,14 @@ const rec = (o: Partial<RoundRecord>): RoundRecord => ({
 
 // Abend 1: Anna 2× Impostor (1× erwischt, 1× gewonnen), Ben 1× Impostor (gewonnen)
 // Abend 2: Cem 1× Impostor (erwischt), eine Runde ohne Impostor, Ben 1× Impostor (erwischt)
-// Modi: 2× stars, 4× legenden
+// Modi: 2× erster, 4× zweiter Modus
 const records: RoundRecord[] = [
   rec({ evening: 1, impostors: ["a"], starter: "b", winner: "crew" }),
   rec({ evening: 1, impostors: ["a"], starter: "b", winner: "impostor" }),
-  rec({ evening: 1, impostors: ["b"], starter: "c", winner: "impostor", mode: "legenden" }),
-  rec({ evening: 2, impostors: ["c"], starter: "c", winner: "crew", mode: "legenden" }),
-  rec({ evening: 2, impostors: [], starter: "d", winner: null, mode: "legenden" }),
-  rec({ evening: 2, impostors: ["b"], starter: "c", winner: "crew", mode: "legenden", players: ["b", "c", "d"] }),
+  rec({ evening: 1, impostors: ["b"], starter: "c", winner: "impostor", mode: MODES[1].id }),
+  rec({ evening: 2, impostors: ["c"], starter: "c", winner: "crew", mode: MODES[1].id }),
+  rec({ evening: 2, impostors: [], starter: "d", winner: null, mode: MODES[1].id }),
+  rec({ evening: 2, impostors: ["b"], starter: "c", winner: "crew", mode: MODES[1].id, players: ["b", "c", "d"] }),
 ];
 
 describe("computeStats", () => {
@@ -43,7 +44,7 @@ describe("computeStats", () => {
     expect(s.masterImpostor).toEqual(["Anna", "Ben"]); // je 1 Sieg als Impostor → Gleichstand alphabetisch
     expect(s.unlucky).toEqual(["Anna", "Ben"]); // je 2× Impostor
     expect(s.starterKing).toEqual(["Cem"]); // 3× Starter
-    expect(s.favoriteMode).toBe("legenden");
+    expect(s.favoriteMode).toBe(MODES[1].id);
     expect(s.table).toEqual([
       { name: "Anna", rounds: 5, impostor: 2, impostorWins: 1, caught: 1 },
       { name: "Ben", rounds: 6, impostor: 2, impostorWins: 1, caught: 1 },
@@ -91,7 +92,7 @@ describe("toRecord bei geänderter Gruppe", () => {
   it("überspringt Namen, die während der Runde umbenannt oder entfernt wurden", () => {
     const group: Group = { id: "g", name: "G", members: members.slice(1), selected: [], evening: 1 };
     const round = { id: "r2", revealOrder: ["Anna", "Ben", "Cem"], impostors: ["Anna"], starter: "Anna" } as Round;
-    expect(toRecord(round, group, "stars", { winner: "crew", caught: true }, "t")).toMatchObject({
+    expect(toRecord(round, group, MODES[0].id, { winner: "crew", caught: true }, "t")).toMatchObject({
       players: ["b", "c"],
       impostors: [],
       starter: "",
@@ -108,11 +109,11 @@ describe("toRecord", () => {
       impostors: ["Ben"],
       starter: "Anna",
     } as Round;
-    expect(toRecord(round, group, "teams", { winner: "impostor", caught: false }, "2026-10-26T21:00:00.000Z")).toEqual({
+    expect(toRecord(round, group, MODES[0].id, { winner: "impostor", caught: false }, "2026-10-26T21:00:00.000Z")).toEqual({
       roundId: "r1",
       evening: 3,
       at: "2026-10-26T21:00:00.000Z",
-      mode: "teams",
+      mode: MODES[0].id,
       players: ["c", "a", "b"],
       impostors: ["b"],
       starter: "a",

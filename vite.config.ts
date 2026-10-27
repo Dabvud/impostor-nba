@@ -5,6 +5,7 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 import pkg from "./package.json";
 import { versionFromDescribe } from "./src/version";
+import { APP_NAME, MANIFEST_DESCRIPTION, THEME_COLOR } from "./src/variant/config";
 
 function gitDescribe(): string {
   try {
@@ -28,18 +29,25 @@ export default defineConfig({
     __BUILD_DATE__: JSON.stringify(buildDate),
   },
   plugins: [
+    {
+      name: "variant-html",
+      transformIndexHtml: {
+        order: "pre",
+        handler: (html) => html.replaceAll("%APP_NAME%", APP_NAME).replaceAll("%THEME_COLOR%", THEME_COLOR),
+      },
+    },
     react(),
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        name: "Impostor NBA",
-        short_name: "Impostor NBA",
-        description: "NBA-Impostor für eure Runde – ein Handy, alle Spieler.",
+        name: APP_NAME,
+        short_name: APP_NAME,
+        description: MANIFEST_DESCRIPTION,
         lang: "de",
         display: "standalone",
         orientation: "portrait",
-        theme_color: "#0a1530",
-        background_color: "#0a1530",
+        theme_color: THEME_COLOR,
+        background_color: THEME_COLOR,
         icons: [
           { src: "pwa-64x64.png", sizes: "64x64", type: "image/png" },
           { src: "pwa-192x192.png", sizes: "192x192", type: "image/png" },

@@ -1,3 +1,5 @@
+import { RULES_SUBJECT } from "../variant/config";
+
 type Props = { onBack: () => void };
 
 export default function RulesScreen({ onBack }: Props) {
@@ -8,7 +10,7 @@ export default function RulesScreen({ onBack }: Props) {
       <section className="panel">
         <h2>Ziel</h2>
         <p>
-          Alle bekommen denselben NBA-Spieler oder dasselbe Team – nur der Impostor nicht. Die Crew will den Impostor
+          Alle bekommen {RULES_SUBJECT} – nur der Impostor nicht. Die Crew will den Impostor
           entlarven, der Impostor will unerkannt bleiben.
         </p>
       </section>

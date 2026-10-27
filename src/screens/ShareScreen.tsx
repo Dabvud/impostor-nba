@@ -1,5 +1,6 @@
 import QRCode from "qrcode";
 import { useEffect, useState } from "react";
+import { APP_NAME, QR_COLORS, SHARE_TEXT } from "../variant/config";
 
 type Props = { url: string; onBack: () => void };
 
@@ -10,7 +11,7 @@ export default function ShareScreen({ url, onBack }: Props) {
 
   // Wird im Gerät erzeugt – funktioniert auch offline.
   useEffect(() => {
-    QRCode.toString(url, { type: "svg", margin: 1, color: { dark: "#062312", light: "#f2f5f0" } })
+    QRCode.toString(url, { type: "svg", margin: 1, color: QR_COLORS })
       .then(setSvg)
       .catch(() => setSvg(""));
   }, [url]);
@@ -18,7 +19,7 @@ export default function ShareScreen({ url, onBack }: Props) {
   async function share() {
     try {
       if (canShare) {
-        await navigator.share({ title: "Impostor NBA", text: "Unser NBA-Impostor für die nächste Runde:", url });
+        await navigator.share({ title: APP_NAME, text: SHARE_TEXT, url });
       } else {
         await navigator.clipboard.writeText(url);
         setCopied(true);

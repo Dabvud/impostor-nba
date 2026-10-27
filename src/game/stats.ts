@@ -1,6 +1,7 @@
 import type { Group, Member } from "./groups";
 import type { Winner } from "./state";
-import type { ModeId, Round } from "./types";
+import type { ModeId } from "./modes";
+import type { Round } from "./types";
 
 export type { Winner };
 export type RoundRecord = {

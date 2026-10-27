@@ -1,3 +1,4 @@
+import { MODES } from "../../src/game/modes";
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
@@ -22,7 +23,7 @@ const rec = (evening: number, impostor: string, winner: "crew" | "impostor"): Ro
   roundId: `${evening}${impostor}${winner}`,
   evening,
   at: "2026-10-26T20:00:00.000Z",
-  mode: "stars",
+  mode: MODES[0].id,
   players: ["a", "b", "c"],
   impostors: [impostor],
   starter: "c",

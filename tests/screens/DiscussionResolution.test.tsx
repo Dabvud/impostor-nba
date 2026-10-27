@@ -9,8 +9,8 @@ vi.mock("../../src/alarm", () => ({ alarm: vi.fn() }));
 import ResolutionScreen from "../../src/screens/ResolutionScreen";
 
 const round: Round = {
-  word: { name: "Nowitzki", hints: ["Deutschland"] },
-  hint: "Deutschland",
+  word: { name: "Begriff A", hints: ["Merkmal A"] },
+  hint: "Merkmal A",
   impostors: ["Ben", "Dana"],
   revealOrder: ["Anna", "Ben", "Cem", "Dana", "Eli"],
   starter: "Jonas",
@@ -71,8 +71,8 @@ describe("ResolutionScreen", () => {
     render(<ResolutionScreen round={round} onNewRound={onNewRound} onSettings={onSettings} />);
     expect(screen.getByText("Ben")).toBeInTheDocument();
     expect(screen.getByText("Dana")).toBeInTheDocument();
-    expect(screen.getByText("Nowitzki")).toBeInTheDocument();
-    expect(screen.getByText("Tipp war: Deutschland")).toBeInTheDocument();
+    expect(screen.getByText("Begriff A")).toBeInTheDocument();
+    expect(screen.getByText("Tipp war: Merkmal A")).toBeInTheDocument();
     await new Promise((r) => setTimeout(r, 550));
     await user.click(screen.getByRole("button", { name: "Neue Runde" }));
     await user.click(screen.getByRole("button", { name: "Einstellungen" }));
@@ -107,7 +107,7 @@ describe("ResolutionScreen alle Impostor", () => {
   });
 
   it("zeigt, wer welchen Tipp hatte", () => {
-    const personalHints = { Anna: "Linkshänder", Ben: "Glatze", Cem: "2010er", Dana: "Südamerika", Eli: "Finals-MVP" };
+    const personalHints = { Anna: "Merkmal B", Ben: "Merkmal C", Cem: "Merkmal D", Dana: "Südamerika", Eli: "Finaltor" };
     render(
       <ResolutionScreen
         round={{ ...round, impostors: [...round.revealOrder], hint: null, personalHints }}
@@ -115,8 +115,8 @@ describe("ResolutionScreen alle Impostor", () => {
         onSettings={vi.fn()}
       />,
     );
-    expect(screen.getByText("Anna: Linkshänder")).toBeInTheDocument();
-    expect(screen.getByText("Eli: Finals-MVP")).toBeInTheDocument();
+    expect(screen.getByText("Anna: Merkmal B")).toBeInTheDocument();
+    expect(screen.getByText("Eli: Finaltor")).toBeInTheDocument();
   });
 });
 
@@ -148,7 +148,7 @@ describe("ResolutionScreen Ablauf mit Ergebnis", () => {
     const onCaught = vi.fn();
     render(<ResolutionScreen round={single} step="caught?" winner={null} onCaught={onCaught} onNewRound={vi.fn()} onSettings={vi.fn()} />);
     expect(screen.getByText("Wurde Ben erwischt?")).toBeInTheDocument();
-    expect(screen.queryByText("Nowitzki")).not.toBeInTheDocument();
+    expect(screen.queryByText("Begriff A")).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Ja" }));
     expect(onCaught).not.toHaveBeenCalled(); // Klickschutz nach dem Gedrückthalten
     await wait();
@@ -165,7 +165,7 @@ describe("ResolutionScreen Ablauf mit Ergebnis", () => {
     const onRevealWord = vi.fn();
     render(<ResolutionScreen round={single} step="guess" winner={null} onRevealWord={onRevealWord} onNewRound={vi.fn()} onSettings={vi.fn()} />);
     expect(screen.getByText("Ben darf jetzt das Wort raten")).toBeInTheDocument();
-    expect(screen.queryByText("Nowitzki")).not.toBeInTheDocument();
+    expect(screen.queryByText("Begriff A")).not.toBeInTheDocument();
     await wait();
     fireEvent.click(screen.getByRole("button", { name: "Wort aufdecken" }));
     expect(onRevealWord).toHaveBeenCalledOnce();
@@ -174,7 +174,7 @@ describe("ResolutionScreen Ablauf mit Ergebnis", () => {
   it("zeigt das Wort und fragt, ob richtig geraten wurde", async () => {
     const onGuessed = vi.fn();
     render(<ResolutionScreen round={single} step="guessed?" winner={null} onGuessed={onGuessed} onNewRound={vi.fn()} onSettings={vi.fn()} />);
-    expect(screen.getByText("Nowitzki")).toBeInTheDocument();
+    expect(screen.getByText("Begriff A")).toBeInTheDocument();
     expect(screen.getByText("Hat Ben richtig geraten?")).toBeInTheDocument();
     await wait();
     fireEvent.click(screen.getByRole("button", { name: "Nein" }));
@@ -184,7 +184,7 @@ describe("ResolutionScreen Ablauf mit Ergebnis", () => {
   it("zeigt am Ende den Gewinner", () => {
     const { unmount } = render(<ResolutionScreen round={single} step="done" winner="crew" onNewRound={vi.fn()} onSettings={vi.fn()} />);
     expect(screen.getByText("Crew gewinnt 🎯")).toBeInTheDocument();
-    expect(screen.getByText("Nowitzki")).toBeInTheDocument();
+    expect(screen.getByText("Begriff A")).toBeInTheDocument();
     unmount();
     const again = render(<ResolutionScreen round={single} step="done" winner="impostor" caught={false} onNewRound={vi.fn()} onSettings={vi.fn()} />);
     expect(screen.getByText("Impostor gewinnt 🕵️")).toBeInTheDocument();

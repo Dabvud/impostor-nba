@@ -1,0 +1,23 @@
+/* NBA-Farben: Marineblau als Grund, Rot für die Hauptaktion, Blau für Auswahl, Weiß für Text */
+:root {
+  --bg: #0a1530;
+  --surface: #15264f;
+  --card: #0e1c40;
+  --line: #2b4075;
+  --line-soft: #1f315e;
+  --text: #f5f7fc;
+  --muted: #a3b1d1;
+  --accent: #d9213a;
+  --on-accent: #ffffff;
+  --select: #2e66e6;
+  --on-select: #ffffff;
+  --danger: #ff4f63;
+  --clock-color: var(--text);
+  --focus: var(--text);
+  --cover-a: #1b2f5e;
+  --cover-b: #162852;
+  --hold-fill: rgba(10, 21, 48, 0.35);
+  --qr-bg: #ffffff;
+  --impostor-win-bg: var(--accent);
+  --impostor-win-fg: var(--on-accent);
+}

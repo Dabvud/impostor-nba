@@ -1,4 +1,5 @@
-import type { NbaPlayer, NbaTeam, PlayerExtras, Settings, TeamExtras } from "../../src/game/types";
+import type { NbaPlayer, NbaTeam, PlayerExtras, TeamExtras } from "../../src/variant/types";
+import type { Settings } from "../../src/game/types";
 
 export const playerExtras = (overrides: Partial<PlayerExtras> = {}): PlayerExtras => ({
   continent: null, conference: null, team: null, playStyle: null, trait: null, moment: null, award: null,
@@ -24,6 +25,6 @@ export const team = (name: string, color: string, conference: string): NbaTeam =
 // Jedes Team teilt einen Tipp mit einem anderen, aber keiner trifft auf alle zu.
 export const teams = [team("X", "Rot", "Westen"), team("Y", "Rot", "Osten"), team("Z", "Blau", "Osten")];
 export const settings: Settings = {
-  names: ["Anna", "Ben", "Cem"], impostorCount: 1, mode: "stars", hintsEnabled: true,
+  names: ["Anna", "Ben", "Cem"], impostorCount: 1, mode: "stars", difficulty: 1, hintsEnabled: true,
   secretImpostors: false, thinkSeconds: null, discussSeconds: null, groupId: null, guessEnabled: true,
 };
