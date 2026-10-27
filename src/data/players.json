@@ -1,1 +1,2741 @@
-[]
+[
+  {
+    "name": "Aaron Gordon",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "special": "Dunker"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Nuggets",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": "Tattoos",
+      "era": "2010er",
+      "build": "kräftig",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Arizona",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Alex Caruso",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Verteidiger"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Thunder",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": "Glatze",
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Spätstarter",
+      "shirtNumber": "trägt die 9",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "undrafted",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Alperen Şengün",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Türkei",
+      "position": "Center",
+      "special": "Post-Spieler"
+    },
+    "extras": {
+      "continent": "Asien",
+      "conference": "meist im Westen",
+      "team": "Rockets",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": "Europa-Import",
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "kein College",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Amen Thompson",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Athlet"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Rockets",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Highschool-Phänomen",
+      "shirtNumber": "trägt die 1",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "kein College",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Andrew Wiggins",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Kanada",
+      "position": "Small Forward",
+      "special": "Athlet"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Warriors",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": "Rookie of the Year",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 22",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Kansas",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Anthony Davis",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "special": "Shotblocker"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Lakers",
+      "playStyle": "Rim-Protector",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": "Bart",
+      "era": "2010er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 3",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Kentucky",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Anthony Edwards",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Dunker"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Timberwolves",
+      "playStyle": "Slasher",
+      "trait": "Trashtalker",
+      "moment": null,
+      "award": null,
+      "title": "Olympiasieger",
+      "hair": "Kurzhaarschnitt",
+      "look": null,
+      "era": "2020er",
+      "build": "kräftig",
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 5",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": null,
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Austin Reaves",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Scorer"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Lakers",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Spätstarter",
+      "shirtNumber": "trägt die 15",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "undrafted",
+      "college": "Oklahoma",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Bam Adebayo",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "special": "Verteidiger"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Heat",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Rekordspiel mit vielen Punkten",
+      "award": null,
+      "title": "Olympiasieger",
+      "hair": "Kurzhaarschnitt",
+      "look": null,
+      "era": "2020er",
+      "build": "kräftig",
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 13",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Kentucky",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Brandon Ingram",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Mitteldistanz"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Pelicans",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": null,
+      "award": "Most Improved Player",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": "Tattoos",
+      "era": "2010er",
+      "build": "lange Arme",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 14",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "Duke",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Brandon Miller",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Dreierschütze"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Hornets",
+      "playStyle": "Schütze",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 24",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": null,
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Cade Cunningham",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Spielmacher"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Pistons",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 2",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Oklahoma State",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Chet Holmgren",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "special": "Shotblocker"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Thunder",
+      "playStyle": "Rim-Protector",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 7",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "Gonzaga",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "CJ McCollum",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Mitteldistanz"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Trail Blazers",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": null,
+      "award": "Most Improved Player",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 3",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Cooper Flagg",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "special": "Allrounder"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Mavericks",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Rekordspiel mit vielen Punkten",
+      "award": "Rookie of the Year",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 32",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Duke",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Damian Lillard",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Dreierschütze"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Trail Blazers",
+      "playStyle": "Scorer",
+      "trait": "Clutch-Spieler",
+      "moment": "Game-Winner in den Playoffs",
+      "award": "Rookie of the Year",
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": "Bart",
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 0",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Darius Garland",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Spielmacher"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Cavaliers",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 10",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "De'Aaron Fox",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Schnelligkeit"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Kings",
+      "playStyle": "Slasher",
+      "trait": "Clutch-Spieler",
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "klein und schnell",
+      "hand": "Linkshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 5",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Kentucky",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Dejounte Murray",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Spielmacher"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Spurs",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": "Tattoos",
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Wandervogel",
+      "shirtNumber": "trägt die 5",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "DeMar DeRozan",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Mitteldistanz"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Raptors",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": "Tattoos",
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 10",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "USC",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Deni Avdija",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Israel",
+      "position": "Small Forward",
+      "special": "Allrounder"
+    },
+    "extras": {
+      "continent": "Asien",
+      "conference": "meist im Osten",
+      "team": "Trail Blazers",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Europa-Import",
+      "shirtNumber": "trägt die 8",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Dennis Schröder",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Deutschland",
+      "position": "Point Guard",
+      "special": "Schnelligkeit"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Osten",
+      "team": "Hawks",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": "klein und schnell",
+      "hand": "Rechtshänder",
+      "careerType": "Europa-Import",
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Derrick White",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Verteidiger"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Celtics",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Game-Winner in den Playoffs",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": "Glatze",
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Spätstarter",
+      "shirtNumber": "trägt die 9",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Desmond Bane",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Dreierschütze"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Grizzlies",
+      "playStyle": "Schütze",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "kräftig",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 22",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Devin Booker",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Mitteldistanz"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Suns",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Rekordspiel mit vielen Punkten",
+      "award": null,
+      "title": "Olympiasieger",
+      "hair": "Kurzhaarschnitt",
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 1",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Kentucky",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Domantas Sabonis",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Litauen",
+      "position": "Center",
+      "special": "Rebounder"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Kings",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "sehr groß",
+      "hand": "Linkshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 11",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Gonzaga",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Donovan Mitchell",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Scorer"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Cavaliers",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Rekordspiel mit vielen Punkten",
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Draymond Green",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "special": "Verteidiger"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Warriors",
+      "playStyle": "Two-Way-Spieler",
+      "trait": "Trashtalker",
+      "moment": "Finals-Auftritt",
+      "award": "DPOY",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": "kräftig",
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 23",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Zweitrunden-Pick",
+      "college": "Michigan State",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Evan Mobley",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "special": "Shotblocker"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Cavaliers",
+      "playStyle": "Rim-Protector",
+      "trait": null,
+      "moment": null,
+      "award": "DPOY",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 4",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "USC",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Franz Wagner",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Deutschland",
+      "position": "Small Forward",
+      "special": "Allrounder"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Osten",
+      "team": "Magic",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 22",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": null,
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Giannis Antetokounmpo",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Griechenland",
+      "position": "Power Forward",
+      "special": "Athlet"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Osten",
+      "team": "Bucks",
+      "playStyle": "Slasher",
+      "trait": "Anführer",
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": "Kurzhaarschnitt",
+      "look": null,
+      "era": "2010er",
+      "build": "kräftig",
+      "hand": "Rechtshänder",
+      "careerType": "Europa-Import",
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Ivica Zubac",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Kroatien",
+      "position": "Center",
+      "special": "Rebounder"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Clippers",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": "Europa-Import",
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Zweitrunden-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Ja Morant",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Dunker"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Grizzlies",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": "Rookie of the Year",
+      "title": "kein NBA-Titel",
+      "hair": "Dreadlocks",
+      "look": null,
+      "era": "2020er",
+      "build": "klein und schnell",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Jalen Brunson",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Mitteldistanz"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Knicks",
+      "playStyle": "Scorer",
+      "trait": "Anführer",
+      "moment": "Finals-Auftritt",
+      "award": "Finals-MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 11",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Zweitrunden-Pick",
+      "college": "Villanova",
+      "transfer": "wechselte als Free Agent"
+    }
+  },
+  {
+    "name": "Jalen Duren",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "special": "Rebounder"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Pistons",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 0",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Jalen Green",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Dunker"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Rockets",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Highschool-Phänomen",
+      "shirtNumber": "trägt die 4",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Jalen Johnson",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "special": "Allrounder"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Hawks",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 1",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Duke",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Jalen Williams",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Allrounder"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Thunder",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "lange Arme",
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 8",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Jamal Murray",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Kanada",
+      "position": "Point Guard",
+      "special": "Mitteldistanz"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Nuggets",
+      "playStyle": "Scorer",
+      "trait": "Clutch-Spieler",
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": "Locken",
+      "look": "Bart",
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 27",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Kentucky",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "James Harden",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Spielmacher"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Rockets",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": null,
+      "award": "MVP",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": "Bart",
+      "era": "2010er",
+      "build": null,
+      "hand": "Linkshänder",
+      "careerType": "Wandervogel",
+      "shirtNumber": "trägt die 13",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Jaren Jackson Jr.",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "special": "Shotblocker"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Grizzlies",
+      "playStyle": "Rim-Protector",
+      "trait": null,
+      "moment": null,
+      "award": "DPOY",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 13",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Michigan State",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Jarrett Allen",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "special": "Rebounder"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Cavaliers",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Texas",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Jaylen Brown",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Allrounder"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Celtics",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Finals-MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": "Bart",
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 7",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": null,
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Jayson Tatum",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Scorer"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Celtics",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Rekordspiel mit vielen Punkten",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": "Bart",
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 0",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "Duke",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Jimmy Butler",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Verteidiger"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Heat",
+      "playStyle": "Two-Way-Spieler",
+      "trait": "Clutch-Spieler",
+      "moment": "Finals-Auftritt",
+      "award": "Most Improved Player",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 22",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Joel Embiid",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Kamerun",
+      "position": "Center",
+      "special": "Post-Spieler"
+    },
+    "extras": {
+      "continent": "Afrika",
+      "conference": "meist im Osten",
+      "team": "76ers",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Rekordspiel mit vielen Punkten",
+      "award": "MVP",
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 21",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "Kansas",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Josh Giddey",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Australien",
+      "position": "Point Guard",
+      "special": "Spielmacher"
+    },
+    "extras": {
+      "continent": "Ozeanien",
+      "conference": "meist im Westen",
+      "team": "Bulls",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": "Locken",
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 3",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Josh Hart",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Rebounder"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Knicks",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": "Stirnband",
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 3",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Villanova",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Jrue Holiday",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Verteidiger"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Bucks",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": "Dreadlocks",
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Wandervogel",
+      "shirtNumber": "trägt die 21",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "UCLA",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Julius Randle",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "special": "Scorer"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Knicks",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": null,
+      "award": "Most Improved Player",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "kräftig",
+      "hand": "Linkshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 30",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Kentucky",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Karl-Anthony Towns",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Dominikanische Republik",
+      "position": "Center",
+      "special": "Dreierschütze"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Timberwolves",
+      "playStyle": "Schütze",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Rookie of the Year",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 32",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Kentucky",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Kawhi Leonard",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Verteidiger"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Clippers",
+      "playStyle": "Two-Way-Spieler",
+      "trait": "ruhiger Typ",
+      "moment": "Game-Winner in den Playoffs",
+      "award": "Finals-MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": "kräftig",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 2",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Kevin Durant",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Scorer"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Thunder",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2000er",
+      "build": "lange Arme",
+      "hand": "Rechtshänder",
+      "careerType": "Wandervogel",
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "Texas",
+      "transfer": "wechselte als Free Agent"
+    }
+  },
+  {
+    "name": "Klay Thompson",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Dreierschütze"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Warriors",
+      "playStyle": "Schütze",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": "Stirnband",
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 11",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Kristaps Porziņģis",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Lettland",
+      "position": "Center",
+      "special": "Shotblocker"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Knicks",
+      "playStyle": "Rim-Protector",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": "Europa-Import",
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Kyrie Irving",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Scorer"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Cavaliers",
+      "playStyle": "Scorer",
+      "trait": "Clutch-Spieler",
+      "moment": "Finals-Auftritt",
+      "award": "Rookie of the Year",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 11",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Duke",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "LaMelo Ball",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Spielmacher"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Hornets",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": null,
+      "award": "Rookie of the Year",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": "Tattoos",
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Highschool-Phänomen",
+      "shirtNumber": "trägt die 1",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "kein College",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Lauri Markkanen",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Finnland",
+      "position": "Power Forward",
+      "special": "Dreierschütze"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Jazz",
+      "playStyle": "Schütze",
+      "trait": null,
+      "moment": null,
+      "award": "Most Improved Player",
+      "title": "kein NBA-Titel",
+      "hair": "Locken",
+      "look": null,
+      "era": "2020er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 23",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Arizona",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "LeBron James",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Allrounder"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Lakers",
+      "playStyle": "Two-Way-Spieler",
+      "trait": "Anführer",
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": "Kurzhaarschnitt",
+      "look": "Bart",
+      "era": "2000er",
+      "build": "kräftig",
+      "hand": "Rechtshänder",
+      "careerType": "Highschool-Phänomen",
+      "shirtNumber": "trägt die 23",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "kein College",
+      "transfer": "wechselte als Free Agent"
+    }
+  },
+  {
+    "name": "Luka Dončić",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Slowenien",
+      "position": "Point Guard",
+      "special": "Spielmacher"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Mavericks",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": "Game-Winner in den Playoffs",
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": "Bart",
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Europa-Import",
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-3-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Marcus Smart",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Verteidiger"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Celtics",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": null,
+      "award": "DPOY",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Oklahoma State",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Mikal Bridges",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Verteidiger"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Knicks",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "lange Arme",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 25",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Villanova",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Myles Turner",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Center",
+      "special": "Shotblocker"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Pacers",
+      "playStyle": "Rim-Protector",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Texas",
+      "transfer": "wechselte als Free Agent"
+    }
+  },
+  {
+    "name": "Nikola Jokić",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Serbien",
+      "position": "Center",
+      "special": "Spielmacher"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Nuggets",
+      "playStyle": "Spielmacher",
+      "trait": "ruhiger Typ",
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": "Europa-Import",
+      "shirtNumber": "trägt die 15",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Zweitrunden-Pick",
+      "college": "kein College",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Nikola Vučević",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Montenegro",
+      "position": "Center",
+      "special": "Rebounder"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Osten",
+      "team": "Magic",
+      "playStyle": "Innenspieler",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 9",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "USC",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Norman Powell",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Jamaika",
+      "position": "Shooting Guard",
+      "special": "Dreierschütze"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Clippers",
+      "playStyle": "Schütze",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 24",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Zweitrunden-Pick",
+      "college": "UCLA",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "OG Anunoby",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Großbritannien",
+      "position": "Small Forward",
+      "special": "Verteidiger"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Osten",
+      "team": "Knicks",
+      "playStyle": "Two-Way-Spieler",
+      "trait": "ruhiger Typ",
+      "moment": "Game-Winner in den Playoffs",
+      "award": null,
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "lange Arme",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 8",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Paolo Banchero",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "special": "Scorer"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Magic",
+      "playStyle": "Scorer",
+      "trait": null,
+      "moment": null,
+      "award": "Rookie of the Year",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 5",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Duke",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Pascal Siakam",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Kamerun",
+      "position": "Power Forward",
+      "special": "Allrounder"
+    },
+    "extras": {
+      "continent": "Afrika",
+      "conference": "meist im Osten",
+      "team": "Raptors",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Most Improved Player",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": null,
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Paul George",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Allrounder"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Pacers",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": null,
+      "award": "Most Improved Player",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 13",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Rudy Gobert",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Frankreich",
+      "position": "Center",
+      "special": "Shotblocker"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Jazz",
+      "playStyle": "Rim-Protector",
+      "trait": null,
+      "moment": null,
+      "award": "DPOY",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": "Bart",
+      "era": "2010er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": "Europa-Import",
+      "shirtNumber": "trägt die 27",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "kein College",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Scottie Barnes",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "special": "Allrounder"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Raptors",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": null,
+      "award": "Rookie of the Year",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 4",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": null,
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Shai Gilgeous-Alexander",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Kanada",
+      "position": "Point Guard",
+      "special": "Mitteldistanz"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Thunder",
+      "playStyle": "Scorer",
+      "trait": "Clutch-Spieler",
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 2",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Kentucky",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Stephen Curry",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Dreierschütze"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Warriors",
+      "playStyle": "Schütze",
+      "trait": "Anführer",
+      "moment": "Finals-Auftritt",
+      "award": "MVP",
+      "title": "NBA-Champion",
+      "hair": "Kurzhaarschnitt",
+      "look": "Bart",
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 30",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": null,
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Stephon Castle",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Verteidiger"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Spurs",
+      "playStyle": "Two-Way-Spieler",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "Rookie of the Year",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 5",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": null,
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Trae Young",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Spielmacher"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Hawks",
+      "playStyle": "Spielmacher",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "klein und schnell",
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 11",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Top-10-Pick",
+      "college": "Oklahoma",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Trey Murphy III",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Small Forward",
+      "special": "Dreierschütze"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Pelicans",
+      "playStyle": "Schütze",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 25",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Tyler Herro",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Dreierschütze"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Heat",
+      "playStyle": "Schütze",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": "Tattoos",
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 14",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Kentucky",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Tyrese Haliburton",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Spielmacher"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Pacers",
+      "playStyle": "Spielmacher",
+      "trait": "Clutch-Spieler",
+      "moment": "Game-Winner in den Playoffs",
+      "award": null,
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 0",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": null,
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Tyrese Maxey",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Point Guard",
+      "special": "Schnelligkeit"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "76ers",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": "Most Improved Player",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "klein und schnell",
+      "hand": "Rechtshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 0",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "Kentucky",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Victor Wembanyama",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "Frankreich",
+      "position": "Center",
+      "special": "Shotblocker"
+    },
+    "extras": {
+      "continent": "Europa",
+      "conference": "meist im Westen",
+      "team": "Spurs",
+      "playStyle": "Rim-Protector",
+      "trait": null,
+      "moment": "Finals-Auftritt",
+      "award": "DPOY",
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "sehr groß",
+      "hand": "Rechtshänder",
+      "careerType": "Europa-Import",
+      "shirtNumber": "trägt die 1",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "kein College",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  },
+  {
+    "name": "Zach LaVine",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Shooting Guard",
+      "special": "Dunker"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Osten",
+      "team": "Bulls",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "Olympiasieger",
+      "hair": null,
+      "look": "Tattoos",
+      "era": "2010er",
+      "build": null,
+      "hand": "Rechtshänder",
+      "careerType": null,
+      "shirtNumber": "trägt die 8",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Erstrunden-Pick",
+      "college": "UCLA",
+      "transfer": "wechselte per Trade"
+    }
+  },
+  {
+    "name": "Zion Williamson",
+    "tags": [
+      "star"
+    ],
+    "hints": {
+      "nation": "USA",
+      "position": "Power Forward",
+      "special": "Dunker"
+    },
+    "extras": {
+      "continent": "Nordamerika",
+      "conference": "meist im Westen",
+      "team": "Pelicans",
+      "playStyle": "Slasher",
+      "trait": null,
+      "moment": null,
+      "award": null,
+      "title": "kein NBA-Titel",
+      "hair": null,
+      "look": null,
+      "era": "2020er",
+      "build": "kräftig",
+      "hand": "Linkshänder",
+      "careerType": "Eigengewächs",
+      "shirtNumber": "trägt die 1",
+      "status": "aktiv",
+      "afterCareer": null,
+      "draft": "Nummer-1-Pick",
+      "college": "Duke",
+      "transfer": "blieb seinem ersten NBA-Team treu"
+    }
+  }
+]

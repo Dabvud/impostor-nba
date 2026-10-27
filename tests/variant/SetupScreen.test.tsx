@@ -6,35 +6,47 @@ import { poolSizes } from "../../src/game/modes";
 import { settings } from "./fixtures";
 
 describe("Spielmodi in der Einrichtung", () => {
-  it("kennzeichnet die leeren Spieler-Modi als bald und lässt nur NBA-Teams zu", async () => {
+  it("bietet Stars und NBA-Teams an und kennzeichnet die leeren Legenden als bald", async () => {
     const user = userEvent.setup();
     render(<SetupScreen initial={null} poolSizes={poolSizes()} onStart={vi.fn()} />);
-    expect(screen.getByRole("option", { name: "⭐ Aktuelle Stars (bald)" })).toBeDisabled();
+    expect(screen.getByRole("option", { name: "⭐ Aktuelle Stars" })).toBeEnabled();
     expect(screen.getByRole("option", { name: "👑 Legenden (bald)" })).toBeDisabled();
     expect(screen.getByRole("option", { name: "🏟️ NBA-Teams" })).toBeEnabled();
+    expect(screen.getByLabelText("Spielmodus")).toHaveValue("stars");
+    await user.selectOptions(screen.getByLabelText("Spielmodus"), "teams");
     expect(screen.getByLabelText("Spielmodus")).toHaveValue("teams");
     await user.selectOptions(screen.getByLabelText("Spielmodus"), "stars");
-    expect(screen.getByLabelText("Spielmodus")).toHaveValue("teams");
+    expect(screen.getByLabelText("Spielmodus")).toHaveValue("stars");
     await user.selectOptions(screen.getByLabelText("Spielmodus"), "legenden");
-    expect(screen.getByLabelText("Spielmodus")).toHaveValue("teams");
+    expect(screen.getByLabelText("Spielmodus")).toHaveValue("stars");
   });
 
-  it("startet eine neue Einrichtung mit NBA-Teams", async () => {
+  it("startet eine neue Einrichtung mit aktuellen Stars", async () => {
     const onStart = vi.fn();
     const user = userEvent.setup();
     render(<SetupScreen initial={null} poolSizes={poolSizes()} onStart={onStart} />);
     expect(screen.getByRole("heading", { name: "Impostor NBA" })).toBeInTheDocument();
     for (const name of ["Anna", "Ben", "Cem"]) await user.type(screen.getByLabelText("Name"), name + "{Enter}");
     await user.click(screen.getByRole("button", { name: "Start" }));
-    expect(onStart).toHaveBeenCalledWith(expect.objectContaining({ mode: "teams", difficulty: 1, names: ["Anna", "Ben", "Cem"] }));
+    expect(onStart).toHaveBeenCalledWith(expect.objectContaining({ mode: "stars", difficulty: 1, names: ["Anna", "Ben", "Cem"] }));
   });
 
-  it("fällt bei gespeichertem Modus stars auf NBA-Teams zurück und startet damit", async () => {
+  it("behält den gespeicherten spielbaren Modus stars und startet damit", async () => {
     const onStart = vi.fn();
     const user = userEvent.setup();
     render(<SetupScreen initial={settings} poolSizes={poolSizes()} onStart={onStart} />);
-    expect(screen.getByLabelText("Spielmodus")).toHaveValue("teams");
+    expect(screen.getByLabelText("Spielmodus")).toHaveValue("stars");
     expect(screen.getByRole("button", { name: "Start" })).toBeEnabled();
+    await user.click(screen.getByRole("button", { name: "Start" }));
+    expect(onStart).toHaveBeenCalledWith(settings);
+  });
+
+  it("fällt bei leeren Spieler-Töpfen auf NBA-Teams zurück", async () => {
+    const onStart = vi.fn();
+    const user = userEvent.setup();
+    render(<SetupScreen initial={settings} poolSizes={{ stars: 0, legenden: 0, teams: 30 }} onStart={onStart} />);
+    expect(screen.getByRole("option", { name: "⭐ Aktuelle Stars (bald)" })).toBeDisabled();
+    expect(screen.getByLabelText("Spielmodus")).toHaveValue("teams");
     await user.click(screen.getByRole("button", { name: "Start" }));
     expect(onStart).toHaveBeenCalledWith({ ...settings, mode: "teams" });
   });

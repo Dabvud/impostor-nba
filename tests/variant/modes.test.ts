@@ -190,8 +190,12 @@ describe("Anbindung der Spieldaten", () => {
     }
   });
 
-  it("hat vorerst leere Spieler-Modi und genau 30 NBA-Teams", () => {
-    expect(poolSizes()).toEqual({ stars: 0, legenden: 0, teams: 30 });
+  it("hat einen gefüllten Star-Topf, noch keine Legenden und genau 30 NBA-Teams", () => {
+    const sizes = poolSizes();
+    expect(sizes.stars).toBeGreaterThanOrEqual(60);
+    expect(sizes.stars).toBeLessThanOrEqual(90);
+    expect(sizes.legenden).toBe(0);
+    expect(sizes.teams).toBe(30);
   });
 
   it("setzt die Grenze bei Teams auf 6, bei Stars und Legenden auf 10", () => {
