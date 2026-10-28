@@ -73,14 +73,14 @@ describe("Spielmodi in der Einrichtung", () => {
 
 
 describe("Variantenabhängige Topfoptionen", () => {
-  it("zeigt Ärenknöpfe nur bei alle und Casual in allen Spieler-Modi", async () => {
+  it("zeigt Ärenknöpfe bei Legenden und alle und Casual in allen Spieler-Modi", async () => {
     const user = userEvent.setup();
     render(<SetupScreen initial={settings} poolSizes={poolSizes()} onStart={vi.fn()} />);
     for (const mode of ["stars", "legenden", "alle", "teams"]) {
       await user.selectOptions(screen.getByLabelText("Spielmodus"), mode);
-      if (mode === "alle") {
+      if (mode === "legenden" || mode === "alle") {
         expect(screen.getByRole("group", { name: FILTER_LABEL })).toBeInTheDocument();
-        for (const filter of MODES.find((m) => m.id === "alle")!.filters!) {
+        for (const filter of MODES.find((m) => m.id === mode)!.filters!) {
           expect(screen.getByRole("button", { name: filter.label })).toHaveAttribute("aria-pressed", "true");
         }
       } else {

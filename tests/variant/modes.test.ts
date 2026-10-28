@@ -268,16 +268,25 @@ describe("MODES", () => {
   it("hat vier Modi mit exakten Labels und ohne Schwierigkeit", () => {
     expect(MODES).toEqual([
       { id: "stars", label: "⭐ Aktuelle Stars", hasDifficulty: false, hasCasual: true },
-      { id: "legenden", label: "👑 Legenden", hasDifficulty: false, hasCasual: true },
+      {
+        id: "legenden", label: "👑 Legenden", hasDifficulty: false, hasCasual: true,
+        filters: [
+          { id: "2010-heute", label: "2010er" },
+          { id: "2000er", label: "2000er" },
+          { id: "90er", label: "90er" },
+          { id: "80er", label: "80er" },
+          { id: "70er-frueher", label: "70er u. früher" },
+        ],
+      },
       {
         id: "alle", label: "🏀 Alle NBA-Spieler", hasDifficulty: false, hasCasual: true,
         filters: [
-      { id: "2010-heute", label: "2010–heute" },
-      { id: "2000er", label: "2000er" },
-      { id: "90er", label: "90er" },
-      { id: "80er", label: "80er" },
-      { id: "70er-frueher", label: "70er u. früher" },
-    ],
+          { id: "2010-heute", label: "2010–heute" },
+          { id: "2000er", label: "2000er" },
+          { id: "90er", label: "90er" },
+          { id: "80er", label: "80er" },
+          { id: "70er-frueher", label: "70er u. früher" },
+        ],
       },
       { id: "teams", label: "🏟️ NBA-Teams", hasDifficulty: false },
     ]);
@@ -332,7 +341,7 @@ describe("Topfoptionen", () => {
       .toEqual(buildPool("alle", 1, squad, []));
   });
 
-  it.each(["stars", "legenden"] as const)("ignoriert Ärenfilter in %s", (mode) => {
+  it.each(["stars"] as const)("ignoriert Ärenfilter in %s", (mode) => {
     const squad = eraPlayers.map((p) => ({ ...p, tags: ["star", "legende"] as NbaPlayer["tags"] }));
     expect(buildPool(mode, 1, squad, [], { excludedFilters: ["2010-heute", "70er-frueher"], casual: false }))
       .toEqual(buildPool(mode, 1, squad, []));
@@ -386,5 +395,19 @@ describe("Topfoptionen", () => {
       expect(poolFor(mode.id, 1, options))
         .toEqual(buildPool(mode.id, 1, playersJson as NbaPlayer[], teamsJson as NbaTeam[], options));
     }
+  });
+});
+
+describe("Ären bei Legenden", () => {
+  it("filtert Legenden nach Ära und teilt die IDs mit dem Modus alle", () => {
+    const squad = [
+      player("Neu", { tags: ["legende"], extras: playerExtras({ era: "2010er" }) }),
+      player("Alt", { tags: ["legende"], extras: playerExtras({ era: "80er" }) }),
+    ];
+    const options = { excludedFilters: ["80er"], casual: false };
+    expect(buildPool("legenden", 1, squad, [], options).map((e) => e.name)).toEqual(["Neu"]);
+    expect(buildPool("alle", 1, squad, [], options).map((e) => e.name)).toEqual(["Neu"]);
+    expect(buildPool("stars", 1, squad.map((p) => ({ ...p, tags: ["star"] as NbaPlayer["tags"] })), [], options)
+      .map((e) => e.name)).toEqual(["Neu", "Alt"]);
   });
 });

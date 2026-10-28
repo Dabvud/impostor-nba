@@ -6,18 +6,24 @@ import type { NbaPlayer, NbaTeam, PlayerExtras, PositionGroup, Tag, TeamExtras, 
 
 export type ModeId = "stars" | "legenden" | "alle" | "teams";
 
+/** Ären vor 2010; dieselben IDs in allen Modi, damit eine abgewählte Ära überall abgewählt bleibt. */
+const OLDER_ERAS = [
+  { id: "2000er", label: "2000er" },
+  { id: "90er", label: "90er" },
+  { id: "80er", label: "80er" },
+  { id: "70er-frueher", label: "70er u. früher" },
+];
+
 export const MODES: ModeOption<ModeId>[] = [
   { id: "stars", label: "⭐ Aktuelle Stars", hasDifficulty: false, hasCasual: true },
-  { id: "legenden", label: "👑 Legenden", hasDifficulty: false, hasCasual: true },
+  {
+    id: "legenden", label: "👑 Legenden", hasDifficulty: false, hasCasual: true,
+    // Legenden gibt es (noch) nicht aus den 2020ern
+    filters: [{ id: "2010-heute", label: "2010er" }, ...OLDER_ERAS],
+  },
   {
     id: "alle", label: "🏀 Alle NBA-Spieler", hasDifficulty: false, hasCasual: true,
-    filters: [
-      { id: "2010-heute", label: "2010–heute" },
-      { id: "2000er", label: "2000er" },
-      { id: "90er", label: "90er" },
-      { id: "80er", label: "80er" },
-      { id: "70er-frueher", label: "70er u. früher" },
-    ],
+    filters: [{ id: "2010-heute", label: "2010–heute" }, ...OLDER_ERAS],
   },
   { id: "teams", label: "🏟️ NBA-Teams", hasDifficulty: false },
 ];
