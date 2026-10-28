@@ -4,6 +4,10 @@ import type { Entry } from "../../src/game/types";
 
 vi.mock("../../src/variant/modes", async (importOriginal) => ({
   ...await importOriginal<typeof import("../../src/variant/modes")>(),
+  MODES: (await importOriginal<typeof import("../../src/variant/modes")>()).MODES.map((mode, i) => ({
+    id: mode.id, label: "Modus " + i, hasDifficulty: false,
+    ...(i === 1 ? { choices: [{ id: "a", label: "A" }, { id: "b", label: "B" }] } : {}),
+  })),
   poolFor: vi.fn(),
 }));
 
@@ -21,6 +25,18 @@ describe("poolSizes", () => {
     expect(Object.keys(sizes)).toEqual(MODES.map((m) => m.id));
     for (const m of MODES) expect(sizes[m.id]).toBe(m.id === MODES[0].id ? 0 : 2);
   });
+});
+
+it("verwendet für Einfachauswahlen den größten Optionstopf, auch wenn der Topf ohne Wahl leer ist", () => {
+  vi.mocked(poolFor).mockImplementation((_mode, difficulty, options) => {
+    expect(difficulty).toBe(3);
+    return Array.from({ length: options?.choice === "b" ? 6 : options?.choice === "a" ? 2 : 0 },
+      (_, i) => ({ name: "Begriff " + i, hints: [] }));
+  });
+  expect(poolSizes()[MODES[1].id]).toBe(6);
+  expect(firstPlayableMode(poolSizes())).toBe(MODES[1].id);
+  vi.mocked(poolFor).mockReturnValue([]);
+  expect(poolSizes()[MODES[1].id]).toBe(0);
 });
 
 describe("firstPlayableMode", () => {

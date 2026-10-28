@@ -4,7 +4,7 @@ import { countBy, isText, sharedOnly, toTips } from "../game/tips";
 import type { Entry, ModeOption, PoolOptions, Tier } from "../game/types";
 import type { NbaPlayer, NbaTeam, PlayerExtras, PositionGroup, Tag, TeamExtras, TeamHints } from "./types";
 
-export type ModeId = "stars" | "legenden" | "alle" | "teams";
+export type ModeId = "stars" | "legenden" | "alle" | "lieblingsteam" | "teams";
 
 /** Ären vor 2010; dieselben IDs in allen Modi, damit eine abgewählte Ära überall abgewählt bleibt. */
 const OLDER_ERAS = [
@@ -24,6 +24,11 @@ export const MODES: ModeOption<ModeId>[] = [
   {
     id: "alle", label: "🏀 Alle NBA-Spieler", hasDifficulty: false, hasCasual: true,
     filters: [{ id: "2010-heute", label: "2010–heute" }, ...OLDER_ERAS],
+  },
+  {
+    id: "lieblingsteam", label: "❤️ Lieblingsteam", hasDifficulty: false,
+    choices: teamsJson.map(({ name }) => ({ id: name, label: name })).sort((a, b) => a.label.localeCompare(b.label, "de")),
+    choiceLabel: "Team", minChoicePool: 5,
   },
   { id: "teams", label: "🏟️ NBA-Teams", hasDifficulty: false },
 ];
@@ -54,7 +59,6 @@ const PLAYER_EXTRA_SLOTS: [keyof PlayerExtras, string][] = [
   ["college", "college"],
   ["transfer", "transfer"],
 ];
-const PLAYER_SLOTS = ["herkunft", "position", ...PLAYER_EXTRA_SLOTS.map(([, slot]) => slot)];
 const TEAM_SLOTS = [
   "conference", "conference", "farbe", "ort", "erfolg", "logo", // conference, division, color, region, success, logo
   "gruendung", "ort", "rivale", "maskottchen", "geschichte", "name",
@@ -69,7 +73,9 @@ const POSITION_GROUPS: Record<string, PositionGroup> = {
   Center: "Center",
 };
 
-function playerEntries(players: NbaPlayer[]): Entry[] {
+function playerEntries(players: NbaPlayer[], includeTeam = true): Entry[] {
+  const extraSlots = PLAYER_EXTRA_SLOTS.filter(([, slot]) => includeTeam || slot !== "team");
+  const slots = ["herkunft", "position", ...extraSlots.map(([, slot]) => slot)];
   const candidates = players.map(({ hints, extras }) => [...new Set([
     hints.nation === "USA" ? "US-Amerikaner" : "kein US-Amerikaner",
     ...(extras?.continent === "Europa" ? ["Europäer"] : []),
@@ -79,14 +85,14 @@ function playerEntries(players: NbaPlayer[]): Entry[] {
   const counts = countBy(candidates.flat(), (hint) => hint);
   // Spalte 0 = Nation (strengere Grenze), danach Position und die Zusatz-Kategorien
   const all = sharedOnly(
-    players.map((p) => [p.hints.nation, p.hints.position, ...PLAYER_EXTRA_SLOTS.map(([k]) => p.extras?.[k])]),
+    players.map((p) => [p.hints.nation, p.hints.position, ...extraSlots.map(([k]) => p.extras?.[k])]),
     (c) => (c === 0 ? MIN_SAME_NATION : 2),
   );
   return players.map(({ name, hints }, i) => {
     return {
       name,
       hints: candidates[i].filter((hint) => (counts.get(hint) ?? 0) >= 2),
-      allHints: toTips(all[i], PLAYER_SLOTS),
+      allHints: toTips(all[i], slots),
       group: POSITION_GROUPS[hints.position],
     };
   });
@@ -139,14 +145,25 @@ export function buildPool(
         return true;
       }));
     }
+    case "lieblingsteam": {
+      const choice = options?.choice;
+      if (!choice) return [];
+      const seen = new Set<string>();
+      const pool = selectedPlayers.filter((p) => {
+        if (!p.teams?.includes(choice) || seen.has(p.name)) return false;
+        seen.add(p.name);
+        return true;
+      });
+      return playerEntries(pool, false);
+    }
     case "teams":
       return teamEntries(teams);
   }
 }
 
 /** Schlüssel, unter dem die schon gespielten Begriffe eines Topfs gespeichert werden. */
-export function poolKey(mode: ModeId, _difficulty: Tier): string {
-  return mode;
+export function poolKey(mode: ModeId, _difficulty: Tier, choice?: string | null): string {
+  return MODES.find((m) => m.id === mode)?.choices ? `${mode}:${choice ?? ""}` : mode;
 }
 
 /** Liefert den Topf mit den eingetragenen Begriffen. */

@@ -222,6 +222,44 @@ button.primary {
   border-top: 1px solid var(--line-soft);
 }
 
+.install-lead {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+/* Schritte zum Installieren – echte Reihenfolge, daher nummeriert */
+.install-panel ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.install-panel li {
+  counter-increment: step;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.install-panel li::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  background: var(--select);
+  color: var(--on-select);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
 .pool-count {
   margin: 0;
   font-size: 14px;

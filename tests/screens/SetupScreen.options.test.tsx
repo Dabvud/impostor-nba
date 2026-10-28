@@ -12,6 +12,8 @@ vi.mock("../../src/variant/modes", async (importOriginal) => {
     ...original,
     MODES: original.MODES.map((mode, i) => ({
       ...mode,
+      choices: undefined,
+      choiceLabel: undefined,
       filters: i === 0 ? [{ id: "a", label: "Auswahl A" }, { id: "b", label: "Auswahl B" }] : undefined,
       hasCasual: i === 0,
     })),
@@ -22,7 +24,7 @@ vi.mock("../../src/variant/modes", async (importOriginal) => {
 const initial: Settings = {
   names: ["Anna", "Ben", "Cem"], impostorCount: 1, mode: MODES[0].id, difficulty: 1,
   hintsEnabled: true, secretImpostors: false, thinkSeconds: null, discussSeconds: null,
-  groupId: null, guessEnabled: true, excludedFilters: [], casual: false,
+  groupId: null, guessEnabled: true, excludedFilters: [], casual: false, choice: null,
 };
 
 beforeEach(() => {
@@ -47,9 +49,9 @@ describe("Setup mit Topfoptionen", () => {
     expect(a).toHaveAttribute("aria-pressed", "true");
     await user.click(a);
     await user.click(screen.getByRole("switch", { name: CASUAL_LABEL }));
-    expect(poolFor).toHaveBeenLastCalledWith(initial.mode, 1, { excludedFilters: ["a"], casual: true });
+    expect(poolFor).toHaveBeenLastCalledWith(initial.mode, 1, { excludedFilters: ["a"], casual: true, choice: null });
     await user.click(screen.getByRole("button", { name: "Start" }));
-    const expected = { ...initial, excludedFilters: ["a"], casual: true };
+    const expected = { ...initial, excludedFilters: ["a"], casual: true, choice: null };
     expect(onStart).toHaveBeenCalledWith(expected);
     expect(onDraftChange).toHaveBeenLastCalledWith(expected, initial.names);
   });
@@ -57,7 +59,7 @@ describe("Setup mit Topfoptionen", () => {
   it("übernimmt gespeicherte Optionen und behält sie bei einem Moduswechsel", async () => {
     const user = userEvent.setup();
     const onStart = vi.fn();
-    const saved = { ...initial, excludedFilters: ["a", "unbekannt"], casual: true };
+    const saved = { ...initial, excludedFilters: ["a", "unbekannt"], casual: true, choice: null };
     render(<SetupScreen initial={saved} onStart={onStart} />);
     expect(screen.getByRole("button", { name: "Auswahl A" })).toHaveAttribute("aria-pressed", "false");
     expect(screen.getByRole("switch", { name: CASUAL_LABEL })).toBeChecked();

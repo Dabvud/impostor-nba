@@ -16,10 +16,14 @@ export function maxImpostors(playerCount: number): number {
 export function validateSettings(s: Settings, poolSize?: number, filteredPoolSize?: number): string[] {
   const names = normalizeNames(s.names);
   const errors: string[] = [];
-  const filters = MODES.find((m) => m.id === s.mode)?.filters;
+  const mode = MODES.find((m) => m.id === s.mode);
+  const filters = mode?.filters;
   if (poolSize === 0) errors.push("In diesem Modus gibt es noch keine Begriffe");
   else if (filteredPoolSize === 0) errors.push("Mit dieser Auswahl gibt es keine Begriffe");
   if (filters?.length && filters.every((f) => s.excludedFilters.includes(f.id))) {
+    errors.push("Mindestens eine Auswahl nötig");
+  }
+  if (mode?.choices && !mode.choices.some((choice) => choice.id === s.choice)) {
     errors.push("Mindestens eine Auswahl nötig");
   }
   if (names.length < MIN_PLAYERS) errors.push(`Mindestens ${MIN_PLAYERS} Spieler`);

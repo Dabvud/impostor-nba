@@ -9,6 +9,7 @@ vi.mock("../../src/variant/modes", async (importOriginal) => {
     ...original,
     MODES: original.MODES.map((mode, i) => ({
       ...mode,
+      choices: i === 1 ? [{ id: "a", label: "A" }] : undefined,
       filters: i === 0 ? [{ id: "a", label: "A" }, { id: "b", label: "B" }] : undefined,
     })),
   };
@@ -26,7 +27,7 @@ const base: Settings = {
   groupId: null,
   guessEnabled: true,
   excludedFilters: [],
-  casual: false,
+  casual: false, choice: null,
 };
 
 describe("maxImpostors", () => {
@@ -99,11 +100,17 @@ describe("Topfauswahl validieren", () => {
   });
 
   it("ignoriert Abwahlen in einem Modus ohne Filter", () => {
-    expect(validateSettings({ ...base, mode: MODES[1].id, excludedFilters: ["a", "b"] }, 5, 5)).toEqual([]);
+    expect(validateSettings({ ...base, mode: MODES[2].id, excludedFilters: ["a", "b"] }, 5, 5)).toEqual([]);
   });
 
   it("unterscheidet leere Auswahl und grundsätzlich leeren Modus", () => {
     expect(validateSettings(base, 5, 0)).toEqual(["Mit dieser Auswahl gibt es keine Begriffe"]);
     expect(validateSettings(base, 0, 0)).toEqual(["In diesem Modus gibt es noch keine Begriffe"]);
   });
+});
+
+
+it.each([null, "unbekannt"])("verlangt eine gültige Einfachauswahl statt %s", (choice) => {
+  expect(validateSettings({ ...base, mode: MODES[1].id, choice }, 5, 5)).toContain("Mindestens eine Auswahl nötig");
+  expect(validateSettings({ ...base, mode: MODES[1].id, choice: "a" }, 5, 5)).toEqual([]);
 });

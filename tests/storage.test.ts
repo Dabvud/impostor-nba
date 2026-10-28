@@ -29,7 +29,7 @@ const settings: Settings = {
   groupId: null,
   guessEnabled: true,
   excludedFilters: [],
-  casual: false,
+  casual: false, choice: null,
 };
 const game: GameState = {
   phase: "reveal",
@@ -260,11 +260,11 @@ describe("Topfoptionen speichern", () => {
   it("ergänzt die Standardwerte für Einstellungen ohne die neuen Felder", () => {
     const { excludedFilters: _filters, casual: _casual, ...old } = settings;
     localStorage.setItem(STORAGE_PREFIX + ":v1:settings", JSON.stringify(old));
-    expect(loadSettings()).toEqual({ ...old, excludedFilters: [], casual: false });
+    expect(loadSettings()).toEqual({ ...old, excludedFilters: [], casual: false, choice: null });
   });
 
   it("speichert auch unbekannte Filter-IDs und einen aktiven Schalter unverändert", () => {
-    const selected = { ...settings, excludedFilters: ["a", "unbekannt"], casual: true };
+    const selected = { ...settings, excludedFilters: ["a", "unbekannt"], casual: true, choice: null };
     saveSettings(selected);
     expect(loadSettings()).toEqual(selected);
   });
@@ -275,6 +275,23 @@ describe("Topfoptionen speichern", () => {
     { casual: null }, { casual: "true" }, { casual: 1 }, { casual: [] },
   ])("verwirft ungültige Typen: %j", (invalid) => {
     localStorage.setItem(STORAGE_PREFIX + ":v1:settings", JSON.stringify({ ...settings, ...invalid }));
+    expect(loadSettings()).toBeNull();
+  });
+});
+
+
+describe("Einfachauswahl speichern", () => {
+  it("ergänzt alte Einstellungen ohne Wahl mit null", () => {
+    const { choice: _choice, ...old } = settings;
+    localStorage.setItem(STORAGE_PREFIX + ":v1:settings", JSON.stringify(old));
+    expect(loadSettings()).toEqual({ ...old, choice: null });
+  });
+  it.each([null, "option-a", "unbekannt"])("behält %s unverändert", (choice) => {
+    saveSettings({ ...settings, choice });
+    expect(loadSettings()).toEqual({ ...settings, choice });
+  });
+  it.each([5, true, [], {}, ["a"]])("verwirft ungültige Wahltypen: %j", (choice) => {
+    localStorage.setItem(STORAGE_PREFIX + ":v1:settings", JSON.stringify({ ...settings, choice }));
     expect(loadSettings()).toBeNull();
   });
 });

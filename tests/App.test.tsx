@@ -180,7 +180,7 @@ describe("Statistik-Protokoll", () => {
     groupId: "g1",
     guessEnabled: true,
     excludedFilters: [],
-    casual: false,
+    casual: false, choice: null,
   };
   const stats = () => JSON.parse(localStorage.getItem(`${STORAGE_PREFIX}:v1:stats:g1`) ?? "[]");
 

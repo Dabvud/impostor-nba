@@ -1,4 +1,5 @@
 import QRCode from "qrcode";
+import { ANDROID_INSTALL_STEPS, IOS_INSTALL_STEPS, OPEN_IN_SAFARI } from "../components/InstallInstructions";
 import { useEffect, useState } from "react";
 import { APP_NAME, QR_COLORS, SHARE_TEXT } from "../variant/config";
 
@@ -39,10 +40,10 @@ export default function ShareScreen({ url, onBack }: Props) {
       <section className="panel">
         <h2>Installieren</h2>
         <p>
-          <strong>iPhone:</strong> Link in Safari öffnen → Teilen-Symbol → „Zum Home-Bildschirm“
+          <strong>iPhone:</strong> {OPEN_IN_SAFARI} → {IOS_INSTALL_STEPS.join(" → ")}
         </p>
         <p>
-          <strong>Android:</strong> Link in Chrome öffnen → Menü ⋮ → „App installieren“
+          <strong>Android:</strong> Link in Chrome öffnen → {ANDROID_INSTALL_STEPS.join(" → ")}
         </p>
       </section>
 

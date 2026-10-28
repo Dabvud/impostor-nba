@@ -46,6 +46,7 @@ function isSettings(v: unknown): v is Settings {
     [1, 2, 3].includes(v.difficulty as number) &&
     (v.excludedFilters === undefined || isStringArray(v.excludedFilters)) &&
     (v.casual === undefined || typeof v.casual === "boolean") &&
+    (v.choice === undefined || v.choice === null || typeof v.choice === "string") &&
     (v.hintsEnabled === undefined || typeof v.hintsEnabled === "boolean") &&
     (v.secretImpostors === undefined || typeof v.secretImpostors === "boolean") &&
     isOptionalSeconds(v.thinkSeconds) &&
@@ -131,6 +132,7 @@ export function loadSettings(): Settings | null {
     hintsEnabled: v.hintsEnabled ?? true,
     excludedFilters: v.excludedFilters ?? [],
     casual: v.casual ?? false,
+    choice: v.choice ?? null,
     secretImpostors: v.secretImpostors ?? false,
     thinkSeconds: secondsOrNull(v.thinkSeconds),
     discussSeconds: secondsOrNull(v.discussSeconds),

@@ -1,5 +1,7 @@
 import { useEffect, useReducer, useRef, useState } from "react";
 import { unlockAudio } from "./alarm";
+import { canPromptInstall, detectPlatform, isStandalone, promptInstall, wantsInstall } from "./install";
+import InstallScreen from "./screens/InstallScreen";
 import { startEvening, type Group } from "./game/groups";
 import { poolSizes } from "./game/modes";
 import { nextRound } from "./game/session";
@@ -33,7 +35,7 @@ import {
 const sizes = poolSizes();
 
 /** Bildschirme neben dem Spiel – nicht gespeichert, nach Neuladen geht es ins Spiel. */
-type View = { kind: "game" } | { kind: "group"; groupId: string | null } | { kind: "rules" | "stats" | "share" };
+type View = { kind: "game" } | { kind: "group"; groupId: string | null } | { kind: "rules" | "stats" | "share" | "install" };
 
 function initialState(): GameState {
   const saved = loadGame();
@@ -45,7 +47,23 @@ export default function App() {
   const [settings, setSettings] = useState<Settings | null>(loadSettings);
   const [groups, setGroups] = useState<Group[]>(loadGroups);
   const [draft, setDraft] = useState<{ settings: Settings; freeNames: string[] } | null>(null);
-  const [view, setView] = useState<View>({ kind: "game" });
+  const [platform] = useState(() => detectPlatform(navigator.userAgent, isStandalone()));
+  const [view, setView] = useState<View>(() => ({ kind: wantsInstall(location.search) && platform !== "installed" ? "install" : "game" }));
+  const [canPrompt, setCanPrompt] = useState(canPromptInstall);
+
+  useEffect(() => {
+    const updatePrompt = () => setCanPrompt(canPromptInstall());
+    window.addEventListener("beforeinstallprompt", updatePrompt);
+    return () => window.removeEventListener("beforeinstallprompt", updatePrompt);
+  }, []);
+
+  function closeInstall() {
+    const url = new URL(location.href);
+    url.searchParams.delete("installieren");
+    history.replaceState(history.state, "", url.pathname + url.search + url.hash);
+    // eine laufende Runde bleibt erhalten
+    setView({ kind: "game" });
+  }
   // erhöht sich nach „Statistik löschen“, damit das Protokoll neu gelesen wird
   const [statsVersion, setStatsVersion] = useState(0);
   const phase = useRef(state.phase);
@@ -131,6 +149,9 @@ export default function App() {
   }
 
   function renderScreen() {
+    if (view.kind === "install") return <InstallScreen platform={platform} canPrompt={canPrompt} onClose={closeInstall} onPrompt={() => {
+      void promptInstall().then(() => setCanPrompt(canPromptInstall()));
+    }} />;
     switch (state.phase) {
       case "setup": {
         const back = () => setView({ kind: "game" });
@@ -235,7 +256,7 @@ export default function App() {
 
   return (
     <>
-      {state.phase !== "setup" && (
+      {state.phase !== "setup" && view.kind !== "install" && (
         <button type="button" className="end-round" onClick={endRound}>
           <span aria-hidden="true">✕</span> Runde beenden
         </button>

@@ -15,8 +15,12 @@ export type ModeOption<M extends string = string> = {
   hasDifficulty: boolean;
   filters?: { id: string; label: string }[];
   hasCasual?: boolean;
+  choices?: { id: string; label: string }[];
+  choiceLabel?: string;
+  /** Mindestgröße einer wählbaren Option; ohne Angabe reicht ein Begriff. */
+  minChoicePool?: number;
 };
-export type PoolOptions = { excludedFilters: string[]; casual: boolean };
+export type PoolOptions = { excludedFilters: string[]; casual: boolean; choice: string | null };
 export type Settings = {
   names: string[];
   impostorCount: number;
@@ -26,6 +30,8 @@ export type Settings = {
   /** IDs abgewählter Filter; neue Filter bleiben dadurch automatisch aktiv. */
   excludedFilters: string[];
   casual: boolean;
+  /** Gewählte Option eines Modus mit Einfachauswahl. */
+  choice: string | null;
   /** Anzahl der Impostor wird jede Runde geheim ausgelost (0 bis Maximum). */
   secretImpostors: boolean;
   /** Überlegzeit pro Spieler in der Hinweisrunde; null = keine Hinweisrunde. */

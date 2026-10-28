@@ -15,6 +15,7 @@ describe("Spielmodi in der Einrichtung", () => {
     expect(screen.getByRole("option", { name: "👑 Legenden" })).toBeEnabled();
     expect(screen.queryByRole("option", { name: "👑 Legenden (bald)" })).not.toBeInTheDocument();
     expect(screen.getByRole("option", { name: "🏟️ NBA-Teams" })).toBeEnabled();
+    expect(screen.getByRole("option", { name: "❤️ Lieblingsteam (bald)" })).toBeDisabled();
     expect(screen.getByLabelText("Spielmodus")).toHaveValue("stars");
     await user.selectOptions(screen.getByLabelText("Spielmodus"), "teams");
     expect(screen.getByLabelText("Spielmodus")).toHaveValue("teams");
@@ -56,7 +57,7 @@ describe("Spielmodi in der Einrichtung", () => {
   it("fällt bei leeren Spieler-Töpfen auf NBA-Teams zurück", async () => {
     const onStart = vi.fn();
     const user = userEvent.setup();
-    render(<SetupScreen initial={settings} poolSizes={{ stars: 0, legenden: 0, alle: 0, teams: 30 }} onStart={onStart} />);
+    render(<SetupScreen initial={settings} poolSizes={{ stars: 0, legenden: 0, alle: 0, lieblingsteam: 0, teams: 30 }} onStart={onStart} />);
     expect(screen.getByRole("option", { name: "⭐ Aktuelle Stars (bald)" })).toBeDisabled();
     expect(screen.getByLabelText("Spielmodus")).toHaveValue("teams");
     await user.click(screen.getByRole("button", { name: "Start" }));

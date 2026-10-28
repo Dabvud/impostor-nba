@@ -132,7 +132,7 @@ describe("SetupScreen", () => {
       groupId: null,
       guessEnabled: true,
       excludedFilters: [],
-      casual: false,
+      casual: false, choice: null,
     };
     render(<SetupScreen initial={initial} onStart={vi.fn()} />);
     await user.click(screen.getByRole("button", { name: "Mehr Zeit" }));
@@ -155,7 +155,7 @@ describe("SetupScreen", () => {
       groupId: null,
       guessEnabled: true,
       excludedFilters: [],
-      casual: false,
+      casual: false, choice: null,
     };
     render(<SetupScreen initial={initial} onStart={vi.fn()} />);
     expect(screen.getByRole("switch", { name: "Geheime Anzahl" })).toBeChecked();
@@ -196,7 +196,7 @@ describe("SetupScreen", () => {
       groupId: null,
       guessEnabled: true,
       excludedFilters: [],
-      casual: false,
+      casual: false, choice: null,
     };
     render(<SetupScreen initial={initial} onStart={onStart} />);
     await user.click(screen.getByRole("button", { name: "Finn entfernen" }));
@@ -222,7 +222,7 @@ describe("SetupScreen", () => {
       groupId: null,
       guessEnabled: true,
       excludedFilters: [],
-      casual: false,
+      casual: false, choice: null,
     };
     render(<SetupScreen initial={initial} onStart={onStart} />);
     await addNames(user, ["  Dana  "]);
@@ -240,7 +240,7 @@ describe("SetupScreen", () => {
       groupId: null,
       guessEnabled: true,
       excludedFilters: [],
-      casual: false,
+      casual: false, choice: null,
     });
   });
 
@@ -314,7 +314,7 @@ describe("SetupScreen mit Gruppen", () => {
       const [groups, setGroups] = useState<Group[]>([big]);
       const initial: Settings = {
         names: [], impostorCount: 3, mode: MODES[0].id, difficulty: 1, hintsEnabled: true, secretImpostors: false,
-        thinkSeconds: null, discussSeconds: null, groupId: "g1", guessEnabled: true, excludedFilters: [], casual: false,
+        thinkSeconds: null, discussSeconds: null, groupId: "g1", guessEnabled: true, excludedFilters: [], casual: false, choice: null,
       };
       return <SetupScreen initial={initial} onStart={onStart} groups={groups} onGroupsChange={setGroups} />;
     }
@@ -360,7 +360,7 @@ describe("SetupScreen mit Gruppen", () => {
       groupId: "geloescht",
       guessEnabled: true,
       excludedFilters: [],
-      casual: false,
+      casual: false, choice: null,
     };
     render(<Harness initial={initial} />);
     expect(screen.getByRole("button", { name: "Ohne Gruppe" })).toHaveAttribute("aria-pressed", "true");
@@ -389,7 +389,7 @@ describe("SetupScreen mit Topfgrößen", () => {
   const initial: Settings = {
     names: ["Anna", "Ben", "Cem"], impostorCount: 1, mode: MODES[0].id, difficulty: 1,
     hintsEnabled: true, secretImpostors: false, thinkSeconds: null, discussSeconds: null,
-    groupId: null, guessEnabled: true, excludedFilters: [], casual: false,
+    groupId: null, guessEnabled: true, excludedFilters: [], casual: false, choice: null,
   };
 
   it("verwendet den Titel aus der Konfiguration", () => {

@@ -82,11 +82,25 @@ export default function SetupScreen({
   const [difficulty, setDifficulty] = useState<Tier>(initial?.difficulty ?? 1);
   const [excludedFilters, setExcludedFilters] = useState<string[]>(initial?.excludedFilters ?? []);
   const [casual, setCasual] = useState(initial?.casual ?? false);
+  const [choice, setChoice] = useState<string | null>(initial?.choice ?? null);
   const [hintsEnabled, setHintsEnabled] = useState(initial?.hintsEnabled ?? true);
 
   const [secretImpostors, setSecretImpostors] = useState(initial?.secretImpostors ?? false);
   const [thinkSeconds, setThinkSeconds] = useState<number | null>(initial?.thinkSeconds ?? null);
   const [discussSeconds, setDiscussSeconds] = useState<number | null>(initial?.discussSeconds ?? null);
+
+  const selectedMode = MODES.find((m) => m.id === mode);
+  const choicePools = useMemo(() => selectedMode?.choices?.map((option) => ({
+    ...option,
+    size: poolFor(mode, difficulty, { excludedFilters, casual, choice: option.id }).length,
+  })), [selectedMode, mode, difficulty, excludedFilters, casual]);
+  const selectableChoices = choicePools?.filter((option) => option.size >= (selectedMode?.minChoicePool ?? 1));
+  const effectiveChoice = selectableChoices
+    ? selectableChoices.find((option) => option.id === choice)?.id ?? selectableChoices[0]?.id ?? null
+    : choice;
+  useEffect(() => {
+    if (choicePools && choice !== effectiveChoice) setChoice(effectiveChoice);
+  }, [choicePools, choice, effectiveChoice]);
 
   const max = maxImpostors(names.length);
   // Gewählte Anzahl bleibt erhalten (z. B. beim Umsortieren der Sitzreihenfolge), angezeigt und
@@ -100,23 +114,25 @@ export default function SetupScreen({
     hintsEnabled,
     excludedFilters,
     casual,
+    choice: effectiveChoice,
     secretImpostors,
     thinkSeconds,
     discussSeconds,
     groupId,
     guessEnabled,
   };
-  const unfilteredPoolSize = useMemo(() => poolFor(mode, difficulty).length, [mode, difficulty]);
+  const unfilteredPoolSize = useMemo(() => choicePools
+    ? Math.max(0, ...choicePools.map((option) => option.size))
+    : poolFor(mode, difficulty).length, [mode, difficulty, choicePools]);
   const filteredPoolSize = useMemo(
-    () => poolFor(mode, difficulty, { excludedFilters, casual }).length,
-    [mode, difficulty, excludedFilters, casual],
+    () => poolFor(mode, difficulty, { excludedFilters, casual, choice: effectiveChoice }).length,
+    [mode, difficulty, excludedFilters, casual, effectiveChoice],
   );
   const errors = validateSettings(settings, poolSizes?.[mode] ?? unfilteredPoolSize, filteredPoolSize);
 
   const draftKey = JSON.stringify([settings, freeNames]);
   // nur bei echten Änderungen melden (Objekte entstehen bei jedem Rendern neu)
   useEffect(() => onDraftChange(settings, freeNames), [draftKey]);
-  const selectedMode = MODES.find((m) => m.id === mode);
 
   function addName(e: FormEvent) {
     e.preventDefault();
@@ -363,6 +379,23 @@ export default function SetupScreen({
             </option>
           ))}
         </select>
+        {choicePools && (
+          <label className="pool-filters">
+            <span className="pool-filters-label">{selectedMode?.choiceLabel ?? "Auswahl"}</span>
+            <select
+              aria-label={selectedMode?.choiceLabel ?? "Auswahl"}
+              value={effectiveChoice ?? ""}
+              onChange={(e) => setChoice(e.target.value || null)}
+            >
+              {effectiveChoice === null && <option value="" disabled>Keine Auswahl verfügbar</option>}
+              {choicePools.map((option) => (
+                <option key={option.id} value={option.id} disabled={option.size < (selectedMode?.minChoicePool ?? 1)}>
+                  {option.label}{option.size < (selectedMode?.minChoicePool ?? 1) ? " (zu wenige)" : ""}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
         {selectedMode?.filters && (
           <div className="pool-filters">
             <p id="pool-filters-label" className="pool-filters-label">{FILTER_LABEL}</p>
@@ -393,7 +426,7 @@ export default function SetupScreen({
             />
           </label>
         )}
-        {(selectedMode?.filters || selectedMode?.hasCasual) && (
+        {(selectedMode?.filters || selectedMode?.hasCasual || selectedMode?.choices) && (
           <p className="pool-count" aria-live="polite">{filteredPoolSize} im Topf</p>
         )}
         {selectedMode?.hasDifficulty && (

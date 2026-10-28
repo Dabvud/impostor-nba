@@ -8,6 +8,7 @@ import { allImpostorsMax, poolFor } from "../../src/variant/modes";
 vi.mock("../../src/variant/modes", async (importOriginal) => ({
   ...await importOriginal<typeof import("../../src/variant/modes")>(),
   poolFor: vi.fn(),
+  poolKey: vi.fn((mode: string, _difficulty: number, choice?: string | null) => choice ? `${mode}:${choice}` : mode),
   allImpostorsMax: vi.fn(),
 }));
 
@@ -33,17 +34,18 @@ const settings: Settings = {
   groupId: null,
   guessEnabled: true,
   excludedFilters: [],
-  casual: false,
+  casual: false, choice: null,
 };
 
 describe("nextRound", () => {
   it("übergibt die aktuellen Optionen an die Variante und behält den Topfschlüssel", () => {
-    const selected = { ...settings, excludedFilters: ["a"], casual: true };
+    const selected = { ...settings, excludedFilters: ["a"], casual: true, choice: "option-a" };
     const result = nextRound(selected, {}, seededRng(5));
     expect(poolFor).toHaveBeenLastCalledWith(settings.mode, settings.difficulty, {
-      excludedFilters: ["a"], casual: true,
+      excludedFilters: ["a"], casual: true, choice: "option-a",
     });
-    expect(Object.keys(result.used)).toEqual([poolKey(settings.mode, settings.difficulty)]);
+    expect(poolKey).toHaveBeenCalledWith(settings.mode, settings.difficulty, "option-a");
+    expect(Object.keys(result.used)).toEqual([poolKey(settings.mode, settings.difficulty, "option-a")]);
   });
 
   it("aktualisiert nur den Topf des gewählten Modus", () => {
