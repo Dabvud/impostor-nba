@@ -79,12 +79,43 @@ describe("poolFor", () => {
   it("filtert Stars, Legenden und Teams anhand der Tags", () => {
     expect(names("stars")).toEqual(["A", "C"]);
     expect(names("legenden")).toEqual(["B", "C"]);
+    expect(names("alle")).toEqual(["A", "B", "C"]);
     expect(names("teams")).toEqual(["X", "Y", "Z"]);
   });
 
-  it.each(["stars", "legenden", "teams"] as const)("ignoriert die Schwierigkeit bei %s", (mode) => {
+  it.each(["stars", "legenden", "alle", "teams"] as const)("ignoriert die Schwierigkeit bei %s", (mode) => {
     expect(buildPool(mode, 2, players, teams)).toEqual(buildPool(mode, 1, players, teams));
     expect(buildPool(mode, 3, players, teams)).toEqual(buildPool(mode, 1, players, teams));
+  });
+
+  it("nimmt Spieler mit beiden Tags einmal auf und berechnet Tipps über den gesamten Topf", () => {
+    const squad = [
+      player("A", { hints: { nation: "USA", position: "Point Guard", tips: ["Dunker"] },
+        extras: playerExtras({ hand: "Linkshänder" }) }),
+      player("B", { tags: ["legende"], hints: { nation: "USA", position: "Center", tips: ["Dunker"] },
+        extras: playerExtras({ hand: "Linkshänder" }) }),
+      player("C", { tags: ["star", "legende"] }),
+    ];
+    for (const mode of ["stars", "legenden"] as const) {
+      const pool = buildPool(mode, 1, squad, []);
+      expect(pool.every((e) => !e.hints.includes("Dunker"))).toBe(true);
+      expect(pool.every((e) => !e.allHints?.some((h) => h.value === "Linkshänder"))).toBe(true);
+    }
+    const pool = buildPool("alle", 1, squad, []);
+    expect(pool.map((e) => e.name)).toEqual(["A", "B", "C"]);
+    expect(pool.filter((e) => e.name === "C")).toHaveLength(1);
+    for (const entry of pool.slice(0, 2)) {
+      expect(entry.hints).toContain("Dunker");
+      expect(entry.allHints).toContainEqual({ slot: "hand", value: "Linkshänder" });
+    }
+  });
+
+  it("behält bei alle jeden Namen in Eingabereihenfolge mit seinem ersten Eintrag", () => {
+    const squad = [player("B", { tags: [] }), player("A")];
+    const duplicate = player("B", { hints: { nation: "Kanada", position: "Center", tips: ["Dunker"] } });
+    const pool = buildPool("alle", 1, [...squad, duplicate], []);
+    expect(pool.map((e) => e.name)).toEqual(["B", "A"]);
+    expect(pool).toEqual(buildPool("alle", 1, squad, []));
   });
 
   it("liefert Namen und nur im jeweiligen Topf geteilte Tipps", () => {
@@ -234,10 +265,11 @@ describe("poolKey", () => {
 });
 
 describe("MODES", () => {
-  it("hat drei Modi mit exakten Labels und ohne Schwierigkeit", () => {
+  it("hat vier Modi mit exakten Labels und ohne Schwierigkeit", () => {
     expect(MODES).toEqual([
       { id: "stars", label: "⭐ Aktuelle Stars", hasDifficulty: false },
       { id: "legenden", label: "👑 Legenden", hasDifficulty: false },
+      { id: "alle", label: "🏀 Alle NBA-Spieler", hasDifficulty: false },
       { id: "teams", label: "🏟️ NBA-Teams", hasDifficulty: false },
     ]);
   });
@@ -257,10 +289,12 @@ describe("Anbindung der Spieldaten", () => {
     expect(sizes.stars).toBeGreaterThanOrEqual(60);
     expect(sizes.stars).toBeLessThanOrEqual(90);
     expect(sizes.legenden).toBeGreaterThan(0);
+    expect(sizes.alle).toBe(new Set(playersJson.map((p) => p.name)).size);
+    expect(sizes.alle).toBeGreaterThanOrEqual(Math.max(sizes.stars, sizes.legenden));
     expect(sizes.teams).toBe(30);
   });
 
-  it("setzt die Grenze bei Teams auf 6, bei Stars und Legenden auf 10", () => {
-    expect(MODES.map((mode) => allImpostorsMax(mode.id))).toEqual([10, 10, 6]);
+  it("setzt die Grenze bei Teams auf 6, bei allen Spieler-Modi auf 10", () => {
+    expect(MODES.map((mode) => allImpostorsMax(mode.id))).toEqual([10, 10, 10, 6]);
   });
 });

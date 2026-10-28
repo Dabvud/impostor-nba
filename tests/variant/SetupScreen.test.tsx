@@ -54,7 +54,7 @@ describe("Spielmodi in der Einrichtung", () => {
   it("fällt bei leeren Spieler-Töpfen auf NBA-Teams zurück", async () => {
     const onStart = vi.fn();
     const user = userEvent.setup();
-    render(<SetupScreen initial={settings} poolSizes={{ stars: 0, legenden: 0, teams: 30 }} onStart={onStart} />);
+    render(<SetupScreen initial={settings} poolSizes={{ stars: 0, legenden: 0, alle: 0, teams: 30 }} onStart={onStart} />);
     expect(screen.getByRole("option", { name: "⭐ Aktuelle Stars (bald)" })).toBeDisabled();
     expect(screen.getByLabelText("Spielmodus")).toHaveValue("teams");
     await user.click(screen.getByRole("button", { name: "Start" }));

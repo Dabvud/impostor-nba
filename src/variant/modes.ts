@@ -4,11 +4,12 @@ import { countBy, isText, sharedOnly, toTips } from "../game/tips";
 import type { Entry, ModeOption, Tier } from "../game/types";
 import type { NbaPlayer, NbaTeam, PlayerExtras, PositionGroup, Tag, TeamExtras, TeamHints } from "./types";
 
-export type ModeId = "stars" | "legenden" | "teams";
+export type ModeId = "stars" | "legenden" | "alle" | "teams";
 
 export const MODES: ModeOption<ModeId>[] = [
   { id: "stars", label: "⭐ Aktuelle Stars", hasDifficulty: false },
   { id: "legenden", label: "👑 Legenden", hasDifficulty: false },
+  { id: "alle", label: "🏀 Alle NBA-Spieler", hasDifficulty: false },
   { id: "teams", label: "🏟️ NBA-Teams", hasDifficulty: false },
 ];
 
@@ -101,6 +102,14 @@ export function buildPool(mode: ModeId, _difficulty: Tier, players: NbaPlayer[],
       return playerEntries(withTag(players, "star"));
     case "legenden":
       return playerEntries(withTag(players, "legende"));
+    case "alle": {
+      const seen = new Set<string>();
+      return playerEntries(players.filter(({ name }) => {
+        if (seen.has(name)) return false;
+        seen.add(name);
+        return true;
+      }));
+    }
     case "teams":
       return teamEntries(teams);
   }
