@@ -164,7 +164,7 @@ describe("Legenden und Herkunft", () => {
   it("vergibt höchstens den Ära-Tipp der Glanzzeit und reserviert die neuen Wörter für Legenden", () => {
     for (const p of legends) {
       expect(LEGEND_ERAS, p.name).toContain(p.extras?.era);
-      // Der Nutzer darf den Ära-Tipp einzeln streichen (z. B. Russell, Cousy, Mikan).
+      // Der Nutzer darf den Ära-Tipp einzeln streichen (z. B. Russell).
       expect(["Star der " + p.extras?.era], p.name)
         .toEqual(expect.arrayContaining(p.hints.tips.filter((tip) => tip.startsWith("Star der "))));
       expect(p.hints.tips.filter((tip) => tip.startsWith("Star der ")).length, p.name).toBeLessThanOrEqual(1);
@@ -174,7 +174,7 @@ describe("Legenden und Herkunft", () => {
       expect(p.hints.tips.some((tip) => LEGEND_TIPS.includes(tip)), p.name).toBe(false);
     }
     // Individuelle Naismith-Aufnahme, kein künftiger Kandidat und keine bloße Team-Aufnahme.
-    for (const name of ["Dwight Howard", "Carmelo Anthony", "Amar'e Stoudemire", "Chris Bosh", "Dominique Wilkins", "James Worthy"]) {
+    for (const name of ["Dwight Howard", "Carmelo Anthony", "Amar'e Stoudemire", "Chris Bosh", "Dominique Wilkins"]) {
       expect(legends.find((p) => p.name === name)?.hints.tips, name).toContain("Hall of Famer");
     }
     for (const name of ["Russell Westbrook", "Chris Paul", "Peja Stojaković", "Marc Gasol", "Derrick Rose", "Isaiah Thomas (2010er)", "DeMarcus Cousins", "Penny Hardaway", "Gilbert Arenas", "Rasheed Wallace"]) {
@@ -206,7 +206,7 @@ describe("Legenden und Herkunft", () => {
       expect(p?.extras?.era, name).toBe("2010er");
       expect(p?.hints.tips, name).toContain("All-NBA");
     }
-    const eras = { "Carmelo Anthony": "2010er", "Dominique Wilkins": "80er", "James Worthy": "80er",
+    const eras = { "Carmelo Anthony": "2010er", "Dominique Wilkins": "80er",
       "Penny Hardaway": "90er", "Gilbert Arenas": "2000er", "Rasheed Wallace": "2000er", "Dwight Howard": "2010er" };
     for (const [name, era] of Object.entries(eras)) {
       const p = legends.find((p) => p.name === name);
@@ -237,7 +237,7 @@ describe("Legenden und Herkunft", () => {
   });
 
   it("behandelt historische Draft-Sonderfälle ohne erfundenen regulären Draftplatz", () => {
-    for (const name of ["Wilt Chamberlain", "Moses Malone", "George Mikan"]) {
+    for (const name of ["Wilt Chamberlain"]) {
       const p = legends.find((p) => p.name === name);
       expect(p?.extras?.draft, name).toBeNull();
       expect(p?.hints.tips, name).not.toContain("Top-10-Pick");

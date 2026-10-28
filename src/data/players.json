@@ -605,48 +605,6 @@
     }
   },
   {
-    "name": "Bob Cousy",
-    "tags": [
-      "legende"
-    ],
-    "hints": {
-      "nation": "USA",
-      "position": "Point Guard",
-      "tips": [
-        "Spielmacher",
-        "Allrounder",
-        "All-Star",
-        "All-NBA",
-        "NBA-Champion",
-        "Hall of Famer",
-        "Teamlegende",
-        "Top-10-Pick"
-      ]
-    },
-    "extras": {
-      "continent": "Nordamerika",
-      "conference": null,
-      "team": "Celtics",
-      "playStyle": "Spielmacher",
-      "trait": null,
-      "moment": "Finals-Auftritt",
-      "award": "MVP",
-      "title": "NBA-Champion",
-      "hair": null,
-      "look": null,
-      "era": "50er",
-      "build": null,
-      "hand": "Rechtshänder",
-      "careerType": null,
-      "shirtNumber": "trug die 14",
-      "status": "Karriere beendet",
-      "afterCareer": null,
-      "draft": "Top-10-Pick",
-      "college": "Holy Cross",
-      "transfer": null
-    }
-  },
-  {
     "name": "Brandon Ingram",
     "tags": [
       "star"
@@ -1027,49 +985,6 @@
     }
   },
   {
-    "name": "Chris Webber",
-    "tags": [
-      "legende"
-    ],
-    "hints": {
-      "nation": "USA",
-      "position": "Power Forward",
-      "tips": [
-        "Post-Spieler",
-        "Spielmacher",
-        "All-Star",
-        "All-NBA",
-        "Conference-Finalist",
-        "Hall of Famer",
-        "Star der 2000er",
-        "Teamlegende",
-        "Top-10-Pick"
-      ]
-    },
-    "extras": {
-      "continent": "Nordamerika",
-      "conference": "meist im Westen",
-      "team": "Kings",
-      "playStyle": "Innenspieler",
-      "trait": null,
-      "moment": null,
-      "award": "Rookie of the Year",
-      "title": "kein NBA-Titel",
-      "hair": null,
-      "look": null,
-      "era": "2000er",
-      "build": null,
-      "hand": "Rechtshänder",
-      "careerType": null,
-      "shirtNumber": "trug die 4",
-      "status": "Karriere beendet",
-      "afterCareer": null,
-      "draft": "Nummer-1-Pick",
-      "college": "Michigan",
-      "transfer": null
-    }
-  },
-  {
     "name": "CJ McCollum",
     "tags": [
       "star"
@@ -1104,47 +1019,6 @@
       "afterCareer": null,
       "draft": "Top-10-Pick",
       "college": null,
-      "transfer": "wechselte per Trade"
-    }
-  },
-  {
-    "name": "Clyde Drexler",
-    "tags": [
-      "legende"
-    ],
-    "hints": {
-      "nation": "USA",
-      "position": "Shooting Guard",
-      "tips": [
-        "Dunker",
-        "All-Star",
-        "All-NBA",
-        "NBA-Champion",
-        "Hall of Famer",
-        "Star der 90er",
-        "Teamlegende"
-      ]
-    },
-    "extras": {
-      "continent": "Nordamerika",
-      "conference": "meist im Westen",
-      "team": "Trail Blazers",
-      "playStyle": "Slasher",
-      "trait": null,
-      "moment": "Finals-Auftritt",
-      "award": null,
-      "title": "NBA-Champion",
-      "hair": null,
-      "look": null,
-      "era": "90er",
-      "build": null,
-      "hand": "Rechtshänder",
-      "careerType": null,
-      "shirtNumber": "trug die 22",
-      "status": "Karriere beendet",
-      "afterCareer": null,
-      "draft": "Erstrunden-Pick",
-      "college": "Houston",
       "transfer": "wechselte per Trade"
     }
   },
@@ -2288,47 +2162,6 @@
     }
   },
   {
-    "name": "George Mikan",
-    "tags": [
-      "legende"
-    ],
-    "hints": {
-      "nation": "USA",
-      "position": "Center",
-      "tips": [
-        "Post-Spieler",
-        "Rebounder",
-        "All-Star",
-        "All-NBA",
-        "NBA-Champion",
-        "Hall of Famer",
-        "Teamlegende"
-      ]
-    },
-    "extras": {
-      "continent": "Nordamerika",
-      "conference": null,
-      "team": "Lakers",
-      "playStyle": "Innenspieler",
-      "trait": null,
-      "moment": "Finals-Auftritt",
-      "award": null,
-      "title": "NBA-Champion",
-      "hair": null,
-      "look": null,
-      "era": "50er",
-      "build": null,
-      "hand": "Rechtshänder",
-      "careerType": null,
-      "shirtNumber": "trug die 99",
-      "status": "Karriere beendet",
-      "afterCareer": "verstorben",
-      "draft": null,
-      "college": "DePaul",
-      "transfer": "blieb seinem ersten NBA-Team treu"
-    }
-  },
-  {
     "name": "Giannis Antetokounmpo",
     "tags": [
       "star",
@@ -2936,49 +2769,6 @@
       "draft": "Top-3-Pick",
       "college": null,
       "transfer": "wechselte per Trade"
-    }
-  },
-  {
-    "name": "James Worthy",
-    "tags": [
-      "legende"
-    ],
-    "hints": {
-      "nation": "USA",
-      "position": "Small Forward",
-      "tips": [
-        "Dunker",
-        "Post-Spieler",
-        "All-Star",
-        "All-NBA",
-        "NBA-Champion",
-        "Hall of Famer",
-        "Star der 80er",
-        "Teamlegende",
-        "Top-10-Pick"
-      ]
-    },
-    "extras": {
-      "continent": "Nordamerika",
-      "conference": "meist im Westen",
-      "team": "Lakers",
-      "playStyle": "Innenspieler",
-      "trait": null,
-      "moment": "Finals-Auftritt",
-      "award": "Finals-MVP",
-      "title": "NBA-Champion",
-      "hair": null,
-      "look": null,
-      "era": "80er",
-      "build": null,
-      "hand": "Rechtshänder",
-      "careerType": null,
-      "shirtNumber": "trug die 42",
-      "status": "Karriere beendet",
-      "afterCareer": null,
-      "draft": "Nummer-1-Pick",
-      "college": "North Carolina",
-      "transfer": "blieb seinem ersten NBA-Team treu"
     }
   },
   {
@@ -4690,48 +4480,6 @@
       "draft": "Top-10-Pick",
       "college": "Villanova",
       "transfer": "wechselte per Trade"
-    }
-  },
-  {
-    "name": "Moses Malone",
-    "tags": [
-      "legende"
-    ],
-    "hints": {
-      "nation": "USA",
-      "position": "Center",
-      "tips": [
-        "Rebounder",
-        "Post-Spieler",
-        "All-Star",
-        "All-NBA",
-        "NBA-Champion",
-        "Hall of Famer",
-        "Star der 80er",
-        "Teamlegende"
-      ]
-    },
-    "extras": {
-      "continent": "Nordamerika",
-      "conference": null,
-      "team": "76ers",
-      "playStyle": "Innenspieler",
-      "trait": null,
-      "moment": "Finals-Auftritt",
-      "award": "MVP",
-      "title": "NBA-Champion",
-      "hair": null,
-      "look": null,
-      "era": "80er",
-      "build": null,
-      "hand": "Rechtshänder",
-      "careerType": null,
-      "shirtNumber": "trug die 2",
-      "status": "Karriere beendet",
-      "afterCareer": "verstorben",
-      "draft": null,
-      "college": "kein College",
-      "transfer": null
     }
   },
   {
