@@ -161,11 +161,13 @@ describe("Legenden und Herkunft", () => {
     }
   });
 
-  it("vergibt genau den Ära-Tipp der Glanzzeit und reserviert die neuen Wörter für Legenden", () => {
+  it("vergibt höchstens den Ära-Tipp der Glanzzeit und reserviert die neuen Wörter für Legenden", () => {
     for (const p of legends) {
       expect(LEGEND_ERAS, p.name).toContain(p.extras?.era);
-      expect(p.hints.tips.filter((tip) => tip.startsWith("Star der ")), p.name)
-        .toEqual(["Star der " + p.extras?.era]);
+      // Der Nutzer darf den Ära-Tipp einzeln streichen (z. B. Russell, Cousy, Mikan).
+      expect(["Star der " + p.extras?.era], p.name)
+        .toEqual(expect.arrayContaining(p.hints.tips.filter((tip) => tip.startsWith("Star der "))));
+      expect(p.hints.tips.filter((tip) => tip.startsWith("Star der ")).length, p.name).toBeLessThanOrEqual(1);
       if (p.extras?.era === "2010er") expect(p.hints.tips, p.name).toContain("All-NBA");
     }
     for (const p of stars.filter((s) => !s.tags.includes("legende"))) {
@@ -175,7 +177,7 @@ describe("Legenden und Herkunft", () => {
     for (const name of ["Dwight Howard", "Carmelo Anthony", "Amar'e Stoudemire", "Chris Bosh", "Dominique Wilkins", "James Worthy"]) {
       expect(legends.find((p) => p.name === name)?.hints.tips, name).toContain("Hall of Famer");
     }
-    for (const name of ["Russell Westbrook", "Chris Paul", "Peja Stojaković", "Marc Gasol", "Derrick Rose", "Isaiah Thomas", "DeMarcus Cousins", "Penny Hardaway", "Gilbert Arenas", "Rasheed Wallace"]) {
+    for (const name of ["Russell Westbrook", "Chris Paul", "Peja Stojaković", "Marc Gasol", "Derrick Rose", "Isaiah Thomas (2010er)", "DeMarcus Cousins", "Penny Hardaway", "Gilbert Arenas", "Rasheed Wallace"]) {
       expect(legends.find((p) => p.name === name)?.hints.tips, name).not.toContain("Hall of Famer");
     }
   });
@@ -196,7 +198,7 @@ describe("Legenden und Herkunft", () => {
   });
 
   it("setzt die Nutzerentscheidungen aus Runde 3 mit ehrlichem Rücktrittsstatus um", () => {
-    for (const name of ["Isaiah Thomas", "DeMarcus Cousins"]) {
+    for (const name of ["Isaiah Thomas (2010er)", "DeMarcus Cousins"]) {
       const p = legends.find((p) => p.name === name);
       expect(p, name).toBeDefined();
       expect(p?.extras?.status, name).toBeNull();

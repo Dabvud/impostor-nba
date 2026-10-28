@@ -132,7 +132,6 @@
         "Hall of Famer",
         "Star der 2000er",
         "Teamlegende",
-        "bekannter Trade",
         "Top-10-Pick"
       ]
     },
@@ -291,7 +290,6 @@
         "Verteidiger",
         "All-Star",
         "NBA-Champion",
-        "bekannter Trade",
         "Top-10-Pick"
       ]
     },
@@ -333,7 +331,6 @@
         "All-Star",
         "All-NBA",
         "NBA-Champion",
-        "Clutch-Moment",
         "bekannter Trade",
         "Verletzungspech",
         "Top-10-Pick",
@@ -536,7 +533,6 @@
         "All-NBA",
         "NBA-Champion",
         "Hall of Famer",
-        "Star der 60er",
         "Teamlegende",
         "Top-10-Pick"
       ]
@@ -623,7 +619,6 @@
         "All-NBA",
         "NBA-Champion",
         "Hall of Famer",
-        "Star der 50er",
         "Teamlegende",
         "Top-10-Pick"
       ]
@@ -1005,7 +1000,6 @@
         "Star der 2010er",
         "Teamlegende",
         "bekannter Trade",
-        "Clutch-Moment",
         "Top-10-Pick"
       ]
     },
@@ -1123,14 +1117,12 @@
       "position": "Shooting Guard",
       "tips": [
         "Dunker",
-        "Allrounder",
         "All-Star",
         "All-NBA",
         "NBA-Champion",
         "Hall of Famer",
         "Star der 90er",
-        "Teamlegende",
-        "bekannter Trade"
+        "Teamlegende"
       ]
     },
     "extras": {
@@ -1375,7 +1367,6 @@
         "All-Star",
         "All-NBA",
         "Finals-Teilnehmer",
-        "bekannter Trade",
         "Top-10-Pick"
       ]
     },
@@ -1453,7 +1444,6 @@
       "position": "Point Guard",
       "tips": [
         "Spielmacher",
-        "Verteidiger",
         "All-Star",
         "Conference-Finalist",
         "Verletzungspech"
@@ -1777,8 +1767,7 @@
       "position": "Shooting Guard",
       "tips": [
         "Dreierschütze",
-        "Scorer",
-        "bekannter Trade"
+        "Scorer"
       ]
     },
     "extras": {
@@ -1898,8 +1887,7 @@
         "Rebounder",
         "Spielmacher",
         "All-Star",
-        "All-NBA",
-        "bekannter Trade"
+        "All-NBA"
       ]
     },
     "extras": {
@@ -2314,7 +2302,6 @@
         "All-NBA",
         "NBA-Champion",
         "Hall of Famer",
-        "Star der 50er",
         "Teamlegende"
       ]
     },
@@ -2508,7 +2495,7 @@
     }
   },
   {
-    "name": "Isaiah Thomas",
+    "name": "Isaiah Thomas (2010er)",
     "tags": [
       "legende"
     ],
@@ -2551,7 +2538,7 @@
     }
   },
   {
-    "name": "Isiah Thomas",
+    "name": "Isiah Thomas (80er)",
     "tags": [
       "legende"
     ],
@@ -2838,7 +2825,8 @@
         "Verteidiger",
         "All-Star",
         "All-NBA",
-        "NBA-Champion"
+        "NBA-Champion",
+        "Verletzungspech"
       ]
     },
     "extras": {
@@ -3080,7 +3068,6 @@
       "position": "Point Guard",
       "tips": [
         "Spielmacher",
-        "Verteidiger",
         "All-Star",
         "All-NBA",
         "NBA-Champion",
@@ -4005,7 +3992,6 @@
       "position": "Shooting Guard",
       "tips": [
         "Dreierschütze",
-        "Verteidiger",
         "All-Star",
         "All-NBA",
         "NBA-Champion",
