@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { nextRound } from "../../src/game/session";
+import { SPECIAL_RULES } from "../../src/variant/config";
 import type { Entry, Settings } from "../../src/game/types";
 import { seededRng } from "../helpers/rng";
 import { MODES, poolKey } from "../../src/game/modes";
@@ -10,6 +11,15 @@ vi.mock("../../src/variant/modes", async (importOriginal) => ({
   poolFor: vi.fn(),
   poolKey: vi.fn((mode: string, _difficulty: number, choice?: string | null) => choice ? `${mode}:${choice}` : mode),
   allImpostorsMax: vi.fn(),
+}));
+
+vi.mock("../../src/variant/config", () => ({
+  SPECIAL_RULES: [
+    { id: "a", title: "Regel A", text: "Text A" },
+    { id: "b", title: "Regel B", text: "Text B" },
+    { id: "c", title: "Regel C", text: "Text C" },
+    { id: "d", title: "Regel D", text: "Text D" },
+  ],
 }));
 
 const pool: Entry[] = [
@@ -27,7 +37,7 @@ const settings: Settings = {
   impostorCount: 1,
   mode: MODES[0].id,
   difficulty: 2,
-  hintsEnabled: true,
+  hintsEnabled: true, specialRules: false,
   secretImpostors: false,
   thinkSeconds: 30,
   discussSeconds: 120,
@@ -98,5 +108,82 @@ describe("nextRound", () => {
     expect(nextRound(secret, {}, () => 0).round.impostors).toHaveLength(3);
     expect(nextRound({ ...secret, names: [...secret.names, "D"] }, {}, () => 0).round.impostors).toHaveLength(0);
     expect(allImpostorsMax).toHaveBeenCalledWith(settings.mode);
+  });
+});
+
+
+describe("Sonderregel der Runde", () => {
+  const enabled = { ...settings, specialRules: true };
+
+  it("lost in ungefähr 10 % von 1000 Runden eine gleichverteilte Regel aus", () => {
+    const rng = seededRng(42);
+    const counts = new Map(SPECIAL_RULES.map((rule) => [rule.id, 0]));
+    for (let i = 0; i < 1000; i++) {
+      const rule = nextRound(enabled, {}, rng).round.specialRule;
+      if (rule) counts.set(rule.id, counts.get(rule.id)! + 1);
+    }
+    const total = [...counts.values()].reduce((a, b) => a + b, 0);
+    expect(total).toBeGreaterThanOrEqual(70);
+    expect(total).toBeLessThanOrEqual(130);
+    for (const count of counts.values()) {
+      expect(count / total).toBeGreaterThan(0.12);
+      expect(count / total).toBeLessThan(0.38);
+    }
+  });
+
+  it("benutzt getrennte Züge für Regelchance, Regelwahl und Rollenanzahl", () => {
+    for (const chance of [0.05, 0.5]) {
+      for (const roleDraw of [0, 0.05, 0.5, 0.99]) {
+        const rng = vi.fn(() => 0.5)
+          .mockReturnValueOnce(chance).mockReturnValueOnce(0.75).mockReturnValueOnce(roleDraw);
+        const secret = nextRound({ ...enabled, names: ["A", "B", "C", "D", "E", "F", "G"], secretImpostors: true }, {}, rng).round;
+        expect(secret.impostors.length).toBe(roleDraw === 0 ? 7 : roleDraw === 0.05 ? 0 : roleDraw === 0.5 ? 2 : 3);
+        expect(secret.specialRule).toEqual(chance < 0.1 ? SPECIAL_RULES[3] : null);
+      }
+    }
+    for (const impostorCount of [0, 1, 3]) {
+      const rng = vi.fn(() => 0.5).mockReturnValueOnce(0.05).mockReturnValueOnce(0.25);
+      const round = nextRound({ ...enabled, impostorCount }, {}, rng).round;
+      expect(round.specialRule).toEqual(SPECIAL_RULES[1]);
+      expect(round.impostors).toHaveLength(impostorCount);
+    }
+  });
+
+  it("hat auch in Keiner-, Alle- und normalen Runden ungefähr denselben Anteil", () => {
+    const rng = seededRng(73);
+    const totals = [0, 0, 0];
+    const special = [0, 0, 0];
+    for (let i = 0; i < 30000; i++) {
+      const round = nextRound({ ...enabled, secretImpostors: true }, {}, rng).round;
+      const category = round.impostors.length === 0 ? 0 : round.impostors.length === 3 ? 1 : 2;
+      totals[category]++;
+      if (round.specialRule) special[category]++;
+    }
+    for (let i = 0; i < 3; i++) {
+      expect(totals[i]).toBeGreaterThan(200);
+      expect(special[i] / totals[i]).toBeGreaterThan(0.06);
+      expect(special[i] / totals[i]).toBeLessThan(0.14);
+    }
+  });
+
+  it("liefert ausgeschaltet nie eine Regel und verbraucht keine zusätzlichen Züge", () => {
+    for (let seed = 0; seed < 100; seed++) {
+      expect(nextRound(settings, {}, seededRng(seed)).round.specialRule).toBeNull();
+    }
+    const rng = vi.fn(() => 0.5);
+    nextRound(settings, {}, rng);
+    const calls = rng.mock.calls.length;
+    rng.mockClear();
+    nextRound(enabled, {}, rng);
+    expect(rng).toHaveBeenCalledTimes(calls + 2);
+  });
+
+  it("liefert ohne Variantenregeln keine Regel", () => {
+    const rules = SPECIAL_RULES.splice(0);
+    try {
+      expect(nextRound(enabled, {}, () => 0).round.specialRule).toBeNull();
+    } finally {
+      SPECIAL_RULES.push(...rules);
+    }
   });
 });

@@ -23,7 +23,7 @@ vi.mock("../../src/variant/modes", async (importOriginal) => {
 });
 const initial: Settings = {
   names: ["Anna", "Ben", "Cem"], impostorCount: 1, mode: MODES[0].id, difficulty: 1,
-  hintsEnabled: true, secretImpostors: false, thinkSeconds: null, discussSeconds: null,
+  hintsEnabled: true, specialRules: false, secretImpostors: false, thinkSeconds: null, discussSeconds: null,
   groupId: null, guessEnabled: true, excludedFilters: [], casual: false, choice: null,
 };
 beforeEach(() => {

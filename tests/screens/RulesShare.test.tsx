@@ -1,4 +1,4 @@
-import { APP_NAME, SHARE_TEXT } from "../../src/variant/config";
+import { APP_NAME, SHARE_TEXT, SPECIAL_RULES, SPECIAL_RULES_LABEL } from "../../src/variant/config";
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
@@ -8,11 +8,11 @@ import ShareScreen from "../../src/screens/ShareScreen";
 afterEach(() => vi.unstubAllGlobals());
 
 describe("RulesScreen", () => {
-  it("erklärt das Spiel in fünf Abschnitten", async () => {
+  it("erklärt das Spiel einschließlich der Sonderregeln aus der Variante", async () => {
     const onBack = vi.fn();
     render(<RulesScreen onBack={onBack} />);
     const headings = screen.getAllByRole("heading", { level: 2 }).map((h) => h.textContent);
-    expect(headings).toEqual(["Ziel", "Ablauf", "Hinweisrunde", "Auflösen & Raten", "Sondermodi"]);
+    expect(headings).toEqual(["Ziel", "Ablauf", "Hinweisrunde", "Auflösen & Raten", "Sondermodi", ...(SPECIAL_RULES.length ? [SPECIAL_RULES_LABEL] : [])]);
     await userEvent.setup().click(screen.getByRole("button", { name: "Zurück" }));
     expect(onBack).toHaveBeenCalledOnce();
   });

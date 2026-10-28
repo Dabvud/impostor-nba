@@ -1,5 +1,6 @@
 import { allImpostorsMax } from "../variant/modes";
-import { drawImpostorCount, drawRound } from "./engine";
+import { SPECIAL_RULES } from "../variant/config";
+import { drawImpostorCount, drawRound, drawSpecialRule } from "./engine";
 import { poolFor, poolKey } from "./modes";
 import { maxImpostors, normalizeNames } from "./settings";
 import type { Rng, Round, Settings } from "./types";
@@ -20,6 +21,8 @@ export function nextRound(
   const key = poolKey(s.mode, s.difficulty, s.choice);
   const pool = poolFor(s.mode, s.difficulty, { excludedFilters: s.excludedFilters, casual: s.casual, choice: s.choice });
   const names = normalizeNames(s.names);
+  // Vor allen rollenabhängigen Zügen auslosen; weder Anzahl noch Tipps beeinflussen die Regel.
+  const specialRule = s.specialRules ? drawSpecialRule(SPECIAL_RULES, rng) : null;
   // Eigene Tipps nur, solange die Variante genügend Kategorien für alle vorsieht.
   const allowAll = names.length <= allImpostorsMax(s.mode);
   const impostorCount = s.secretImpostors
@@ -28,6 +31,7 @@ export function nextRound(
   const result = drawRound(names, impostorCount, pool, used[key] ?? [], rng, s.hintsEnabled);
   const round = {
     ...result.round,
+    specialRule,
     id: roundId(rng),
     thinkSeconds: s.thinkSeconds,
     discussSeconds: s.discussSeconds,

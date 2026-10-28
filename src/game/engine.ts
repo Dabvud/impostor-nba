@@ -1,4 +1,4 @@
-import type { Entry, Rng, Round } from "./types";
+import type { Entry, Rng, Round, SpecialRule } from "./types";
 
 function shuffle<T>(items: T[], rng: Rng): T[] {
   const result = [...items];
@@ -115,4 +115,15 @@ export function drawImpostorCount(max: number, playerCount: number, rng: Rng, al
   const rest = allChance + NO_IMPOSTOR_CHANCE;
   const share = (r - rest) / (1 - rest);
   return Math.min(max, 1 + Math.floor(share * max));
+}
+
+/** Eigener Zufallszug, unabhängig von Anzahl und Verteilung der Rollen. */
+export const SPECIAL_RULE_CHANCE = 0.1;
+
+export function drawSpecialRule(rules: readonly SpecialRule[], rng: Rng): SpecialRule | null {
+  if (rules.length === 0) return null;
+  const chance = rng();
+  // Auch ohne Treffer genau zwei Züge: Die Rollen-Auslosung beginnt immer danach.
+  const rule = pick([...rules], rng);
+  return chance < SPECIAL_RULE_CHANCE ? { ...rule } : null;
 }

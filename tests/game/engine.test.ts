@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { drawImpostorCount, drawRound } from "../../src/game/engine";
+import { drawImpostorCount, drawRound, drawSpecialRule, SPECIAL_RULE_CHANCE } from "../../src/game/engine";
 import type { Entry } from "../../src/game/types";
 import { seededRng } from "../helpers/rng";
 
@@ -208,5 +208,23 @@ describe("drawImpostorCount", () => {
     expect(drawImpostorCount(2, PLAYERS, () => 0.1099)).toBe(0);
     expect(drawImpostorCount(2, PLAYERS, () => 0.11)).toBe(1);
     expect(drawImpostorCount(2, PLAYERS, () => 0.9999999)).toBe(2);
+  });
+});
+
+
+describe("drawSpecialRule", () => {
+  const rules = ["a", "b", "c", "d"].map((id) => ({ id, title: "Regel " + id, text: "Text " + id }));
+  it("zieht bei exakt 10 % noch keine Regel und verteilt die Auswahl gleichmäßig", () => {
+    expect(SPECIAL_RULE_CHANCE).toBe(0.1);
+    for (let i = 0; i < rules.length; i++) {
+      for (const chance of [0, 0.099999, 0.1, 0.999999]) {
+        const draws = [chance, (i + 0.5) / rules.length];
+        expect(drawSpecialRule(rules, () => draws.shift()!)).toEqual(chance < 0.1 ? rules[i] : null);
+        expect(draws).toEqual([]);
+      }
+    }
+  });
+  it("verbraucht ohne Regeln keinen Zufallszug", () => {
+    expect(drawSpecialRule([], () => { throw new Error("Kein Zufallszug erwartet"); })).toBeNull();
   });
 });

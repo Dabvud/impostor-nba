@@ -265,7 +265,7 @@ describe("poolKey", () => {
 });
 
 describe("MODES", () => {
-  it("hat fünf Modi mit exakten Labels und ohne Schwierigkeit", () => {
+  it("hat sieben Modi mit exakten Labels und ohne Schwierigkeit", () => {
     expect(MODES).toEqual([
       { id: "stars", label: "⭐ Aktuelle Stars", hasDifficulty: false, hasCasual: true },
       {
@@ -288,6 +288,9 @@ describe("MODES", () => {
           { id: "70er-frueher", label: "70er u. früher" },
         ],
       },
+      { id: "europa", label: "🇪🇺 Europa-Topf", hasDifficulty: false, hasCasual: true },
+      { id: "ringclub", label: "💍 Ringclub", hasDifficulty: false, hasCasual: true,
+        filters: MODES.find((mode) => mode.id === "alle")!.filters },
       {
         id: "lieblingsteam", label: "❤️ Lieblingsteam", hasDifficulty: false,
         choices: teamsJson.map(({ name }) => ({ id: name, label: name })).sort((a, b) => a.label.localeCompare(b.label, "de")),
@@ -318,7 +321,7 @@ describe("Anbindung der Spieldaten", () => {
   });
 
   it("setzt die Grenze bei Teams auf 6, bei allen Spieler-Modi auf 10", () => {
-    expect(MODES.map((mode) => allImpostorsMax(mode.id))).toEqual([10, 10, 10, 10, 6]);
+    expect(MODES.map((mode) => allImpostorsMax(mode.id))).toEqual([10, 10, 10, 10, 10, 10, 6]);
   });
 });
 
@@ -414,5 +417,75 @@ describe("Ären bei Legenden", () => {
     expect(buildPool("alle", 1, squad, [], options).map((e) => e.name)).toEqual(["Neu"]);
     expect(buildPool("stars", 1, squad.map((p) => ({ ...p, tags: ["star"] as NbaPlayer["tags"] })), [], options)
       .map((e) => e.name)).toEqual(["Neu", "Alt"]);
+  });
+});
+
+
+describe("Europa-Topf und Ringclub", () => {
+  const european = (name: string, overrides: Partial<NbaPlayer> = {}) => player(name, {
+    hints: { nation: "Deutschland", position: "Point Guard", tips: ["NBA-Champion", "Scorer"] },
+    extras: playerExtras({ continent: "Europa", title: "NBA-Champion", era: "2020er" }),
+    ...overrides,
+  });
+
+  it.each(["europa", "ringclub"] as const)("vereint Stars und Legenden in %s ohne doppelte Namen", (mode) => {
+    const squad = [european("Star"), european("Legende", { tags: ["legende"] }),
+      european("Beides", { tags: ["star", "legende"] }), european("Star")];
+    expect(buildPool(mode, 1, squad, []).map((e) => e.name)).toEqual(["Star", "Legende", "Beides"]);
+    expect(buildPool(mode, 1, squad, [])).toEqual(buildPool(mode, 1, squad.slice(0, 3), []));
+  });
+
+  it("prüft im Europa-Topf genau continent und entfernt die definierenden Herkunftstipps", () => {
+    const squad = [european("A"), european("B"),
+      player("Kein Kontinent", { hints: { nation: "Deutschland", position: "Point Guard", tips: [] } }),
+      european("Anderer Kontinent", { extras: playerExtras({ continent: "Nordamerika" }) })];
+    const pool = buildPool("europa", 1, squad, []);
+    expect(pool.map((e) => e.name)).toEqual(["A", "B"]);
+    for (const entry of pool) {
+      expect(entry.hints).not.toContain("Europäer");
+      expect(entry.hints).not.toContain("kein US-Amerikaner");
+      expect(entry.hints).toContain("NBA-Champion");
+      expect(entry.allHints?.some((tip) => tip.value === "Europa")).toBe(false);
+    }
+    expect(buildPool("alle", 1, squad, [])[0].hints).toEqual(expect.arrayContaining(["Europäer", "kein US-Amerikaner"]));
+  });
+
+  it("prüft im Ringclub tips und entfernt nur den definierenden Titel", () => {
+    const squad = [european("A"), european("B", { extras: playerExtras({ continent: "Europa", title: "Olympiasieger" }) }),
+      european("C", { extras: playerExtras({ continent: "Europa", title: "Olympiasieger" }) }),
+      european("Nur extras", { hints: { nation: "USA", position: "Center", tips: [] } })];
+    const pool = buildPool("ringclub", 1, squad, []);
+    expect(pool.map((e) => e.name)).toEqual(["A", "B", "C"]);
+    for (const entry of pool) {
+      expect(entry.hints).not.toContain("NBA-Champion");
+      expect(entry.allHints?.some((tip) => tip.value === "NBA-Champion")).toBe(false);
+      expect(entry.hints).toContain("Europäer");
+    }
+    expect(pool[1].allHints).toContainEqual({ slot: "erfolg", value: "Olympiasieger" });
+    expect(buildPool("alle", 1, squad, [])[0].hints).toContain("NBA-Champion");
+    expect(buildPool("alle", 1, squad, [])[0].allHints).toContainEqual({ slot: "erfolg", value: "NBA-Champion" });
+  });
+
+  it("kombiniert im Ringclub Casual und dieselben Ären wie alle", () => {
+    expect(MODES.find((m) => m.id === "ringclub")!.filters).toEqual(MODES.find((m) => m.id === "alle")!.filters);
+    const squad = [european("Neu", { casual: true }),
+      european("Alt", { casual: true, extras: playerExtras({ continent: "Europa", era: "90er" }) }), european("Schwer")];
+    const options = { excludedFilters: ["90er"], casual: true, choice: null };
+    expect(buildPool("ringclub", 1, squad, [], options).map((e) => e.name)).toEqual(["Neu"]);
+    expect(buildPool("europa", 1, squad, [], options).map((e) => e.name)).toEqual(["Neu", "Alt"]);
+  });
+
+  it.each([["europa", 15], ["ringclub", 40]] as const)("hat im echten %s-Topf mindestens %i eindeutige Spieler", (mode, minimum) => {
+    const pool = poolFor(mode, 1);
+    const eligible = playersJson.filter((p) => mode === "europa"
+      ? p.extras?.continent === "Europa" : p.hints.tips.includes("NBA-Champion"));
+    expect(pool.map((e) => e.name)).toEqual([...new Set(eligible.map((p) => p.name))]);
+    expect(pool.length).toBeGreaterThanOrEqual(minimum);
+    expect(new Set(pool.map((e) => e.name)).size).toBe(pool.length);
+    for (const entry of pool) {
+      const excluded = mode === "europa" ? ["Europäer", "kein US-Amerikaner"] : ["NBA-Champion"];
+      expect(entry.hints.some((hint) => excluded.includes(hint))).toBe(false);
+      expect(entry.allHints?.some((tip) => tip.value === (mode === "europa" ? "Europa" : "NBA-Champion"))).toBe(false);
+    }
   });
 });

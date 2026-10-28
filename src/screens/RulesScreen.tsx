@@ -1,4 +1,4 @@
-import { RULES_SUBJECT } from "../variant/config";
+import { RULES_SUBJECT, SPECIAL_RULES, SPECIAL_RULES_DESCRIPTION, SPECIAL_RULES_LABEL } from "../variant/config";
 
 type Props = { onBack: () => void };
 
@@ -46,6 +46,16 @@ export default function RulesScreen({ onBack }: Props) {
           sind es alle.
         </p>
       </section>
+
+      {SPECIAL_RULES.length > 0 && (
+        <section className="panel">
+          <h2>{SPECIAL_RULES_LABEL}</h2>
+          <p>{SPECIAL_RULES_DESCRIPTION}</p>
+          <ul>
+            {SPECIAL_RULES.map((rule) => <li key={rule.id}><strong>{rule.title}</strong>: {rule.text}</li>)}
+          </ul>
+        </section>
+      )}
 
       <nav className="setup-links">
         <button type="button" onClick={onBack}>

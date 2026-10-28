@@ -3,7 +3,7 @@ import { MODES } from "./game/modes";
 import type { UsedMap } from "./game/session";
 import type { GameState } from "./game/state";
 import type { RoundRecord } from "./game/stats";
-import type { Round, Settings } from "./game/types";
+import type { Round, Settings, SpecialRule } from "./game/types";
 import { STORAGE_PREFIX } from "./variant/config";
 
 const KEYS = {
@@ -48,6 +48,7 @@ function isSettings(v: unknown): v is Settings {
     (v.casual === undefined || typeof v.casual === "boolean") &&
     (v.choice === undefined || v.choice === null || typeof v.choice === "string") &&
     (v.hintsEnabled === undefined || typeof v.hintsEnabled === "boolean") &&
+    (v.specialRules === undefined || typeof v.specialRules === "boolean") &&
     (v.secretImpostors === undefined || typeof v.secretImpostors === "boolean") &&
     isOptionalSeconds(v.thinkSeconds) &&
     isOptionalSeconds(v.discussSeconds) &&
@@ -61,6 +62,10 @@ function isOptionalSeconds(v: unknown): boolean {
 }
 
 const secondsOrNull = (v: unknown): number | null => (typeof v === "number" && v > 0 ? v : null);
+
+function isSpecialRule(v: unknown): v is SpecialRule {
+  return isObject(v) && typeof v.id === "string" && typeof v.title === "string" && typeof v.text === "string";
+}
 
 function isRound(v: unknown): v is Round {
   return (
@@ -81,6 +86,7 @@ function upgradeRound(round: Round): Round {
   const fallbackOrder = [...round.revealOrder.slice(start), ...round.revealOrder.slice(0, start)];
   return {
     ...round,
+    ...(round.specialRule === undefined ? {} : { specialRule: isSpecialRule(round.specialRule) ? round.specialRule : null }),
     // ältere Runden: ohne ID (nie in einer Statistik) und ohne Raten
     id: typeof round.id === "string" ? round.id : "",
     guessEnabled: round.guessEnabled === true,
@@ -134,6 +140,7 @@ export function loadSettings(): Settings | null {
     casual: v.casual ?? false,
     choice: v.choice ?? null,
     secretImpostors: v.secretImpostors ?? false,
+    specialRules: v.specialRules ?? false,
     thinkSeconds: secondsOrNull(v.thinkSeconds),
     discussSeconds: secondsOrNull(v.discussSeconds),
     groupId: v.groupId ?? null,

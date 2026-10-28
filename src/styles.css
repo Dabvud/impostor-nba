@@ -222,6 +222,61 @@ button.primary {
   border-top: 1px solid var(--line-soft);
 }
 
+/* Sonderregel: kommt selten, darf also auffallen – Rahmen in der Hauptfarbe, großer Titel */
+.special-rule {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 18px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  text-align: center;
+}
+
+.special-rule-kicker {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.special-rule-title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.special-rule-text {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+/* Erinnerung während der Hinweisrunde: schmal, ohne vom Namen abzulenken */
+.special-rule.is-reminder {
+  gap: 4px;
+  padding: 10px 14px;
+  border-width: 1px;
+  text-align: left;
+}
+
+.special-rule.is-reminder .special-rule-kicker {
+  display: none;
+}
+
+.special-rule.is-reminder .special-rule-title {
+  font-size: 16px;
+}
+
+.special-rule.is-reminder .special-rule-text {
+  font-size: 14px;
+  color: var(--muted);
+}
+
 .install-lead {
   margin: 0;
   font-size: 17px;

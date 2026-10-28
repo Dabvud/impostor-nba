@@ -25,6 +25,6 @@ export const team = (name: string, color: string, conference: string): NbaTeam =
 // Jedes Team teilt einen Tipp mit einem anderen, aber keiner trifft auf alle zu.
 export const teams = [team("X", "Rot", "Westen"), team("Y", "Rot", "Osten"), team("Z", "Blau", "Osten")];
 export const settings: Settings = {
-  names: ["Anna", "Ben", "Cem"], impostorCount: 1, mode: "stars", difficulty: 1, hintsEnabled: true,
+  names: ["Anna", "Ben", "Cem"], impostorCount: 1, mode: "stars", difficulty: 1, hintsEnabled: true, specialRules: false,
   secretImpostors: false, thinkSeconds: null, discussSeconds: null, groupId: null, guessEnabled: true, excludedFilters: [], casual: false, choice: null,
 };

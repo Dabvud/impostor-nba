@@ -20,7 +20,7 @@ const base: Settings = {
   impostorCount: 1,
   mode: MODES[0].id,
   difficulty: 1,
-  hintsEnabled: true,
+  hintsEnabled: true, specialRules: false,
   secretImpostors: false,
   thinkSeconds: null,
   discussSeconds: null,

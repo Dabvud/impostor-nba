@@ -173,7 +173,7 @@ describe("Statistik-Protokoll", () => {
     impostorCount: 1,
     mode: playableMode,
     difficulty: 1,
-    hintsEnabled: true,
+    hintsEnabled: true, specialRules: false,
     secretImpostors: false,
     thinkSeconds: null,
     discussSeconds: null,

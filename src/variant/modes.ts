@@ -4,7 +4,7 @@ import { countBy, isText, sharedOnly, toTips } from "../game/tips";
 import type { Entry, ModeOption, PoolOptions, Tier } from "../game/types";
 import type { NbaPlayer, NbaTeam, PlayerExtras, PositionGroup, Tag, TeamExtras, TeamHints } from "./types";
 
-export type ModeId = "stars" | "legenden" | "alle" | "lieblingsteam" | "teams";
+export type ModeId = "stars" | "legenden" | "alle" | "europa" | "ringclub" | "lieblingsteam" | "teams";
 
 /** Ären vor 2010; dieselben IDs in allen Modi, damit eine abgewählte Ära überall abgewählt bleibt. */
 const OLDER_ERAS = [
@@ -13,6 +13,8 @@ const OLDER_ERAS = [
   { id: "80er", label: "80er" },
   { id: "70er-frueher", label: "70er u. früher" },
 ];
+
+const ALL_ERAS = [{ id: "2010-heute", label: "2010–heute" }, ...OLDER_ERAS];
 
 export const MODES: ModeOption<ModeId>[] = [
   { id: "stars", label: "⭐ Aktuelle Stars", hasDifficulty: false, hasCasual: true },
@@ -23,8 +25,10 @@ export const MODES: ModeOption<ModeId>[] = [
   },
   {
     id: "alle", label: "🏀 Alle NBA-Spieler", hasDifficulty: false, hasCasual: true,
-    filters: [{ id: "2010-heute", label: "2010–heute" }, ...OLDER_ERAS],
+    filters: ALL_ERAS,
   },
+  { id: "europa", label: "🇪🇺 Europa-Topf", hasDifficulty: false, hasCasual: true },
+  { id: "ringclub", label: "💍 Ringclub", hasDifficulty: false, hasCasual: true, filters: ALL_ERAS },
   {
     id: "lieblingsteam", label: "❤️ Lieblingsteam", hasDifficulty: false,
     choices: teamsJson.map(({ name }) => ({ id: name, label: name })).sort((a, b) => a.label.localeCompare(b.label, "de")),
@@ -73,7 +77,9 @@ const POSITION_GROUPS: Record<string, PositionGroup> = {
   Center: "Center",
 };
 
-function playerEntries(players: NbaPlayer[], includeTeam = true): Entry[] {
+type PlayerEntryOptions = { includeTeam?: boolean; excludedHints?: string[]; excludedExtras?: Partial<Record<keyof PlayerExtras, string>> };
+
+function playerEntries(players: NbaPlayer[], { includeTeam = true, excludedHints = [], excludedExtras = {} }: PlayerEntryOptions = {}): Entry[] {
   const extraSlots = PLAYER_EXTRA_SLOTS.filter(([, slot]) => includeTeam || slot !== "team");
   const slots = ["herkunft", "position", ...extraSlots.map(([, slot]) => slot)];
   const candidates = players.map(({ hints, extras }) => [...new Set([
@@ -85,13 +91,13 @@ function playerEntries(players: NbaPlayer[], includeTeam = true): Entry[] {
   const counts = countBy(candidates.flat(), (hint) => hint);
   // Spalte 0 = Nation (strengere Grenze), danach Position und die Zusatz-Kategorien
   const all = sharedOnly(
-    players.map((p) => [p.hints.nation, p.hints.position, ...extraSlots.map(([k]) => p.extras?.[k])]),
+    players.map((p) => [p.hints.nation, p.hints.position, ...extraSlots.map(([k]) => p.extras?.[k] === excludedExtras[k] ? null : p.extras?.[k])]),
     (c) => (c === 0 ? MIN_SAME_NATION : 2),
   );
   return players.map(({ name, hints }, i) => {
     return {
       name,
-      hints: candidates[i].filter((hint) => (counts.get(hint) ?? 0) >= 2),
+      hints: candidates[i].filter((hint) => !excludedHints.includes(hint) && (counts.get(hint) ?? 0) >= 2),
       allHints: toTips(all[i], slots),
       group: POSITION_GROUPS[hints.position],
     };
@@ -137,13 +143,20 @@ export function buildPool(
       return playerEntries(withTag(selectedPlayers, "star"));
     case "legenden":
       return playerEntries(withTag(selectedPlayers, "legende"));
-    case "alle": {
+    case "alle":
+    case "europa":
+    case "ringclub": {
+      const candidates = selectedPlayers.filter((p) => mode === "europa"
+        ? p.extras?.continent === "Europa"
+        : mode === "ringclub" ? p.hints.tips.includes("NBA-Champion") : true);
       const seen = new Set<string>();
-      return playerEntries(selectedPlayers.filter(({ name }) => {
+      return playerEntries(candidates.filter(({ name }) => {
         if (seen.has(name)) return false;
         seen.add(name);
         return true;
-      }));
+      }), mode === "europa"
+        ? { excludedHints: ["Europäer", "kein US-Amerikaner"], excludedExtras: { continent: "Europa" } }
+        : mode === "ringclub" ? { excludedHints: ["NBA-Champion"], excludedExtras: { title: "NBA-Champion" } } : {});
     }
     case "lieblingsteam": {
       const choice = options?.choice;
@@ -154,7 +167,7 @@ export function buildPool(
         seen.add(p.name);
         return true;
       });
-      return playerEntries(pool, false);
+      return playerEntries(pool, { includeTeam: false });
     }
     case "teams":
       return teamEntries(teams);

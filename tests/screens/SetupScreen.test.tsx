@@ -125,7 +125,7 @@ describe("SetupScreen", () => {
       impostorCount: 1,
       mode: MODES[0].id,
       difficulty: 1,
-      hintsEnabled: true,
+      hintsEnabled: true, specialRules: false,
       secretImpostors: false,
       thinkSeconds: null,
       discussSeconds: 90,
@@ -148,7 +148,7 @@ describe("SetupScreen", () => {
       impostorCount: 1,
       mode: MODES[0].id,
       difficulty: 1,
-      hintsEnabled: true,
+      hintsEnabled: true, specialRules: false,
       secretImpostors: true,
       thinkSeconds: 15,
       discussSeconds: 180,
@@ -189,7 +189,7 @@ describe("SetupScreen", () => {
       impostorCount: 2,
       mode: MODES[0].id,
       difficulty: 1,
-      hintsEnabled: true,
+      hintsEnabled: true, specialRules: false,
       secretImpostors: false,
       thinkSeconds: null,
       discussSeconds: null,
@@ -215,7 +215,7 @@ describe("SetupScreen", () => {
       impostorCount: 1,
       mode: MODES[0].id,
       difficulty: 3,
-      hintsEnabled: true,
+      hintsEnabled: true, specialRules: false,
       secretImpostors: false,
       thinkSeconds: null,
       discussSeconds: null,
@@ -233,7 +233,7 @@ describe("SetupScreen", () => {
       impostorCount: 1,
       mode: MODES[1].id,
       difficulty: 3,
-      hintsEnabled: true,
+      hintsEnabled: true, specialRules: false,
       secretImpostors: false,
       thinkSeconds: null,
       discussSeconds: null,
@@ -313,7 +313,7 @@ describe("SetupScreen mit Gruppen", () => {
     function BigHarness() {
       const [groups, setGroups] = useState<Group[]>([big]);
       const initial: Settings = {
-        names: [], impostorCount: 3, mode: MODES[0].id, difficulty: 1, hintsEnabled: true, secretImpostors: false,
+        names: [], impostorCount: 3, mode: MODES[0].id, difficulty: 1, hintsEnabled: true, specialRules: false, secretImpostors: false,
         thinkSeconds: null, discussSeconds: null, groupId: "g1", guessEnabled: true, excludedFilters: [], casual: false, choice: null,
       };
       return <SetupScreen initial={initial} onStart={onStart} groups={groups} onGroupsChange={setGroups} />;
@@ -353,7 +353,7 @@ describe("SetupScreen mit Gruppen", () => {
       impostorCount: 1,
       mode: MODES[0].id,
       difficulty: 1,
-      hintsEnabled: true,
+      hintsEnabled: true, specialRules: false,
       secretImpostors: false,
       thinkSeconds: null,
       discussSeconds: null,
@@ -388,7 +388,7 @@ describe("SetupScreen mit Gruppen", () => {
 describe("SetupScreen mit Topfgrößen", () => {
   const initial: Settings = {
     names: ["Anna", "Ben", "Cem"], impostorCount: 1, mode: MODES[0].id, difficulty: 1,
-    hintsEnabled: true, secretImpostors: false, thinkSeconds: null, discussSeconds: null,
+    hintsEnabled: true, specialRules: false, secretImpostors: false, thinkSeconds: null, discussSeconds: null,
     groupId: null, guessEnabled: true, excludedFilters: [], casual: false, choice: null,
   };
 

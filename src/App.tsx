@@ -224,6 +224,7 @@ export default function App() {
             key={state.index}
             name={state.round.speakingOrder[state.index]}
             seconds={state.round.thinkSeconds ?? 0}
+            specialRule={state.round.specialRule}
             position={state.index + 1}
             total={state.round.speakingOrder.length}
             onNext={() => dispatch({ type: "nextClue" })}
@@ -232,6 +233,8 @@ export default function App() {
       case "discussion":
         return (
           <DiscussionScreen
+            specialRule={state.round.specialRule}
+            announceSpecialRule={!state.round.thinkSeconds}
             starter={state.round.thinkSeconds ? null : state.round.starter}
             seconds={state.round.discussSeconds}
             onResolve={() => dispatch({ type: "resolve" })}

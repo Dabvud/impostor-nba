@@ -22,7 +22,7 @@ const settings: Settings = {
   impostorCount: 1,
   mode: MODES[0].id,
   difficulty: 2,
-  hintsEnabled: false,
+  hintsEnabled: false, specialRules: false,
   secretImpostors: true,
   thinkSeconds: 30,
   discussSeconds: 60,
@@ -78,6 +78,7 @@ describe("speichern und laden", () => {
 describe("Spielstände aus v1.0", () => {
   it("ergänzt bei alten Einstellungen Tipp an, kein Geheim-Modus, keine Timer", () => {
     const {
+      specialRules: _specialRules,
       hintsEnabled: _a,
       secretImpostors: _b,
       thinkSeconds: _c,
@@ -89,7 +90,7 @@ describe("Spielstände aus v1.0", () => {
     localStorage.setItem(`${STORAGE_PREFIX}:v1:settings`, JSON.stringify(old));
     expect(loadSettings()).toEqual({
       ...settings,
-      hintsEnabled: true,
+      hintsEnabled: true, specialRules: false,
       secretImpostors: false,
       thinkSeconds: null,
       discussSeconds: null,
@@ -293,5 +294,39 @@ describe("Einfachauswahl speichern", () => {
   it.each([5, true, [], {}, ["a"]])("verwirft ungültige Wahltypen: %j", (choice) => {
     localStorage.setItem(STORAGE_PREFIX + ":v1:settings", JSON.stringify({ ...settings, choice }));
     expect(loadSettings()).toBeNull();
+  });
+});
+
+
+describe("Sonderregeln speichern", () => {
+  const rule = { id: "testregel", title: "Regel A", text: "Text A" };
+  it.each([false, true])("erhält die Einstellung %s", (specialRules) => {
+    saveSettings({ ...settings, specialRules });
+    expect(loadSettings()?.specialRules).toBe(specialRules);
+  });
+  it("ergänzt bei alten Einstellungen den Standard aus und verwirft falsche Typen", () => {
+    const { specialRules: _specialRules, ...old } = settings;
+    localStorage.setItem(STORAGE_PREFIX + ":v1:settings", JSON.stringify(old));
+    expect(loadSettings()?.specialRules).toBe(false);
+    localStorage.setItem(STORAGE_PREFIX + ":v1:settings", JSON.stringify({ ...old, specialRules: "true" }));
+    expect(loadSettings()).toBeNull();
+  });
+  it.each(["clues", "discussion"] as const)("erhält die ausgeloste Regel in %s auch nach Neuladen", (phase) => {
+    const state = phase === "clues"
+      ? { phase, index: 0, round: { ...game.round, specialRule: rule } }
+      : { phase, round: { ...game.round, specialRule: rule } };
+    saveGame(state);
+    expect(loadGame()).toEqual(state);
+  });
+  it("akzeptiert alte Runden ohne Regel und erhält null", () => {
+    saveGame(game);
+    expect(loadGame()).toEqual(game);
+    const without = { ...game, round: { ...game.round, specialRule: null } };
+    saveGame(without);
+    expect(loadGame()).toEqual(without);
+  });
+  it.each([{ id: 5, title: "Regel", text: "Text" }, { id: "a", title: "Regel" }, "kaputt"])("verwirft eine beschädigte Regel ohne die Runde zu verlieren", (specialRule) => {
+    localStorage.setItem(STORAGE_PREFIX + ":v1:game", JSON.stringify({ ...game, round: { ...game.round, specialRule } }));
+    expect(loadGame()).toEqual({ ...game, round: { ...game.round, specialRule: null } });
   });
 });

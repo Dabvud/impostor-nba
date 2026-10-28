@@ -5,7 +5,7 @@ import { addMember, newId, selectedNames, toggleSelected, type Group } from "../
 import { firstPlayableMode, MODES, poolFor, type ModeId } from "../game/modes";
 import { maxImpostors, normalizeNames, validateSettings } from "../game/settings";
 import type { Settings, Tier } from "../game/types";
-import { APP_NAME, CASUAL_LABEL, FILTER_LABEL } from "../variant/config";
+import { APP_NAME, CASUAL_LABEL, FILTER_LABEL, SPECIAL_RULES, SPECIAL_RULES_LABEL } from "../variant/config";
 
 const DIFFICULTIES: { tier: Tier; label: string }[] = [
   { tier: 1, label: "Leicht" },
@@ -85,6 +85,7 @@ export default function SetupScreen({
   const [choice, setChoice] = useState<string | null>(initial?.choice ?? null);
   const [hintsEnabled, setHintsEnabled] = useState(initial?.hintsEnabled ?? true);
 
+  const [specialRules, setSpecialRules] = useState(initial?.specialRules ?? false);
   const [secretImpostors, setSecretImpostors] = useState(initial?.secretImpostors ?? false);
   const [thinkSeconds, setThinkSeconds] = useState<number | null>(initial?.thinkSeconds ?? null);
   const [discussSeconds, setDiscussSeconds] = useState<number | null>(initial?.discussSeconds ?? null);
@@ -116,6 +117,7 @@ export default function SetupScreen({
     casual,
     choice: effectiveChoice,
     secretImpostors,
+    specialRules: SPECIAL_RULES.length > 0 && specialRules,
     thinkSeconds,
     discussSeconds,
     groupId,
@@ -288,6 +290,12 @@ export default function SetupScreen({
             onChange={(e) => setSecretImpostors(e.target.checked)}
           />
         </label>
+        {SPECIAL_RULES.length > 0 && (
+          <label className="switch-row">
+            <span>{SPECIAL_RULES_LABEL}</span>
+            <input type="checkbox" role="switch" checked={specialRules} onChange={(e) => setSpecialRules(e.target.checked)} />
+          </label>
+        )}
         {secretImpostors ? (
           <p className="hint">Lasst euch überraschen</p>
         ) : (

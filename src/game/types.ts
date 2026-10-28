@@ -34,6 +34,8 @@ export type Settings = {
   choice: string | null;
   /** Anzahl der Impostor wird jede Runde geheim ausgelost (0 bis Maximum). */
   secretImpostors: boolean;
+  /** Pro Runde kann unabhängig von den Rollen eine Sonderregel gelten. */
+  specialRules: boolean;
   /** Überlegzeit pro Spieler in der Hinweisrunde; null = keine Hinweisrunde. */
   thinkSeconds: number | null;
   /** Diskussionszeit; null = kein Diskussions-Timer. */
@@ -43,7 +45,9 @@ export type Settings = {
   /** Ein erwischter Impostor darf das Wort raten und gewinnt bei richtiger Antwort. */
   guessEnabled: boolean;
 };
+export type SpecialRule = { id: string; title: string; text: string };
 export type Round = {
+  specialRule?: SpecialRule | null;
   /** Zufällige ID, damit eine Runde nie doppelt in die Statistik kommt. */
   id: string;
   word: Entry;
