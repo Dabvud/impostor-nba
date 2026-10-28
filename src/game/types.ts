@@ -9,13 +9,23 @@ export type Tier = 1 | 2 | 3;
  */
 export type Tip = { slot: string; value: string };
 export type Entry = { name: string; hints: string[]; allHints?: Tip[]; group?: string; tipDonor?: boolean };
-export type ModeOption<M extends string = string> = { id: M; label: string; hasDifficulty: boolean };
+export type ModeOption<M extends string = string> = {
+  id: M;
+  label: string;
+  hasDifficulty: boolean;
+  filters?: { id: string; label: string }[];
+  hasCasual?: boolean;
+};
+export type PoolOptions = { excludedFilters: string[]; casual: boolean };
 export type Settings = {
   names: string[];
   impostorCount: number;
   mode: ModeId;
   difficulty: Tier;
   hintsEnabled: boolean;
+  /** IDs abgewählter Filter; neue Filter bleiben dadurch automatisch aktiv. */
+  excludedFilters: string[];
+  casual: boolean;
   /** Anzahl der Impostor wird jede Runde geheim ausgelost (0 bis Maximum). */
   secretImpostors: boolean;
   /** Überlegzeit pro Spieler in der Hinweisrunde; null = keine Hinweisrunde. */

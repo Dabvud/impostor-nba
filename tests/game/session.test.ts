@@ -32,9 +32,20 @@ const settings: Settings = {
   discussSeconds: 120,
   groupId: null,
   guessEnabled: true,
+  excludedFilters: [],
+  casual: false,
 };
 
 describe("nextRound", () => {
+  it("übergibt die aktuellen Optionen an die Variante und behält den Topfschlüssel", () => {
+    const selected = { ...settings, excludedFilters: ["a"], casual: true };
+    const result = nextRound(selected, {}, seededRng(5));
+    expect(poolFor).toHaveBeenLastCalledWith(settings.mode, settings.difficulty, {
+      excludedFilters: ["a"], casual: true,
+    });
+    expect(Object.keys(result.used)).toEqual([poolKey(settings.mode, settings.difficulty)]);
+  });
+
   it("aktualisiert nur den Topf des gewählten Modus", () => {
     const used = { fremderTopf: ["A"] };
     const result = nextRound(settings, used, seededRng(5));

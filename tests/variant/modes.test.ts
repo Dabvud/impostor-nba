@@ -267,9 +267,18 @@ describe("poolKey", () => {
 describe("MODES", () => {
   it("hat vier Modi mit exakten Labels und ohne Schwierigkeit", () => {
     expect(MODES).toEqual([
-      { id: "stars", label: "⭐ Aktuelle Stars", hasDifficulty: false },
-      { id: "legenden", label: "👑 Legenden", hasDifficulty: false },
-      { id: "alle", label: "🏀 Alle NBA-Spieler", hasDifficulty: false },
+      { id: "stars", label: "⭐ Aktuelle Stars", hasDifficulty: false, hasCasual: true },
+      { id: "legenden", label: "👑 Legenden", hasDifficulty: false, hasCasual: true },
+      {
+        id: "alle", label: "🏀 Alle NBA-Spieler", hasDifficulty: false, hasCasual: true,
+        filters: [
+      { id: "2010-heute", label: "2010–heute" },
+      { id: "2000er", label: "2000er" },
+      { id: "90er", label: "90er" },
+      { id: "80er", label: "80er" },
+      { id: "70er-frueher", label: "70er u. früher" },
+    ],
+      },
       { id: "teams", label: "🏟️ NBA-Teams", hasDifficulty: false },
     ]);
   });
@@ -296,5 +305,86 @@ describe("Anbindung der Spieldaten", () => {
 
   it("setzt die Grenze bei Teams auf 6, bei allen Spieler-Modi auf 10", () => {
     expect(MODES.map((mode) => allImpostorsMax(mode.id))).toEqual([10, 10, 10, 6]);
+  });
+});
+
+
+describe("Topfoptionen", () => {
+  const eraPlayers = ["2010er", "2020er", "2000er", "90er", "80er", "70er", "60er", "50er"].map((era) =>
+    player(era, { extras: playerExtras({ era }) }));
+
+  it.each([
+    ["2010-heute", ["2010er", "2020er"]],
+    ["2000er", ["2000er"]], ["90er", ["90er"]], ["80er", ["80er"]],
+    ["70er-frueher", ["70er", "60er", "50er"]],
+  ])("entfernt die abgewählte Gruppe %s", (id, removed) => {
+    const pool = buildPool("alle", 1, eraPlayers, [], { excludedFilters: [id], casual: false });
+    expect(pool.map((e) => e.name)).toEqual(eraPlayers.map((p) => p.name).filter((name) => !removed.includes(name)));
+  });
+
+  it("behält fehlende und unbekannte Ären und ignoriert unbekannte Filter-IDs", () => {
+    const squad = [...eraPlayers, player("Ohne"), player("Null", { extras: playerExtras() }),
+      player("Unbekannt", { extras: playerExtras({ era: "unbekannt" }) })];
+    const excludedFilters = MODES.find((m) => m.id === "alle")!.filters!.map((f) => f.id);
+    expect(buildPool("alle", 1, squad, [], { excludedFilters, casual: false }).map((e) => e.name))
+      .toEqual(["Ohne", "Null", "Unbekannt"]);
+    expect(buildPool("alle", 1, squad, [], { excludedFilters: ["unbekannt", "2010er"], casual: false }))
+      .toEqual(buildPool("alle", 1, squad, []));
+  });
+
+  it.each(["stars", "legenden"] as const)("ignoriert Ärenfilter in %s", (mode) => {
+    const squad = eraPlayers.map((p) => ({ ...p, tags: ["star", "legende"] as NbaPlayer["tags"] }));
+    expect(buildPool(mode, 1, squad, [], { excludedFilters: ["2010-heute", "70er-frueher"], casual: false }))
+      .toEqual(buildPool(mode, 1, squad, []));
+  });
+
+  it.each(["stars", "legenden", "alle"] as const)("nimmt bei Casual in %s ausschließlich explizit markierte Spieler", (mode) => {
+    const squad = [player("Ja", { casual: true }), player("Nein", { casual: false }), player("Fehlt")]
+      .map((p) => ({ ...p, tags: ["star", "legende"] as NbaPlayer["tags"] }));
+    expect(buildPool(mode, 1, squad, [], { excludedFilters: [], casual: true }).map((e) => e.name)).toEqual(["Ja"]);
+    expect(buildPool(mode, 1, squad.slice(1), [], { excludedFilters: [], casual: true })).toEqual([]);
+  });
+
+  it("kombiniert Casual und Ärenauswahl", () => {
+    const squad = [
+      player("Neu", { casual: true, extras: playerExtras({ era: "2020er" }) }),
+      player("Alt", { casual: true, extras: playerExtras({ era: "90er" }) }),
+      player("Schwer", { extras: playerExtras({ era: "2020er" }) }),
+    ];
+    expect(buildPool("alle", 1, squad, [], { excludedFilters: ["90er"], casual: true }).map((e) => e.name)).toEqual(["Neu"]);
+  });
+
+  it.each(["Filter", "Casual"])("berechnet normale und persönliche Tipps erst nach %s", (kind) => {
+    const squad = [
+      player("A", { casual: true, hints: { nation: "USA", position: "Point Guard", tips: ["Dunker"] },
+        extras: playerExtras({ era: "2020er", hand: "Linkshänder" }) }),
+      player("B", { hints: { nation: "USA", position: "Point Guard", tips: ["Dunker"] },
+        extras: playerExtras({ era: "90er", hand: "Linkshänder" }) }),
+      player("C", { casual: true, hints: { nation: "Kanada", position: "Center", tips: [] },
+        extras: playerExtras({ era: "2020er", hand: "Rechtshänder" }) }),
+    ];
+    const before = buildPool("alle", 1, squad, []);
+    expect(before[0].hints).toContain("Dunker");
+    expect(before[0].allHints).toContainEqual({ slot: "hand", value: "Linkshänder" });
+    const options = { excludedFilters: kind === "Filter" ? ["90er"] : [], casual: kind === "Casual" };
+    const after = buildPool("alle", 1, squad, [], options);
+    expect(after.map((e) => e.name)).toEqual(["A", "C"]);
+    expect(after[0].hints).toEqual([]);
+    expect(after[0].allHints).toEqual([]);
+  });
+
+  it("ignoriert bei Teams sämtliche Optionen", () => {
+    expect(buildPool("teams", 1, players, teams, { excludedFilters: ["2010-heute", "90er"], casual: true }))
+      .toEqual(buildPool("teams", 1, players, teams));
+  });
+
+  it("verwendet ohne Optionen denselben vollständigen Topf wie mit den Standardoptionen", () => {
+    for (const mode of MODES) {
+      expect(buildPool(mode.id, 1, players, teams, { excludedFilters: [], casual: false }))
+        .toEqual(buildPool(mode.id, 1, players, teams));
+      const options = { excludedFilters: ["2010-heute", "70er-frueher"], casual: true };
+      expect(poolFor(mode.id, 1, options))
+        .toEqual(buildPool(mode.id, 1, playersJson as NbaPlayer[], teamsJson as NbaTeam[], options));
+    }
   });
 });

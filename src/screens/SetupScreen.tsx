@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { formatTime } from "../components/useCountdown";
 import { displayName } from "../displayName";
 import { addMember, newId, selectedNames, toggleSelected, type Group } from "../game/groups";
-import { firstPlayableMode, MODES, type ModeId } from "../game/modes";
+import { firstPlayableMode, MODES, poolFor, type ModeId } from "../game/modes";
 import { maxImpostors, normalizeNames, validateSettings } from "../game/settings";
 import type { Settings, Tier } from "../game/types";
-import { APP_NAME } from "../variant/config";
+import { APP_NAME, CASUAL_LABEL, FILTER_LABEL } from "../variant/config";
 
 const DIFFICULTIES: { tier: Tier; label: string }[] = [
   { tier: 1, label: "Leicht" },
@@ -80,6 +80,8 @@ export default function SetupScreen({
     return initial && sizes[initial.mode] > 0 ? initial.mode : firstPlayableMode(sizes);
   });
   const [difficulty, setDifficulty] = useState<Tier>(initial?.difficulty ?? 1);
+  const [excludedFilters, setExcludedFilters] = useState<string[]>(initial?.excludedFilters ?? []);
+  const [casual, setCasual] = useState(initial?.casual ?? false);
   const [hintsEnabled, setHintsEnabled] = useState(initial?.hintsEnabled ?? true);
 
   const [secretImpostors, setSecretImpostors] = useState(initial?.secretImpostors ?? false);
@@ -96,18 +98,25 @@ export default function SetupScreen({
     mode,
     difficulty,
     hintsEnabled,
+    excludedFilters,
+    casual,
     secretImpostors,
     thinkSeconds,
     discussSeconds,
     groupId,
     guessEnabled,
   };
-  const errors = validateSettings(settings, poolSizes?.[mode]);
+  const unfilteredPoolSize = useMemo(() => poolFor(mode, difficulty).length, [mode, difficulty]);
+  const filteredPoolSize = useMemo(
+    () => poolFor(mode, difficulty, { excludedFilters, casual }).length,
+    [mode, difficulty, excludedFilters, casual],
+  );
+  const errors = validateSettings(settings, poolSizes?.[mode] ?? unfilteredPoolSize, filteredPoolSize);
 
   const draftKey = JSON.stringify([settings, freeNames]);
   // nur bei echten Änderungen melden (Objekte entstehen bei jedem Rendern neu)
   useEffect(() => onDraftChange(settings, freeNames), [draftKey]);
-  const hasDifficulty = MODES.find((m) => m.id === mode)?.hasDifficulty ?? false;
+  const selectedMode = MODES.find((m) => m.id === mode);
 
   function addName(e: FormEvent) {
     e.preventDefault();
@@ -354,7 +363,40 @@ export default function SetupScreen({
             </option>
           ))}
         </select>
-        {hasDifficulty && (
+        {selectedMode?.filters && (
+          <div className="pool-filters">
+            <p id="pool-filters-label" className="pool-filters-label">{FILTER_LABEL}</p>
+            <div className="filter-chips" role="group" aria-labelledby="pool-filters-label">
+              {selectedMode.filters.map((filter) => (
+                <button
+                  key={filter.id}
+                  type="button"
+                  aria-pressed={!excludedFilters.includes(filter.id)}
+                  onClick={() => setExcludedFilters((excluded) => excluded.includes(filter.id)
+                    ? excluded.filter((id) => id !== filter.id)
+                    : [...excluded, filter.id])}
+                >
+                  {filter.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        {selectedMode?.hasCasual && (
+          <label className="switch-row casual-row">
+            <span>{CASUAL_LABEL}</span>
+            <input
+              type="checkbox"
+              role="switch"
+              checked={casual}
+              onChange={(e) => setCasual(e.target.checked)}
+            />
+          </label>
+        )}
+        {(selectedMode?.filters || selectedMode?.hasCasual) && (
+          <p className="pool-count" aria-live="polite">{filteredPoolSize} im Topf</p>
+        )}
+        {selectedMode?.hasDifficulty && (
           <div className="segmented">
             {DIFFICULTIES.map((d) => (
               <button

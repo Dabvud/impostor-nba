@@ -179,6 +179,8 @@ describe("Statistik-Protokoll", () => {
     discussSeconds: null,
     groupId: "g1",
     guessEnabled: true,
+    excludedFilters: [],
+    casual: false,
   };
   const stats = () => JSON.parse(localStorage.getItem(`${STORAGE_PREFIX}:v1:stats:g1`) ?? "[]");
 

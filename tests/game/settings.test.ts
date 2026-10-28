@@ -1,7 +1,18 @@
 import { MODES } from "../../src/game/modes";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { maxImpostors, normalizeNames, validateSettings } from "../../src/game/settings";
 import type { Settings } from "../../src/game/types";
+
+vi.mock("../../src/variant/modes", async (importOriginal) => {
+  const original = await importOriginal<typeof import("../../src/variant/modes")>();
+  return {
+    ...original,
+    MODES: original.MODES.map((mode, i) => ({
+      ...mode,
+      filters: i === 0 ? [{ id: "a", label: "A" }, { id: "b", label: "B" }] : undefined,
+    })),
+  };
+});
 
 const base: Settings = {
   names: ["Anna", "Ben", "Cem"],
@@ -14,6 +25,8 @@ const base: Settings = {
   discussSeconds: null,
   groupId: null,
   guessEnabled: true,
+  excludedFilters: [],
+  casual: false,
 };
 
 describe("maxImpostors", () => {
@@ -69,5 +82,28 @@ describe("validateSettings", () => {
 
   it("erkennt doppelte Namen getrimmt und ohne Groß-/Kleinschreibung", () => {
     expect(validateSettings({ ...base, names: ["Luca", "luca ", "Ben"] })).toContain("Namen doppelt");
+  });
+});
+
+
+describe("Topfauswahl validieren", () => {
+  it("verlangt bei Filtern mindestens eine aktive Auswahl, auch im geheimen Modus", () => {
+    for (const secretImpostors of [false, true]) {
+      expect(validateSettings({ ...base, excludedFilters: ["a", "b", "unbekannt"], secretImpostors }, 5, 0))
+        .toEqual(["Mit dieser Auswahl gibt es keine Begriffe", "Mindestens eine Auswahl nötig"]);
+    }
+  });
+
+  it("akzeptiert eine aktive Auswahl und ignoriert unbekannte IDs", () => {
+    expect(validateSettings({ ...base, excludedFilters: ["a", "unbekannt"] }, 5, 2)).toEqual([]);
+  });
+
+  it("ignoriert Abwahlen in einem Modus ohne Filter", () => {
+    expect(validateSettings({ ...base, mode: MODES[1].id, excludedFilters: ["a", "b"] }, 5, 5)).toEqual([]);
+  });
+
+  it("unterscheidet leere Auswahl und grundsätzlich leeren Modus", () => {
+    expect(validateSettings(base, 5, 0)).toEqual(["Mit dieser Auswahl gibt es keine Begriffe"]);
+    expect(validateSettings(base, 0, 0)).toEqual(["In diesem Modus gibt es noch keine Begriffe"]);
   });
 });

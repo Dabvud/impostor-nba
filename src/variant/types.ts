@@ -41,7 +41,7 @@ export type TeamExtras = {
   relocated: string | null;
   nameType: string | null;
 };
-export type NbaPlayer = { name: string; tags: Tag[]; hints: PlayerHints; extras?: PlayerExtras };
+export type NbaPlayer = { name: string; tags: Tag[]; hints: PlayerHints; extras?: PlayerExtras; casual?: boolean };
 export type NbaTeam = { name: string; hints: TeamHints; extras?: TeamExtras };
 /** Positionsgruppe, aus der in der Alle-Impostor-Runde die Tipp-Geber kommen. */
 export type PositionGroup = "Guard" | "Forward" | "Center";

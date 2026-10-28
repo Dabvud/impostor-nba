@@ -65,6 +65,27 @@ describe("drawRound", () => {
     expect(result.used).toEqual([result.round.word.name]);
   });
 
+  it("setzt einen verkleinerten, bereits vollständig gespielten Topf zurück", () => {
+    const smaller = pool.slice(0, 2);
+    let used = [...poolNames, "Fremd"];
+    for (let seed = 0; seed < 20; seed++) {
+      const result = drawRound(names, 1, smaller, used, seededRng(seed));
+      expect(smaller.map((e) => e.name)).toContain(result.round.word.name);
+      expect(result.used).toEqual([result.round.word.name]);
+      used = result.used;
+    }
+  });
+
+  it("spielt auch einen einzelnen Begriff mit alter Verlaufsliste wiederholt", () => {
+    let used = [...poolNames];
+    for (let seed = 0; seed < 5; seed++) {
+      const result = drawRound(names, 1, pool.slice(0, 1), used, seededRng(seed));
+      expect(result.round.word).toEqual(pool[0]);
+      expect(result.used).toEqual([pool[0].name]);
+      used = result.used;
+    }
+  });
+
   it("ist bei gleichem Seed reproduzierbar", () => {
     expect(drawRound(names, 2, pool, [], seededRng(99))).toEqual(drawRound(names, 2, pool, [], seededRng(99)));
   });

@@ -26,5 +26,5 @@ export const team = (name: string, color: string, conference: string): NbaTeam =
 export const teams = [team("X", "Rot", "Westen"), team("Y", "Rot", "Osten"), team("Z", "Blau", "Osten")];
 export const settings: Settings = {
   names: ["Anna", "Ben", "Cem"], impostorCount: 1, mode: "stars", difficulty: 1, hintsEnabled: true,
-  secretImpostors: false, thinkSeconds: null, discussSeconds: null, groupId: null, guessEnabled: true,
+  secretImpostors: false, thinkSeconds: null, discussSeconds: null, groupId: null, guessEnabled: true, excludedFilters: [], casual: false,
 };

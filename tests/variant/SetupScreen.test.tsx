@@ -2,6 +2,8 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import SetupScreen from "../../src/screens/SetupScreen";
+import { CASUAL_LABEL, FILTER_LABEL } from "../../src/variant/config";
+import { MODES } from "../../src/variant/modes";
 import { poolSizes } from "../../src/game/modes";
 import { settings } from "./fixtures";
 
@@ -65,6 +67,27 @@ describe("Spielmodi in der Einrichtung", () => {
     render(<SetupScreen initial={null} poolSizes={poolSizes()} onStart={vi.fn()} />);
     for (const name of ["Leicht", "Mittel", "Schwer"]) {
       expect(screen.queryByRole("button", { name })).not.toBeInTheDocument();
+    }
+  });
+});
+
+
+describe("Variantenabhängige Topfoptionen", () => {
+  it("zeigt Ärenknöpfe nur bei alle und Casual in allen Spieler-Modi", async () => {
+    const user = userEvent.setup();
+    render(<SetupScreen initial={settings} poolSizes={poolSizes()} onStart={vi.fn()} />);
+    for (const mode of ["stars", "legenden", "alle", "teams"]) {
+      await user.selectOptions(screen.getByLabelText("Spielmodus"), mode);
+      if (mode === "alle") {
+        expect(screen.getByRole("group", { name: FILTER_LABEL })).toBeInTheDocument();
+        for (const filter of MODES.find((m) => m.id === "alle")!.filters!) {
+          expect(screen.getByRole("button", { name: filter.label })).toHaveAttribute("aria-pressed", "true");
+        }
+      } else {
+        expect(screen.queryByRole("group", { name: FILTER_LABEL })).not.toBeInTheDocument();
+      }
+      if (mode === "teams") expect(screen.queryByRole("switch", { name: CASUAL_LABEL })).not.toBeInTheDocument();
+      else expect(screen.getByRole("switch", { name: CASUAL_LABEL })).not.toBeChecked();
     }
   });
 });

@@ -120,6 +120,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
@@ -322,6 +323,7 @@
       "star",
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Center",
@@ -365,6 +367,7 @@
     "tags": [
       "star"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
@@ -1066,6 +1069,7 @@
       "star",
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
@@ -1476,6 +1480,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Power Forward",
@@ -1518,6 +1523,7 @@
     "tags": [
       "star"
     ],
+    "casual": true,
     "hints": {
       "nation": "Deutschland",
       "position": "Point Guard",
@@ -1711,6 +1717,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "Deutschland",
       "position": "Power Forward",
@@ -1960,6 +1967,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
@@ -2086,6 +2094,7 @@
     "tags": [
       "star"
     ],
+    "casual": true,
     "hints": {
       "nation": "Deutschland",
       "position": "Small Forward",
@@ -2167,6 +2176,7 @@
       "star",
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "Griechenland",
       "position": "Power Forward",
@@ -2455,6 +2465,7 @@
     "tags": [
       "star"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
@@ -2733,6 +2744,7 @@
       "star",
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
@@ -2935,6 +2947,7 @@
     "tags": [
       "star"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
@@ -3021,6 +3034,7 @@
       "star",
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
@@ -3106,6 +3120,7 @@
       "star",
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "Kamerun",
       "position": "Center",
@@ -3430,6 +3445,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Center",
@@ -3560,6 +3576,7 @@
       "star",
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
@@ -3647,6 +3664,7 @@
       "star",
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
@@ -3818,6 +3836,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
@@ -3944,6 +3963,7 @@
       "star",
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
@@ -4069,6 +4089,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
@@ -4153,6 +4174,7 @@
       "star",
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
@@ -4196,6 +4218,7 @@
     "tags": [
       "star"
     ],
+    "casual": true,
     "hints": {
       "nation": "Slowenien",
       "position": "Point Guard",
@@ -4239,6 +4262,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
@@ -4404,6 +4428,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Shooting Guard",
@@ -4525,6 +4550,7 @@
       "star",
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "Serbien",
       "position": "Center",
@@ -5273,6 +5299,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
@@ -5355,6 +5382,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Small Forward",
@@ -5439,6 +5467,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Center",
@@ -5484,6 +5513,7 @@
       "star",
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "USA",
       "position": "Point Guard",
@@ -5933,6 +5963,7 @@
     "tags": [
       "star"
     ],
+    "casual": true,
     "hints": {
       "nation": "Frankreich",
       "position": "Center",
@@ -6060,6 +6091,7 @@
     "tags": [
       "legende"
     ],
+    "casual": true,
     "hints": {
       "nation": "China",
       "position": "Center",

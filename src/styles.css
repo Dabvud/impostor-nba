@@ -176,6 +176,60 @@ button.primary {
   font-weight: 700;
 }
 
+.pool-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pool-filters-label {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Abgewählt = fliegt aus dem Topf: gedimmt und durchgestrichen */
+.filter-chips button {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  text-decoration: line-through;
+  font-variant-numeric: tabular-nums;
+}
+
+.filter-chips button[aria-pressed="true"] {
+  background: var(--select);
+  border-color: var(--select);
+  color: var(--on-select);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.filter-chips button[aria-pressed="true"]::before {
+  content: "✓ ";
+}
+
+.casual-row {
+  padding-top: 12px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.pool-count {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
 .errors {
   margin: 0;
   padding: 0;

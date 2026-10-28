@@ -44,6 +44,8 @@ function isSettings(v: unknown): v is Settings {
     typeof v.impostorCount === "number" &&
     MODES.some((m) => m.id === v.mode) &&
     [1, 2, 3].includes(v.difficulty as number) &&
+    (v.excludedFilters === undefined || isStringArray(v.excludedFilters)) &&
+    (v.casual === undefined || typeof v.casual === "boolean") &&
     (v.hintsEnabled === undefined || typeof v.hintsEnabled === "boolean") &&
     (v.secretImpostors === undefined || typeof v.secretImpostors === "boolean") &&
     isOptionalSeconds(v.thinkSeconds) &&
@@ -127,6 +129,8 @@ export function loadSettings(): Settings | null {
   return {
     ...v,
     hintsEnabled: v.hintsEnabled ?? true,
+    excludedFilters: v.excludedFilters ?? [],
+    casual: v.casual ?? false,
     secretImpostors: v.secretImpostors ?? false,
     thinkSeconds: secondsOrNull(v.thinkSeconds),
     discussSeconds: secondsOrNull(v.discussSeconds),

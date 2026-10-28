@@ -246,6 +246,23 @@ describe("Legenden und Herkunft", () => {
   });
 });
 
+describe("Casual-Topf", () => {
+  const ERA_GROUPS = ["2010-heute", "2000er", "90er", "80er", "70er-frueher"];
+
+  it("markiert Casual nur mit true", () => {
+    for (const p of players) expect([undefined, true], p.name).toContain(p.casual);
+  });
+
+  it("hat in Stars, Legenden und jeder Ären-Gruppe von Alle mindestens einen Casual-Spieler", () => {
+    expect(buildPool("stars", 1, players, teams, { excludedFilters: [], casual: true }).length).toBeGreaterThanOrEqual(10);
+    expect(buildPool("legenden", 1, players, teams, { excludedFilters: [], casual: true }).length).toBeGreaterThanOrEqual(10);
+    for (const group of ERA_GROUPS) {
+      const excludedFilters = ERA_GROUPS.filter((g) => g !== group);
+      expect(buildPool("alle", 1, players, teams, { excludedFilters, casual: true }).length, group).toBeGreaterThan(0);
+    }
+  });
+});
+
 describe("teams.json", () => {
   it("hat genau 30 Teams mit eindeutigen, nicht leeren Namen", () => {
     expect(teams).toHaveLength(30);

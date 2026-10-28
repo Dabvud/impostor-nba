@@ -28,6 +28,8 @@ const settings: Settings = {
   discussSeconds: 60,
   groupId: null,
   guessEnabled: true,
+  excludedFilters: [],
+  casual: false,
 };
 const game: GameState = {
   phase: "reveal",
@@ -250,5 +252,29 @@ describe("Statistik speichern", () => {
   it("verwirft kaputte Einträge", () => {
     localStorage.setItem(`${STORAGE_PREFIX}:v1:stats:g1`, JSON.stringify([record, { roundId: 5 }]));
     expect(loadStats("g1")).toEqual([record]);
+  });
+});
+
+
+describe("Topfoptionen speichern", () => {
+  it("ergänzt die Standardwerte für Einstellungen ohne die neuen Felder", () => {
+    const { excludedFilters: _filters, casual: _casual, ...old } = settings;
+    localStorage.setItem(STORAGE_PREFIX + ":v1:settings", JSON.stringify(old));
+    expect(loadSettings()).toEqual({ ...old, excludedFilters: [], casual: false });
+  });
+
+  it("speichert auch unbekannte Filter-IDs und einen aktiven Schalter unverändert", () => {
+    const selected = { ...settings, excludedFilters: ["a", "unbekannt"], casual: true };
+    saveSettings(selected);
+    expect(loadSettings()).toEqual(selected);
+  });
+
+  it.each([
+    { excludedFilters: null }, { excludedFilters: "a" }, { excludedFilters: [1] },
+    { excludedFilters: ["a", false] }, { excludedFilters: {} },
+    { casual: null }, { casual: "true" }, { casual: 1 }, { casual: [] },
+  ])("verwirft ungültige Typen: %j", (invalid) => {
+    localStorage.setItem(STORAGE_PREFIX + ":v1:settings", JSON.stringify({ ...settings, ...invalid }));
+    expect(loadSettings()).toBeNull();
   });
 });

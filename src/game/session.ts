@@ -18,7 +18,7 @@ export function nextRound(
   rng: Rng,
 ): { round: Round; used: UsedMap } {
   const key = poolKey(s.mode, s.difficulty);
-  const pool = poolFor(s.mode, s.difficulty);
+  const pool = poolFor(s.mode, s.difficulty, { excludedFilters: s.excludedFilters, casual: s.casual });
   const names = normalizeNames(s.names);
   // Eigene Tipps nur, solange die Variante genügend Kategorien für alle vorsieht.
   const allowAll = names.length <= allImpostorsMax(s.mode);

@@ -1,3 +1,5 @@
+export const FILTER_LABEL = "Diese Ären kommen in den Topf";
+export const CASUAL_LABEL = "🧢 Hilfe, ich bin Casual";
 export const APP_NAME = "Impostor NBA";
 /** Präfix der localStorage-Schlüssel – nie ändern, sonst sind Gruppen und Statistik weg. */
 export const STORAGE_PREFIX = "impostor-nba";

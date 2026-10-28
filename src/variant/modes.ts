@@ -1,15 +1,24 @@
 import playersJson from "../data/players.json";
 import teamsJson from "../data/teams.json";
 import { countBy, isText, sharedOnly, toTips } from "../game/tips";
-import type { Entry, ModeOption, Tier } from "../game/types";
+import type { Entry, ModeOption, PoolOptions, Tier } from "../game/types";
 import type { NbaPlayer, NbaTeam, PlayerExtras, PositionGroup, Tag, TeamExtras, TeamHints } from "./types";
 
 export type ModeId = "stars" | "legenden" | "alle" | "teams";
 
 export const MODES: ModeOption<ModeId>[] = [
-  { id: "stars", label: "⭐ Aktuelle Stars", hasDifficulty: false },
-  { id: "legenden", label: "👑 Legenden", hasDifficulty: false },
-  { id: "alle", label: "🏀 Alle NBA-Spieler", hasDifficulty: false },
+  { id: "stars", label: "⭐ Aktuelle Stars", hasDifficulty: false, hasCasual: true },
+  { id: "legenden", label: "👑 Legenden", hasDifficulty: false, hasCasual: true },
+  {
+    id: "alle", label: "🏀 Alle NBA-Spieler", hasDifficulty: false, hasCasual: true,
+    filters: [
+      { id: "2010-heute", label: "2010–heute" },
+      { id: "2000er", label: "2000er" },
+      { id: "90er", label: "90er" },
+      { id: "80er", label: "80er" },
+      { id: "70er-frueher", label: "70er u. früher" },
+    ],
+  },
   { id: "teams", label: "🏟️ NBA-Teams", hasDifficulty: false },
 ];
 
@@ -95,16 +104,30 @@ function teamEntries(teams: NbaTeam[]): Entry[] {
 
 const withTag = (players: NbaPlayer[], tag: Tag) => players.filter((p) => p.tags.includes(tag));
 
+const ERA_FILTERS: Record<string, string> = {
+  "2010er": "2010-heute", "2020er": "2010-heute", "2000er": "2000er",
+  "90er": "90er", "80er": "80er", "70er": "70er-frueher", "60er": "70er-frueher", "50er": "70er-frueher",
+};
+
 /** Liefert den Topf an Begriffen für einen Modus. Schwierigkeitsstufen gibt es (noch) nicht. */
-export function buildPool(mode: ModeId, _difficulty: Tier, players: NbaPlayer[], teams: NbaTeam[]): Entry[] {
+export function buildPool(
+  mode: ModeId, _difficulty: Tier, players: NbaPlayer[], teams: NbaTeam[], options?: PoolOptions,
+): Entry[] {
+  const selectedMode = MODES.find((m) => m.id === mode);
+  const excluded = new Set(selectedMode?.filters?.map((f) => f.id).filter((id) => options?.excludedFilters.includes(id)));
+  const selectedPlayers = players.filter((p) => {
+    if (selectedMode?.hasCasual && options?.casual && p.casual !== true) return false;
+    const filter = p.extras?.era ? ERA_FILTERS[p.extras.era] : undefined;
+    return !filter || !excluded.has(filter);
+  });
   switch (mode) {
     case "stars":
-      return playerEntries(withTag(players, "star"));
+      return playerEntries(withTag(selectedPlayers, "star"));
     case "legenden":
-      return playerEntries(withTag(players, "legende"));
+      return playerEntries(withTag(selectedPlayers, "legende"));
     case "alle": {
       const seen = new Set<string>();
-      return playerEntries(players.filter(({ name }) => {
+      return playerEntries(selectedPlayers.filter(({ name }) => {
         if (seen.has(name)) return false;
         seen.add(name);
         return true;
@@ -121,8 +144,8 @@ export function poolKey(mode: ModeId, _difficulty: Tier): string {
 }
 
 /** Liefert den Topf mit den eingetragenen Begriffen. */
-export function poolFor(mode: ModeId, difficulty: Tier): Entry[] {
-  return buildPool(mode, difficulty, playersJson as NbaPlayer[], teamsJson as NbaTeam[]);
+export function poolFor(mode: ModeId, difficulty: Tier, options?: PoolOptions): Entry[] {
+  return buildPool(mode, difficulty, playersJson as NbaPlayer[], teamsJson as NbaTeam[], options);
 }
 
 /**
